@@ -1,0 +1,92 @@
+{
+ "llamada_id": "CAf8fa6d0fc16e2c0ae1208556778cbd2f",
+ "metadata": {
+  "proyecto": "proaco",
+  "flow": "outbound",
+  "contacto": "Tipito Enojado",
+  "outcome": "too-short",
+  "duration": 25,
+  "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+  "campaign": "Grupo Proaco",
+  "externalId": "CAf8fa6d0fc16e2c0ae1208556778cbd2f",
+  "customFields": {
+   "direccion": "",
+   "user_name": "",
+   "user_email": null,
+   "nro_reclamo": "",
+   "user_interest": "",
+   "motivo_llamado": "Consultas generales",
+   "user_phone_number": ""
+  }
+ },
+ "suites": {
+  "outbound_7reglas": {
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "no hubo listado"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   }
+  },
+  "outbound_llmjudges": {
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "agendamiento_cita": {
+    "value": 0.0,
+    "reason": "El cliente colgó sin mostrar interés y el bot no ofreció agendar una cita o derivarlo a un asesor."
+   },
+   "cliente_no_interesado": {
+    "value": 0.0,
+    "reason": "El bot no ha recibido una respuesta clara de interés o desinterés por parte del cliente y el cliente corta la llamada inmediatamente. No se puede evaluar su comportamiento en este caso."
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "no hubo listado"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   }
+  }
+ }
+}

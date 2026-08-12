@@ -1,0 +1,34 @@
+[BOT] Hola, gracias por llamar a Proaco ¿En que le puedo ayudar?
+[CLIENTE] Estoy buscando un departamento
+[CLIENTE] con tres habitaciones.
+[CLIENTE] proaco_list_intent
+[CLIENTE] proaco_list_intent
+[CLIENTE] Hola. Estoy en un
+[CLIENTE] proaco_resolve_intent
+[CLIENTE] proaco_resolve_intent
+[BOT] Hola, ya estoy buscando departamentos con tres habitaciones para vos. Dame un momento y te voy contando si tenemos opciones disponibles. Encontré varias opciones interesantes. Te leo las primeras tres: Primero: Proyecto “Departamentos con cochera - 2024”.
+[BOT] Piso 00, Departamento 91. Tiene 3 dormitorios, 2 baños, 134 metros cuadrados. Entrega inmediata en 2024 y su precio es 163.900 dólares. Segundo: Proyecto “Departamentos Torre 02 - 2026”. Piso 06, Departamento 2. Cuenta con 3 dormitorios, 3 baños, 178,35 metros cuadrados. Entrega en 2026, y el precio es 254.900 dólares. Tercero: Proyecto “Departamentos Torre 05 - 2024”. Piso 002, Departamento B. Tiene 3 dormitorios, 2 baños, 142,42 metros cuadrados. Entrega inmediata en 2024 y el precio es 259.000 dólares. ¿Alguno de estos te interesa o querés saber más detalles?
+[CLIENTE] un
+[BOT] ¿Te gustaría que te cuente más detalles sobre alguna de estas opciones o prefieres que te lea más departamentos disponibles?
+[CLIENTE] Quiero ver más departamentos disponibles.
+[CLIENTE] Quiero más departamentos disponibles.
+[BOT] Sigo sin escucharte bien.
+[CLIENTE] Quiero más departamentos disponibles.
+[BOT] Por favor, podrías repetir lo que dijiste.
+[CLIENTE] Más departamentos disponibles.
+[BOT] Estoy acá para ayudarte.
+[BOT] Perfecto.
+[BOT] Te leo tres más:
+[BOT] Cuarto:
+[BOT] Proyecto “Departamentos Torre 05 - 2023”, Piso 006, Departamento E. Tiene 3 dormitorios, 2 baños, 131,79 metros cuadrados. Entrega inmediata en 2023. El precio es 259.000 dólares. Quinto: Proyecto “Departamentos Torre 03 - 2027”, Piso 06, Departamento 06. Tiene 3 dormitorios, 3 baños, 178,28 metros cuadrados. Posesión en 2027, con financiación hasta 36 cuotas. Precio: 300.258 dólares. Sexto: Proyecto “Departamentos Torre 03 - 2027”, Piso 07, Departamento 05. También con 3 dormitorios, 3 baños, 178,28 metros cuadrados. Posesión 2027, con financiación hasta 36 cuotas. Precio: 312.472 dólares. ¿Alguno de estos te interesa o querés que te cuente más? Esas eran todas las opciones de departamentos con tres habitaciones que encontré. Ahora, ¿alguno de todos los que mencioné te interesó en particular para que avancemos con más detalles? Si querés, puedo ayudarte a avanzar con alguno de los departamentos que mencionamos. ¿Te interesa alguno en especial o hay algo más que quieras consultar? Disculpame, no se escuchó bien. ¿Podrías repetir cuál de los departamentos te interesó o qué otra consulta tenés? No te escuché claramente. ¿Podrías repetir cuál departamento te interesa o si necesitás más información? Disculpá, no te escuché bien. ¿Podrías repetir cuál departamento te interesa o si querés más detalles? No te escuché bien. ¿Podrías repetir cuál departamento te interesó o en qué más puedo ayudarte?
+[CLIENTE] Me interesa el seis.
+[BOT] Perfecto, el departamento del proyecto “Departamentos Torre 03 - 2027”, Piso 07, Departamento 05, con 3 dormitorios, 3 baños, 178,28 metros cuadrados y un precio de 312.472 dólares. Ahora necesito tus datos de contacto para avanzar. ¿Me decís tu nombre por favor?
+[CLIENTE] Mi nombre es
+[CLIENTE] Silvia Pérez.
+[CLIENTE] proaco_resolve_intent
+[CLIENTE] proaco_resolve_intent
+[BOT] Perfecto, Silvia. Ya hemos registrado tu solicitud. Un agente se pondrá en contacto con vos pronto. ¿Hay algo más en lo que te pueda ayudar?
+[CLIENTE] No.
+[CLIENTE] Está todo perfecto. Muchas gracias.
+[CLIENTE] Gracias.
+[BOT] La llamada ya se completó exitosamente. Si necesitás algo más en el futuro, no dudes en volver a contactarnos. ¡Que tengas un excelente día!

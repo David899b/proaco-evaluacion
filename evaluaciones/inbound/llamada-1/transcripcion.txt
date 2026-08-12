@@ -1,0 +1,24 @@
+[CLIENTE] Hola, buen día, estoy interesado en ver departamentos disponibles en la ciudad, ¿me pueden informar sobre las opciones, por favor?
+[BOT] Claro, puedo ayudarle con eso. ¿Podría indicarme en qué ciudad está interesado para mostrarle departamentos disponibles?
+[CLIENTE] En la ciudad de Buenos Aires, por favor.
+[BOT] En Buenos Aires, ¿qué características busca en el departamento? Por ejemplo, cantidad de ambientes, precio o zona específica. Así le puedo mostrar opciones que se ajusten a lo que desea.
+[CLIENTE] Mi presupuesto es entre cincuenta mil y noventa mil dólares y prefiero departamentos de uno a dos ambientes en barrios como Palermo, Caballito o Belgrano.
+[BOT] Perfecto, le puedo mostrar departamentos de uno a dos ambientes en Palermo, Caballito o Belgrano, con un presupuesto entre 50 mil y 90 mil dólares. ¿Quiere que le liste algunas opciones disponibles?
+[CLIENTE] Sí por favor liste las opciones y luego le doy mi teléfono para coordinar visitas.
+[BOT] Le puedo listar algunas opciones de departamentos en Palermo, Caballito y Belgrano, de uno a dos ambientes y dentro de su presupuesto. Aquí tiene tres opciones para comenzar: 1) Departamento de 1 ambiente en Palermo, 2) Departamento de 2 ambientes en Caballito, 3) Departamento de 1 ambiente en Belgrano. ¿Le interesa alguna de estas opciones para que le brinde más detalles?
+[CLIENTE] Me interesa la opción dos en Caballito, ¿me puede dar la superficie, la antigüedad del edificio y el monto de las expensas?
+[BOT] La opción dos en Caballito es un departamento de 2 ambientes. Para detalles específicos como superficie, antigüedad del edificio y monto de expensas, puedo consultarlo para usted. ¿Podría darme su nombre para continuar con la consulta?
+[CLIENTE] Me llamo Martín López.
+[BOT] Gracias, Martín. Para avanzar con la consulta sobre el departamento en Caballito, ¿podría proporcionarme su número de teléfono para coordinar la información y posibles visitas?
+[CLIENTE] Claro, mi teléfono es uno uno cinco cuatro tres dos uno dos tres cuatro.
+[BOT] Martín, ¿qué día y horario le gustaría para que un asesor lo contacte por teléfono y le brinde toda la información sobre el departamento en Caballito?
+[CLIENTE] El jueves por la tarde alrededor de las cinco me viene bien, gracias.
+[BOT] Martín, he agendado la llamada para el jueves 6 de agosto a las 5 de la tarde. ¿Hay algo más en lo que pueda ayudarle hoy?
+[CLIENTE] Perfecto, me gustaría que me envíen por correo las fotos y el detalle del departamento en Caballito a martin dot lopez at ejemplo dot com, por favor.
+[BOT] Martín, para enviarle la información por correo necesitaría que me deletree su dirección de email, por favor.
+[CLIENTE] Mi correo es eme a erre te i ene punto ele o pe e z arroba e jota e eme pe ele o punto ce o eme
+[BOT] Gracias, Martín. Su correo es m a r t i n . l o p e z @ j e m p l o . c o m. ¿Es correcto?
+[CLIENTE] Disculpe, es eme a erre te i ene punto ele o pe e z arroba e jota e eme pe ele o punto ce o eme.
+[BOT] Gracias por la corrección, Martín. Su correo es m a r t i n . l o p e z @ j e m p l o . c o m. Lo tengo anotado. ¿Desea que le envíe la información del departamento en Caballito a ese correo?
+[CLIENTE] Sí, por favor envíen la información y las fotos del departamento a ese correo.
+[BOT] Martín, he solicitado que le envíen la información y las fotos del departamento en Caballito a su correo. ¿Hay algo más en lo que pueda ayudarle hoy?

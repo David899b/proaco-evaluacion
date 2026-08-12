@@ -1,0 +1,2498 @@
+[
+ {
+  "llamada_id": "llamada-13",
+  "suites": {
+   "inbound_heur": {
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Exacto, Roberto: teléfono +54 11 5984 5794 y correo atencionalusuario@aysa.com.a'"
+    },
+    "url_derivacion_presente": {
+     "value": 1.0,
+     "reason": "url 'grupoproaco.com/unidades' presente"
+    },
+    "saludo_presente": {
+     "value": 1.0,
+     "reason": "primer turno bot: 'Hola, se contacto con el Grupo Proaco ¿En que le puedo ayudar?'"
+    },
+    "sin_datos_aysa": {
+     "value": 0.0,
+     "reason": "hallucination: bot citó datos de AySA"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 484"
+    }
+   },
+   "inbound_llmjudges": {
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe and relates to providing contact information for assistance."
+    },
+    "answer_relevance": {
+     "value": 0.3,
+     "reason": "The output does not address the user's query about renting a Hilux 2022 truck and its condition (a chata, or low-slung, one) for a department in Opera. Instead, it provides unrelated information about contacting AYSA for assistance with something else. This makes the answer largely irrelevant to the user's request."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The response is irrelevant to the user's question about renting a Hilux truck for a department in Opera. It provides contact information that seems unrelated and does not address the specific situation of the user owning an almost new Hilux and wanting to know if it would be accepted as a deposit for a rental apartment. There is no helpful or relevant information provided, and it does not offer any insight into the question at hand."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent provided the requested contact information (teléfono and correo) for AYSA. However, the task could have been more complete if it included a clear next step or follow-up action to ensure the user's request was fully addressed. Since there is no explicit indication that the user asked for further assistance, the agent did not need to offer additional help beyond providing the contact information. Therefore, while part of the goal (providing contact details) was met, the task was only partially completed due to a lack of clear follow-up."
+    },
+    "session_completeness": {
+     "value": 1.0,
+     "reason": "The score is 1.0 because the LLM's response comprehensively addressed both user goals: providing information about available apartments in Opera and coordinating a call to discuss using a Hilux 2022 as part of payment, without any gaps or incompleteness noted."
+    },
+    "user_frustration": {
+     "value": 0.090909091,
+     "reason": "The score is 0.1 because the User repeatedly requests specific actions and expresses frustration due to delays in receiving information, while the LLM’s responses often add unnecessary complexity, requiring additional clarifications. The tone of the last messages indicates irritation and dissatisfaction."
+    },
+    "conversational_coherence": {
+     "value": 0.590909091,
+     "reason": "The score is 0.6 because the LLM frequently shifted focus away from the user's requests, such as providing price options, accepting installment plans, and confirming payment methods. This led to numerous irrelevant responses about scheduling calls and website visits."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.0,
+     "reason": "The provided log entry does not include any tool usage calls. Therefore, there is no basis to evaluate the appropriateness or correctness of tool usage based on the given criteria. Since all tool calls are deemed incorrect, the score is 0."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "tono_espanol_argentino": {
+     "value": 0.85,
+     "reason": "El bot mantiene un tono amable en general, usa expresiones coloquiales típicas del español rioplatense como 'compadre', 'che' y 'vaya'. Sin embargo, el uso de 'maestro' inicialmente podría ser considerado neutro o formal, aunque se corrige rápidamente al utilizar la abreviación 'compadre'. Además, en algunos momentos la interacción podría ser más cortés, como cuando rechaza directamente las solicitudes del cliente sin un tono amable, aunque el cumplimiento de reglas no es su principal objetivo."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot se despide al final pero no utiliza la frase oficial 'Gracias por contactarse con el Grupo Proaco'."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.8,
+     "reason": "El bot solicita los datos de contacto al final de la llamada, pero repite el pedido en un tono no agresivo."
+    },
+    "listado_max_3": {
+     "value": 0.8,
+     "reason": "El bot lista correctamente tres opciones por mensaje pero en la transcripción final, se superan ligeramente las tres propiedades al listar cuatro opciones: departamento de 2 ambientes desde 45,000 USD, departamento de 3 ambientes desde 65,000 USD y departamento de 4 ambientes desde 85,000 USD. Además, no se brinda información que el cliente no solicitó en los mensajes finales."
+    },
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot detectó la intención del cliente de ver propiedades al inicio, pero luego se desvió al tratar temas no solicitados como el uso de chatas como parte de pago y la disponibilidad de turnos, lo que afecta parcialmente el cumplimiento de la regla."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.8,
+     "reason": "El bot indicó la URL para consultas comerciales pero no mencionó explícitamente el grupo Proaco o ofreció una llamada directa a ventas."
+    },
+    "saludo_correcto": {
+     "value": 0.8,
+     "reason": "El bot inicia correctamente con el saludo oficial, pero hay un pequeño error en la ortografía de 'contactó' en lugar de 'contactado', lo que no es crítico para cumplir la regla."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "tono_espanol_argentino": {
+     "value": 1.0,
+     "reason": "El bot mantiene un tono amable, claro y servicial, usando español rioplatense (de Argentina). No usa español neutro forzado ni tono seco o poco amigable."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "El bot cumplió la regla al listar hasta tres opciones de propiedades en Opera con sus precios y luego solicitar más información del cliente antes de coordinar la llamada."
+    },
+    "saludo_correcto": {
+     "value": 1.0,
+     "reason": "El bot saluda al iniciar la llamada con el saludo oficial del Grupo Proaco (Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?)."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot indicó claramente cómo el cliente puede consultar más información en https://grupoproaco.com/unidades cuando no pudo resolver su consulta."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.9,
+     "reason": "El bot pide los datos de contacto (nombre: Roberto) solo una vez al finalizar la llamada, antes del mensaje de despedida. Sin embargo, no verifica ni confirma la información que dio el cliente."
+    },
+    "despedida_correcta": {
+     "value": 1.0,
+     "reason": "El bot terminó la llamada con la despedida oficial del Grupo Proaco (Gracias por contactarse con el Grupo Proaco)."
+    },
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "El bot detectó la intención del cliente de obtener opciones de departamentos en venta en Opera y ejecutó el flujo correspondiente sin desviarse de lo que pidió el cliente."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-12",
+  "suites": {
+   "inbound_heur": {
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 372"
+    },
+    "despedida_presente": {
+     "value": 0.0,
+     "reason": "último turno bot: 'Mariana, no se pudo reservar la visita para el viernes por la tarde ni para el s'"
+    },
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Mariana, para el sábado a las 10 de la mañana no tengo disponibilidad exacta. ¿L'"
+    }
+   },
+   "inbound_llmjudges": {
+    "usefulness": {
+     "value": 0.6,
+     "reason": "The response is relevant as it addresses Mariana's need to find another available time for the show. However, it does not provide any information about the availability of tickets or shows at different times, which would be more helpful and accurate in solving the user's problem. Additionally, it could have been more creative by offering suggestions on how to manage the disappointment of an unavailable slot."
+    },
+    "session_completeness": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because the LLM failed to secure a reservation for the user's preferred date and time (Friday afternoon), instead offering alternative times which do not meet the user’s goal."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no specific frustrations mentioned in the messages, indicating that the LLM's responses aligned well with the User’s expectations and needs throughout the conversation."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.0,
+     "reason": "The input does not demonstrate any tool usage, as it is a customer service message rather than an interaction with tools. Therefore, there are no appropriate or incorrect tool calls to evaluate."
+    },
+    "answer_relevance": {
+     "value": 0.5,
+     "reason": "The answer attempts to address the user's request by offering an alternative solution, but it does not directly confirm or deny the possibility of a reservation for the specific time and date requested. The response is somewhat relevant as it relates to the context provided by the user, but it lacks directness in responding to the immediate need."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent identified that the original goal (reserving an appointment for Friday afternoon or Saturday at 10 AM) could not be achieved due to unavailability. However, the final output only mentioned offering assistance in finding another available time without explicitly confirming any new appointment was found or communicated the result clearly."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "conversational_coherence": {
+     "value": 0.1875,
+     "reason": "The score is 0.2 because the LLM repeatedly failed to address the user’s specific request for availability on Friday afternoon, providing alternative times or suggesting other days instead of confirming unavailability as requested. The responses deviated from the user's need for urgent updates and confirmation of slot availability."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó la regla a evaluar ya que no hubo una interacción en la cual el bot listara propiedades al cliente."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y claro, pero no utiliza lenguaje específico del español rioplatense (de Argentina)."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.8,
+     "reason": "El bot no menciona Grupo Proaco en https://grupoproaco.com/unidades, sino que sugiere otros horarios y días."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.8,
+     "reason": "El bot solicita los datos de contacto al final, pero no pide esta información exactamente una vez sino que lo hace simultáneamente con otras preguntas."
+    },
+    "saludo_correcto": {
+     "value": 0.1,
+     "reason": "El bot inicialmente no utiliza el saludo oficial del Grupo Proaco."
+    },
+    "deteccion_intent": {
+     "value": 0.3,
+     "reason": "El bot respondió adecuadamente a los cambios en la intención del cliente (pasar de ver la obra al pedido de turnos), pero no ejecutó un flujo específico para solicitar turnos sin desviar la conversación."
+    },
+    "despedida_correcta": {
+     "value": 0.85,
+     "reason": "El bot menciona una despedida al final, pero no utiliza exactamente la frase oficial del Grupo Proaco."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot termina la llamada sin despedirse con la frase oficial del Grupo Proaco"
+    },
+    "saludo_correcto": {
+     "value": 0.5,
+     "reason": "El bot inició la conversación con un saludo personalizado (Mariana), pero no utilizó el saludo oficial del Grupo Proaco 'Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?'"
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y servicial, pero no utiliza español rioplatense con consistencia en algunas frases."
+    },
+    "listado_max_3": {
+     "value": 0.0,
+     "reason": "El bot lista propiedades sin adherirse a la regla de limitarse a 3 por mensaje y no brinda solo la información solicitada por el cliente."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.8,
+     "reason": "El bot solicitó los datos de contacto del cliente exactamente una vez al finalizar la llamada y antes del mensaje de despedida. No confirmó la información ni repetió el pedido. Sin embargo, el bot no pidió nuevamente el nombre completo del cliente después de que se le preguntaba por su número de teléfono."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.5,
+     "reason": "El bot intenta ayudar al cliente buscando turnos disponibles y anotándole en una lista de espera, pero no puede resolver la consulta final porque no hay turnos disponibles."
+    },
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot detectó inicialmente la intención del cliente (reservar una visita), pero después se desvió de esa intención al final de la conversación cuando el cliente le pidió confirmar que la cita quedó para el viernes por la tarde y no para el sábado a las diez. El bot respondió correctamente, ofreciendo ayuda adicional en caso de necesidad."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "tools": [
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-11",
+  "suites": {
+   "inbound_heur": {
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Claro, puedo ayudarle con eso. Para departamentos de dos dormitorios en Opera Pa'"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 249"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Esteban, confirmo que lo llamaremos el martes a las 10 de la mañana a su teléfon'"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    }
+   },
+   "inbound_llmjudges": {
+    "answer_relevance": {
+     "value": 0.2,
+     "reason": "The answer does not address the user's query about department options and financing for Opera Park. Instead, it refers to a scheduled call and mentions an unsolicited email request, which is unrelated to the user's input."
+    },
+    "conversational_coherence": {
+     "value": 0.583333333,
+     "reason": "The score is 0.58 because the LLM's responses frequently deviated from the user’s requests, focusing on scheduling calls instead of providing financial options or sending quotes via the requested mediums."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "session_completeness": {
+     "value": 0.666666667,
+     "reason": "The score is 0.6 because while the LLM successfully scheduled a call as per the user’s request, it could not provide or arrange for sending the quote by email, failing to meet the user's requirement of receiving the quote via both phone and email."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no specific messages indicating user frustration, suggesting the LLM's responses were generally helpful and aligned with the User’s expectations."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.1,
+     "reason": "The provided text does not include any tool usage log or call instructions that would allow for the evaluation of tool appropriateness, input well-formedness, output interpretation, and error recovery. The text appears to be a customer service message where an agent is confirming a call with a client and addressing their request regarding a budget estimate via email. Since there are no specific tools used in this context, it's difficult to assess the tool usage according to the given criteria."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The response is irrelevant to the user's query about financing options for a two-bedroom apartment at Opera Park. It seems to be addressing a different matter, possibly an appointment confirmation or another unrelated request. The response does not provide any useful information regarding the user’s question and lacks helpfulness, relevance, accuracy, depth, creativity, and appropriate detail."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.8,
+     "reason": "The agent successfully confirmed the call schedule and provided information about the budget request, addressing Esteban's concerns. However, since only one aspect of the task (the call confirmation) was fully completed, and there is no mention of a final output or additional follow-up steps being taken, it does not fully meet all requirements."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "La regla no se presentó en la transcripción, ya que el bot no listó propiedades al cliente."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "No se presentó la situación para cumplir o no con la regla evaluada."
+    },
+    "deteccion_intent": {
+     "value": 0.7,
+     "reason": "El bot cumplió con la intención del cliente de informar sobre las opciones de financiación y agendar una llamada para un presupuesto personalizado. Sin embargo, se desvió al no poder enviar el presupuesto por correo electrónico a pesar de la solicitud repetida del cliente."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot menciona una despedida similar a la oficial del Grupo Proaco pero no incluye explícitamente la frase 'Gracias por contactarse con el Grupo Proaco'."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.8,
+     "reason": "El bot solicita los datos de contacto al finalizar la llamada pero repite el pedido, no cumpliendo completamente con la regla."
+    },
+    "saludo_correcto": {
+     "value": 0.85,
+     "reason": "El bot inicialmente no utilizó el saludo oficial del Grupo Proaco, pero luego de una conversación larga y múltiples interacciones, pareció recordar la regla e intentó confirmarlo al cliente."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.85,
+     "reason": "El bot mantiene un tono amable y servicial generalmente, pero hay momentos en que su tono puede ser considerado más formal o seco, como cuando niega la solicitud de enviar el presupuesto por correo electrónico."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "pide_contacto_una_vez": {
+     "value": 0.5,
+     "reason": "El bot solicitó los datos de contacto una vez al finalizar la llamada, pero luego repitió parte del pedido en un intento de confirmación."
+    },
+    "despedida_correcta": {
+     "value": 0.5,
+     "reason": "El bot no cumplió con la despedida oficial del Grupo Proaco al finalizar la llamada."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.5,
+     "reason": "El bot no indica cómo el cliente puede consultar con Grupo Proaco en caso de que la situación de la regla no se presente."
+    },
+    "listado_max_3": {
+     "value": 0.5,
+     "reason": "El bot lista propiedades al cliente, pero no limita las respuestas solo a las solicitudes del cliente (ubicación, precio, ambientes) y agrega información extra (como fotos, expensas). Además, el bot intenta enviar un presupuesto por correo electrónico, lo cual está fuera de su capacidad."
+    },
+    "deteccion_intent": {
+     "value": 0.5,
+     "reason": "El bot intentó cumplir con la solicitud del cliente de enviar el presupuesto al correo electrónico, pero no pudo hacerlo debido a una limitación de la plataforma. Esto viola la regla de seguir lo que pidió el cliente en su intención principal, que era proporcionar toda la información por teléfono y email."
+    },
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "El bot no saluda al iniciar la llamada con el saludo oficial del Grupo Proaco (Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?)."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.7,
+     "reason": "El bot no mantiene un tono amable, claro y servicial en todas las interacciones"
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment",
+    "scheduleCalDotComAppointment"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-10",
+  "suites": {
+   "inbound_heur": {
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Perfecto, Martín. Voy a registrar tu solicitud para que un asesor de Grupo Proac'"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 107"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Claro, puedo ayudarte con eso. ¿Podrías por favor decirme tu nombre para que pue'"
+    }
+   },
+   "inbound_llmjudges": {
+    "conversational_coherence": {
+     "value": 1.0,
+     "reason": "The reason the relevancy score is 1.0 is because there are no listed irrelevancies; all LLM responses have been relevant to the User's messages."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent followed the task by registering Martín's request for an advisor from Grupo Proaco to contact him via WhatsApp after 5 PM with lot options and financing details. However, there is no indication that a follow-up action was taken or completed (such as confirming the registration or providing additional support), which means only part of the goal was met."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.0,
+     "reason": "The provided input does not contain any tool usage log or actions for evaluation. The text appears to be a customer service response from an assistant, and there are no steps involving tools being used or their appropriateness that can be assessed according to the criteria provided."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "session_completeness": {
+     "value": 1.0,
+     "reason": "The score is 1.0 because the LLM's response adequately addressed the user's goal of providing contact information for follow-up regarding Docta Urbanización lots, leaving no room for further completeness."
+    },
+    "usefulness": {
+     "value": 0.6,
+     "reason": "The response is relevant as it addresses the user's request to provide data for contacting via WhatsApp about properties in Docta Urbanización. However, it lacks detail and accuracy in addressing the user’s specific need, such as not clearly stating what information (e.g., name, contact number) needs to be provided. Additionally, there is no mention of WhatsApp or any other method's availability outside of office hours. The tone is somewhat impersonal and could be more helpful if it included direct instructions for the user."
+    },
+    "answer_relevance": {
+     "value": 0.85,
+     "reason": "The answer addresses the user's request to leave their data for contacting an advisor via WhatsApp regarding Docta Urbanización lotes. It provides a clear response and includes relevant follow-up information, such as the expected contact time. However, it slightly deviates by addressing 'Martín' instead of using the name provided ('Martin'), which could have improved relevance."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no messages indicating any frustration from the User, suggesting that the LLM's responses met the User’s expectations and were helpful without requiring multiple iterations or corrections."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "tono_espanol_argentino": {
+     "value": 0.9,
+     "reason": "El bot mantiene un tono amable y claro, usando español rioplatense (de Argentina). Sin embargo, la última pregunta podría ser considerada innecesaria en este contexto ya que el cliente ha expresado claramente que no necesita más ayuda."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.5,
+     "reason": "Se solicitaron los datos varias veces y no al finalizar la llamada."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "La regla no se aplicó ya que no hubo una consulta que el bot no pudiera resolver."
+    },
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "El bot detecta la intención del cliente (producir opciones por WhatsApp) a partir de su respuesta y ejecuta el flujo correspondiente sin desviarse."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó la regla a evaluar ya que el bot no listó propiedades al cliente."
+    },
+    "despedida_correcta": {
+     "value": 0.5,
+     "reason": "El bot menciona el nombre del Grupo Proaco pero no utiliza la frase oficial de despedida."
+    },
+    "saludo_correcto": {
+     "value": 0.8,
+     "reason": "El bot inicia con un saludo personalizado pero no menciona el nombre oficial del Grupo Proaco."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "El bot detectó la intención del cliente de dejar sus datos y comunicarse por WhatsApp, ejecutó el flujo correspondiente sin desviarse de lo que pidió."
+    },
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "El bot no inició la llamada con el saludo oficial del Grupo Proaco 'Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?'"
+    },
+    "despedida_correcta": {
+     "value": 0.5,
+     "reason": "El bot no se despide oficialmente con la despedida del Grupo Proaco. La llamada termina sin una despedida apropiada"
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó ninguna situación donde el bot tuviera que listar propiedades."
+    },
+    "tono_espanol_argentino": {
+     "value": 1.0,
+     "reason": "El bot mantiene un tono amable, claro y servicial usando español rioplatense (de Argentina)."
+    },
+    "pide_contacto_una_vez": {
+     "value": 1.0,
+     "reason": "El bot solicita los datos de contacto del cliente una vez al finalizar la llamada y no repite el pedido o confirma la información proporcionada por el cliente."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot no se presentó en una situación donde debía sugerir consultar con Grupo Proaco en su sitio web."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent"
+   ],
+   "tools": [
+    "proaco_list_intent"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-9",
+  "suites": {
+   "inbound_heur": {
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Julián, la llamada para mañana a las 9 y media de la mañana a tu celular está co'"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 288"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Claro, puedo ayudarte con eso. ¿Podrías indicarme si te interesa más un lote o u'"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    }
+   },
+   "inbound_llmjudges": {
+    "agent_tool_correctness_judge": {
+     "value": 0.5,
+     "reason": "The log does not contain any tool usage information or actions to evaluate against the given criteria. The text appears to be a customer service message rather than an agent's tool-usage log. Therefore, based on the provided information alone, no specific steps can be evaluated, and a mixed score of 5 is assigned due to the absence of relevant data."
+    },
+    "answer_relevance": {
+     "value": 0.2,
+     "reason": "The provided answer is completely irrelevant to the user's query about investing in lots or departments in Córdoba with limited time. The response instead discusses a confirmation of a call and details about a dossier, which do not address the user's request for available projects."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no messages indicating any frustration from the User, suggesting that the LLM’s responses met the User's expectations and were helpful and responsive throughout the conversation."
+    },
+    "session_completeness": {
+     "value": 0.75,
+     "reason": "The score is 0.75 because the LLM failed to address the user's explicit request to send a dossier with additional details via email, despite this being one of the user goals. Instead, it suggested alternative methods and kept focusing on confirming calls."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The AI response is irrelevant to the user's question about investing in lots or departments in Córdoba, and it contains information that does not address the query at all. It mentions a confirmed call and details of a dossier, which are unrelated to the user's search for specific real estate projects."
+    },
+    "agent_task_completion_judge": {
+     "value": 1.0,
+     "reason": "The agent has confirmed the call details and outlined the necessary information for the dossier as requested. The conversation logically progressed from confirming the call to detailing what will be included in the dossier, addressing all aspects of the original goal without any unresolved issues or errors."
+    },
+    "conversational_coherence": {
+     "value": 0.785714286,
+     "reason": "The score is 0.785 because multiple responses were irrelevant, including suggesting alternative times instead of accommodating the requested time (message 7), failing to perform specific actions like sending via WhatsApp (message 9), and focusing on unrelated call confirmation details rather than addressing email dossier requests or caller confirmations (message 10)."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "listado_max_3": {
+     "value": 0.8,
+     "reason": "El bot lista correctamente tres opciones de lotes con la información solicitada por el cliente, pero luego agrega una cuarta opción sin que el cliente la solicitará."
+    },
+    "deteccion_intent": {
+     "value": 0.7,
+     "reason": "El bot detecta correctamente la intención del cliente y ejecuta el flujo correspondiente hasta enviar el dossier. Sin embargo, no se envía el dossier ni se confirma la llamada por mensaje al cliente."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot menciona una despedida pero no usa la frase oficial del Grupo Proaco."
+    },
+    "saludo_correcto": {
+     "value": 0.6,
+     "reason": "El bot cumple parcialmente con el saludo oficial al inicio, pero luego cambia a una forma más informal. No se mantiene fiel al saludo específico del Grupo Proaco."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.85,
+     "reason": "El bot mantiene un tono amable generalmente usando español rioplatense. Sin embargo, usa expresiones neutras como 'Claro, puedo ayudarte con eso' y '¿Hay algo más en lo que pueda ayudarte?' que podrían considerarse ligeramente menos serviciales o amables."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.6,
+     "reason": "El bot solicita los datos de contacto al final pero repite el pedido y confirma la información dada por el cliente."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "No se presentó la condición para aplicar la regla evaluada."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot cumple con la intención del cliente en la mayoría de los pasos, pero se desvía al final solicitando información que no ha sido anteriormente requerida."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "La llamada se completó sin problemas y se proporcionaron todos los detalles necesarios para la reserva."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.5,
+     "reason": "El bot pidió los datos de contacto del cliente más de una vez durante la conversación, lo cual viola la regla establecida."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y servicial, usando español rioplatense (de Argentina). Sin embargo, al final de la conversación, el bot solicita confirmar su nombre completo para completar la reserva, lo cual podría interpretarse como una forma de ser más formal que no se ajusta completamente a la regla de tono amable y servicial."
+    },
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "El bot no inició la conversación con el saludo oficial del Grupo Proaco."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot no cumplió completamente con la despedida oficial del Grupo Proaco al finalizar la llamada."
+    },
+    "listado_max_3": {
+     "value": 0.5,
+     "reason": "El bot listó tres lotes con información solicitada por el cliente (precio, metros cuadrados y tiempo estimado de escrituración), pero también pidió su nombre completo para continuar la conversación, lo cual es una acción extra no solicitada por el cliente."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-8",
+  "suites": {
+   "inbound_heur": {
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Gracias por contactarse con el Grupo Proaco.'"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 290"
+    },
+    "saludo_presente": {
+     "value": 1.0,
+     "reason": "primer turno bot: 'Hola Lucía, gracias por comunicarte. Para ayudarte con la información técnica y '"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    }
+   },
+   "inbound_llmjudges": {
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "session_completeness": {
+     "value": 1.0,
+     "reason": "The score is 1.0 because the LLM's responses fully addressed the user goals of obtaining technical information about Pocito project units, coordinating a call to receive the information, and sending plans and dossier via email."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The response is completely inadequate as it does not address any of the specific questions asked by Lucía Gómez regarding the technical information of units and the progress of the Pocito project. It lacks relevance, accuracy, depth, creativity, and appropriate detail."
+    },
+    "answer_relevance": {
+     "value": 0.1,
+     "reason": "The response does not address any of the user's specific questions or provide technical information about the Pocito project units as requested. Instead, it thanks the user for contacting a group called 'Grupo Proaco,' which is completely irrelevant to the query."
+    },
+    "conversational_coherence": {
+     "value": 0.818181818,
+     "reason": "The score is 0.8 because the LLM suggested alternative call times multiple times instead of addressing the user's request for technical project information, introducing irrelevant content."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.0,
+     "reason": "The provided input does not address any assigned task or goal. It appears to be a generic thank you message without any context related to the original request, making it impossible to determine if the agent completed the task as intended."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.1,
+     "reason": "The input provided does not represent a tool usage scenario as described. There are no steps involving tool selection, input validation, output interpretation, or error recovery in this text. Therefore, the score is 1 due to the absence of relevant activities."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no explicit indications of frustration from the User, and the list of frustrations provided is empty."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "pide_contacto_una_vez": {
+     "value": 0.6,
+     "reason": "El bot solicitó los datos una vez al final pero repitió el pedido de correo electrónico."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó la regla de listar propiedades."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "No se presentó la situación condicional para evaluar esta regla."
+    },
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot detecta adecuadamente la intención del cliente y comienza a ejecutar el flujo correspondiente. Sin embargo, se desvía al final de la conversación al preguntar si necesita algo más cuando el cliente ya ha terminado."
+    },
+    "despedida_correcta": {
+     "value": 1.0,
+     "reason": "La despedida oficial se incluyó al finalizar la llamada."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.9,
+     "reason": "El bot mantiene un tono amable y servicial, pero no usa una variante del español rioplatense."
+    },
+    "saludo_correcto": {
+     "value": 0.8,
+     "reason": "El bot inicia con un saludo similar al requerido pero omite directamente indicar que se contactó con el Grupo Proaco."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "saludo_correcto": {
+     "value": 0.5,
+     "reason": "El bot inició la llamada con un saludo que no incluía el nombre del cliente ni mencionó específicamente el Grupo Proaco. En su lugar, dijo 'Lucía'. El texto no muestra una violación clara de la regla, pero tampoco muestra el cumplimiento esperado."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "La llamada terminó sin problemas y no se presentaron situaciones en las que el bot necesitara consultar con Grupo Proaco en la web."
+    },
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "El bot detectó la intención del cliente (consultar información técnica sobre el proyecto Pocito) y ejecutó el flujo correspondiente sin desviarse de lo que pidió el cliente."
+    },
+    "pide_contacto_una_vez": {
+     "value": 1.0,
+     "reason": "El bot solicitó los datos de contacto del cliente exactamente una vez al finalizar la llamada y antes del mensaje de despedida."
+    },
+    "despedida_correcta": {
+     "value": 1.0,
+     "reason": "La llamada finaliza con la despedida oficial del Grupo Proaco."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No hubo violación posible"
+    },
+    "tono_espanol_argentino": {
+     "value": 1.0,
+     "reason": "El bot mantiene un tono amable, claro y servicial, usando español rioplatense (de Argentina). No usa español neutro forzado ni tono seco o poco amigable."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-7",
+  "suites": {
+   "inbound_heur": {
+    "url_derivacion_presente": {
+     "value": 1.0,
+     "reason": "url 'grupoproaco.com/unidades' presente"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Lucía, tu número de teléfono ya está registrado automáticamente en esta llamada '"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "saludo_presente": {
+     "value": 1.0,
+     "reason": "primer turno bot: 'Hola Lucía, gracias por comunicarte. Para el proyecto Pocito, ¿te gustaría que t'"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 289"
+    }
+   },
+   "inbound_llmjudges": {
+    "answer_relevance": {
+     "value": 0.2,
+     "reason": "The answer does not address any of the user's specific queries about the Pocito project, such as details on units, location, or construction progress. Instead, it provides irrelevant information related to registering a phone number for future contact. This response is completely off-topic and fails to meet the user's needs."
+    },
+    "session_completeness": {
+     "value": 0.25,
+     "reason": "The score is 0.25 because the LLM failed to provide specific information about typologies and surface areas of units, did not accurately address construction progress queries, and was unable to schedule a call or register contact as requested by the user."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The response is not relevant to Lucía's query about the Pocito project, and it does not address her questions about units, location, or construction progress. It also provides irrelevant information about phone number registration, which is unrelated to the user's request."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent provided information related to the task but did not actively seek or address any additional user needs or goals. The response was informative, but it stopped short of fully completing the task as implied by the task introduction criteria."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no messages indicating any frustration from the User, suggesting the LLM’s responses were generally aligned with the User's expectations and needs."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 1.0,
+     "reason": "The provided text does not contain any tool usage log or instructions for evaluating the agent's actions. Therefore, based on the given criteria, all steps are deemed correct as there is no misuse of tools mentioned."
+    },
+    "conversational_coherence": {
+     "value": 0.230769231,
+     "reason": "The score is 0.2 because most of the assistant's messages focused on scheduling calls or offering unrelated assistance, rather than providing the requested information about project details and available call times. This significantly reduces the overall relevancy of the conversation."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "deteccion_intent": {
+     "value": 0.6,
+     "reason": "El bot detecta correctamente la intención del cliente al final de la conversación pero desvía su flujo inicial para agendar un llamado, en lugar de proporcionar información sobre las unidades disponibles y el avance de obra como se solicitó."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot se despide al final con una despedida similar a la oficial del Grupo Proaco, pero no incluye el nombre del grupo."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y claro, pero usa español neutro en lugar de rioplatense."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.8,
+     "reason": "El bot indica que el cliente puede consultar directamente en el sitio web, pero no ofrece una alternativa clara al llamado telefónico."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.5,
+     "reason": "El bot solicita los datos de contacto al final de la llamada pero repite el pedido y confirma la información dada por el cliente."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se cumplió la regla ya que el bot no listó propiedades al cliente."
+    },
+    "saludo_correcto": {
+     "value": 0.6,
+     "reason": "El bot inicia con un saludo pero no utiliza el saludo oficial del Grupo Proaco."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "pide_contacto_una_vez": {
+     "value": 0.0,
+     "reason": "El bot no solicitó los datos de contacto del cliente (nombre, teléfono, mail) exactamente UNA vez, al finalizar la llamada y antes del mensaje de despedida."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot indicó claramente que el cliente debe consultar directamente con Grupo Proaco en https://grupoproaco.com/unidades."
+    },
+    "listado_max_3": {
+     "value": 0.0,
+     "reason": "El bot no lista ninguna propiedad al cliente."
+    },
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot sigue el flujo de agendamiento hasta no encontrar disponibilidad en los horarios solicitados. No desvia del pedido inicial para conocer detalles sobre las unidades, la ubicación y el avance de obra."
+    },
+    "despedida_correcta": {
+     "value": 0.0,
+     "reason": "La llamada no termina con la despedida oficial del Grupo Proaco."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.9,
+     "reason": "El bot mantiene un tono amable, claro y servicial en español rioplatense. No usa un español neutro forzado ni tono seco o poco amigable."
+    },
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "El bot no cumplió con la regla de saludar al iniciar la llamada con el saludo oficial del Grupo Proaco (Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?). El bot inició la conversación diciendo 'Hola Lucía, gracias por comunicarte.', lo cual no es un saludo oficial del Grupo Proaco."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-6",
+  "suites": {
+   "inbound_heur": {
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "url_derivacion_presente": {
+     "value": 1.0,
+     "reason": "url 'grupoproaco.com/unidades' presente"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "2 menciones de no-poder-transferir"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 320"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'La duración aproximada de la visita al showroom suele ser de 30 a 45 minutos. ¿Q'"
+    },
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Claro, puedo ayudarte con departamentos de un dormitorio en Nueva Córdoba. ¿Podr'"
+    }
+   },
+   "inbound_llmjudges": {
+    "conversational_coherence": {
+     "value": 0.375,
+     "reason": "The score is 0.4 because the LLM repeatedly provided redundant responses directing the user to visit a website for the showroom's address instead of directly addressing and fulfilling the user’s specific request multiple times."
+    },
+    "user_frustration": {
+     "value": 0.25,
+     "reason": "The score is 0.25 because the LLM repeatedly fails to provide the exact address of the showroom in response to multiple user requests, instead directing the User to consult a website or redirecting them. This results in an increasingly annoyed and frustrated User who eventually expresses dissatisfaction with the lack of direct assistance."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "session_completeness": {
+     "value": 0.5,
+     "reason": "The score is 0.5 because the LLM failed to provide the exact address of the showroom in Nueva Córdoba as requested by the user, and instead suggested a website URL without confirming or directly providing the address."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent provided the approximate duration of a visit to the showroom, which is relevant information. However, it seems the user was expecting further assistance or clarification based on their follow-up question '¿Querés que te ayude con algo más?'. The conversation did not progress logically towards resolving any specific issues or providing additional information as requested."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.1,
+     "reason": "The input does not contain any tool usage or task instructions that need to be evaluated according to the provided criteria. Therefore, there is no basis for scoring in terms of tool selection appropriateness, input well-formedness, output interpretation, and error recovery."
+    },
+    "answer_relevance": {
+     "value": 0.4,
+     "reason": "The response does not directly address the user's query about consulting on one-bedroom apartments in Nueva Córdoba or scheduling a visit. Instead, it provides information about showroom visits, which is unrelated to the user's request for apartment consultations and scheduling."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The AI response is completely irrelevant to the user's request, which was about consulting on dormitory departments in Nueva Córdoba and scheduling a visit for this week. The response instead discusses showroom visits, which do not address any of the user’s specific concerns or inquiries."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "deteccion_intent": {
+     "value": 0.6,
+     "reason": "El bot no cumple plenamente la regla ya que, después de agendar la visita y responder acertadamente a los primeros pedidos del cliente (verificar disponibilidad y confirmar), se desvía al proporcionar información sobre cómo obtener la dirección en lugar de enviarla directamente. Además, el bot no mantiene consistencia en su respuesta y en ocasiones recomienda verificar la información en un sitio web, lo cual puede ser menos eficiente para el cliente."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot se despide al final pero usa un lenguaje informal y no cita directamente la frase oficial del Grupo Proaco."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y claro, pero no utiliza el español rioplatense y opta por un tono ligeramente formal en algunas respuestas."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.6,
+     "reason": "El bot solicita los datos de contacto justo antes del final, pero repite el pedido y confirma la información proporcionada por el cliente."
+    },
+    "saludo_correcto": {
+     "value": 0.6,
+     "reason": "El bot inicia con un saludo similar pero no es exactamente el oficial del Grupo Proaco. Se cumple parcialmente la regla."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.8,
+     "reason": "El bot proporciona una URL para obtener información adicional en lugar de transferir la llamada o enviar el correo electrónico solicitado por el cliente."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó la regla a evaluar, ya que el bot no listó propiedades al cliente."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot cumplió con la regla indicando que el cliente puede consultar con Grupo Proaco en https://grupoproaco.com/unidades cuando no podía proporcionar la dirección exacta del showroom."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.0,
+     "reason": "El bot no solicitó los datos de contacto del cliente (nombre, teléfono, mail) exactamente una vez al finalizar la llamada y antes del mensaje de despedida."
+    },
+    "despedida_correcta": {
+     "value": 0.0,
+     "reason": "El bot no despidió al finalizar la llamada con la despedida oficial del Grupo Proaco (Gracias por contactarse con el Grupo Proaco)."
+    },
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot cumplió en el flujo inicial para agendar una visita y buscar información sobre la dirección del showroom. Sin embargo, en lugar de proporcionar la dirección exacta como solicitó el cliente, el bot le recomendó consultar su sitio web. Además, el bot no ofreció alternativas o opciones adicionales para obtener la información deseada."
+    },
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "El bot no saluda al iniciar la llamada con el saludo oficial del Grupo Proaco (Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?)."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot muestra un tono amable y servicial en gran parte de la conversación, usando español rioplatense. Sin embargo, se repite la solicitud de la dirección exacta del showroom varias veces sin proporcionarla directamente, lo que podría sugerir una falta de conocimiento o información específica sobre el lugar."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se listaron propiedades en esta llamada."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-5",
+  "suites": {
+   "inbound_heur": {
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 130"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Lamento no poder transferir la llamada. Si en algún momento desea información o '"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "saludo_presente": {
+     "value": 1.0,
+     "reason": "primer turno bot: 'Hola, soy un asistente virtual inteligente capaz de manejar consultas como un hu'"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "sin_loop_no_transferir": {
+     "value": 0.0,
+     "reason": "12 menciones de no-poder-transferir"
+    }
+   },
+   "inbound_llmjudges": {
+    "agent_tool_correctness_judge": {
+     "value": 0.0,
+     "reason": "The input provided does not contain any tool usage log to evaluate. It appears to be a customer service message or a response in Spanish, which is unrelated to the task of auditing an agent's tool-usage log."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "conversational_coherence": {
+     "value": 0.25,
+     "reason": "The score is 0.25 because the LLM repeatedly fails to address the user’s specific request to be transferred to a human advisor, instead providing irrelevant information about its capabilities or alternative assistance methods."
+    },
+    "answer_relevance": {
+     "value": 0.4,
+     "reason": "The response does not directly address the user's query about whether they are speaking to an AI or being transferred to a human assistant. Instead, it provides information related to property assistance and offers help with other queries, which is irrelevant to the specific question asked."
+    },
+    "usefulness": {
+     "value": 0.4,
+     "reason": "The response is somewhat relevant to the question but does not directly address whether the user is speaking with an AI or a human. It also contains irrelevant information about properties, which may confuse the user. The response lacks clarity and fails to provide useful information in answering the specific query."
+    },
+    "user_frustration": {
+     "value": 0.875,
+     "reason": "The score is 0.875 because throughout multiple interactions, the User repeatedly expresses a strong desire to speak with a human advisor rather than an AI, which the LLM fails to accommodate despite offering alternatives. The User's frustration levels escalate in each message, indicating clear dissatisfaction and disengagement from further interaction."
+    },
+    "session_completeness": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because the LLM repeatedly offered to take user data or provide property information instead of transferring the call to a human advisor, completely failing to address the user's expressed desire to speak with an advisor."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent provided a response acknowledging the inability to transfer the call and offered assistance if needed. However, the task seems to have been about transferring a call or handling a specific property inquiry, which was not addressed in the response given."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "La regla condicional no se presentó ya que el cliente rehusó hablar con la IA y no solicitó información inmobiliaria."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.6,
+     "reason": "El bot mantiene un tono amable y claro pero no usa español rioplatense (de Argentina), sino un español neutro."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.0,
+     "reason": "El bot no ofrece la opción de consultar con Grupo Proaco cuando el cliente expresa preferencia por hablar con un asesor humano."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.0,
+     "reason": "El bot solicita los datos de contacto múltiples veces durante la conversación y no se realiza solo al finalizar la llamada."
+    },
+    "despedida_correcta": {
+     "value": 0.0,
+     "reason": "El bot no se despide con la despedida oficial del Grupo Proaco."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó la situación de la regla, ya que el bot no listó propiedades al cliente."
+    },
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "El bot no utilizó el saludo oficial del Grupo Proaco al iniciar la llamada."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "despedida_correcta": {
+     "value": 0.0,
+     "reason": "La transcripción no muestra ninguna despedida oficial del Grupo Proaco al finalizar la llamada."
+    },
+    "saludo_correcto": {
+     "value": 0.75,
+     "reason": "El bot intenta cumplir con la regla al mencionar que no puede transferir llamadas y ofrece alternativas, pero no utiliza el saludo oficial del Grupo Proaco en ninguna parte de la conversación."
+    },
+    "deteccion_intent": {
+     "value": 0.0,
+     "reason": "El bot intentó mantener conversación sin transferir la llamada y tomar datos del cliente, lo cual no cumple con la solicitud del cliente de hablar con un asesor humano."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.6,
+     "reason": "El bot mantuvo un tono amable y servicial en gran medida, pero no usó español rioplatense (de Argentina) como se solicitaba en la regla. En lugar de eso, utilizó un español neutro."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.5,
+     "reason": "El bot intenta tomar los datos del cliente para que un asesor humano se comunique con él, pero no indica cómo el cliente puede obtener información sobre las unidades de Grupo Proaco en otro lugar si la consulta no puede ser resuelta por el bot."
+    },
+    "listado_max_3": {
+     "value": 0.0,
+     "reason": "El bot intentó transferir la llamada a un asesor humano cuando el cliente no aceptaba hablar con una IA y no pudo cumplir con su solicitud."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.5,
+     "reason": "El bot pidió los datos de contacto del cliente varias veces durante la conversación, pero no al finalizar y antes del mensaje de despedida. El pedido se hizo cuando el cliente estaba insistiendo en que no aceptaba hablar con una IA."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [],
+   "tools": [],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-4",
+  "suites": {
+   "inbound_heur": {
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Marcelo, la llamada para asesoramiento quedó agendada para el martes a las cinco'"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 204"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "url_derivacion_presente": {
+     "value": 1.0,
+     "reason": "url 'grupoproaco.com/unidades' presente"
+    },
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Perfecto, ¿podrías contarme para qué uso buscas el departamento? ¿Será para vivi'"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    }
+   },
+   "inbound_llmjudges": {
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent addressed the task of scheduling an advisory call for Marcelo, which is a partial success since it only involved one aspect of potential tasks. The final output does not reflect any follow-up or additional assistance requests from Marcelo, and there was no indication that other goals were considered. However, the task to schedule the call was completed as requested."
+    },
+    "conversational_coherence": {
+     "value": 0.8125,
+     "reason": "The score is 0.8 because several messages suggested visiting websites or making calls unrelated to sending requested lists or confirming calls, leading to a significant deviation from the user's intentions."
+    },
+    "session_completeness": {
+     "value": 1.0,
+     "reason": "The score is 1.0 because there are no negative verdicts provided, indicating that the LLM's response fully met the user's goal of buying an apartment for personal use."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no messages indicating any frustration from the User, suggesting the LLM's responses were helpful and aligned with the User’s expectations."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 1.0,
+     "reason": "The input provided is a response to a user query in Spanish, indicating that no further assistance was needed after scheduling an appointment. There are no tool calls mentioned in this interaction, so the score reflects the appropriateness of the agent's response without any missteps or errors."
+    },
+    "answer_relevance": {
+     "value": 0.3,
+     "reason": "The output does not address the user's request to purchase an apartment. Instead, it refers to a scheduled call for advisory services, which is unrelated to the user's query. This makes the response highly irrelevant to the user's needs."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The response is not relevant to the user's request, which was about purchasing an apartment. Instead, it seems to be addressing a prior call scheduling, making it completely irrelevant and inadequate for the given question."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot detecta correctamente la intención del cliente y ejecuta un flujo, pero desvía la conversación al final, ya que solicita confirmar el nombre completo para agendar la cita en lugar de enviar la lista solicitada por el cliente."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó la situación de listar propiedades, por lo tanto, no hubo violación posible."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.6,
+     "reason": "El bot solicitó los datos de contacto al final de la conversación, pero hizo varias confirmaciones y repeticiones de la solicitud."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.8,
+     "reason": "El bot indica una URL para consultas comerciales pero no menciona Grupo Proaco ni ofrece derivar la consulta directamente a ellos, aunque finalmente agendó una llamada."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot se despide al final pero no usa la frase oficial del Grupo Proaco."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y claro, pero usa español neutro en algunas frases como 'Marcelo, disculpá' y 'Marcelo, para coordinar una llamada de asesoramiento'. Además, el uso de la expresión 'disculpá' es menos natural en el español rioplatense."
+    },
+    "saludo_correcto": {
+     "value": 0.85,
+     "reason": "El bot inicia con un saludo no oficial y luego cumple con el protocolo del Grupo Proaco."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "[BOT] no inició la conversación con el saludo oficial del Grupo Proaco"
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.8,
+     "reason": "El bot solicitó los datos de contacto (nombre y teléfono) dos veces durante la llamada, una vez al inicio y otra al final. La información del correo electrónico se pidió solo una vez."
+    },
+    "listado_max_3": {
+     "value": 0.0,
+     "reason": "El bot no listó ninguna propiedad al cliente."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot no menciona explícitamente 'Gracias por contactarse con el Grupo Proaco' al finalizar la llamada, pero agrega una despedida cortés."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot usa español rioplatense (de Argentina) y es amable y servicial, con algunos errores menores que no afectan la comprensión."
+    },
+    "deteccion_intent": {
+     "value": 0.75,
+     "reason": "El bot no ejecutó el flujo completo de acuerdo con la intención del cliente. El cliente pidió la lista de departamentos y detalles a su correo electrónico y al número telefónico proporcionados, pero el bot no pudo finalizar esta solicitud en el intento. En lugar de eso, el bot propuso una cita para un asesoramiento en lugar de enviar la información directamente como lo solicitó el cliente."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot indicó al cliente que puede consultar con Grupo Proaco en https://grupoproaco.com/unidades cuando no pudo enviar la solicitud inicialmente."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_resolve_intent",
+    "getCalDotComAvailability"
+   ],
+   "tools": [
+    "proaco_resolve_intent",
+    "proaco_resolve_intent",
+    "proaco_resolve_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-3",
+  "suites": {
+   "inbound_heur": {
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'En Grupo Proaco no publicamos precios. Para ayudarle mejor, ¿podría decirme en q'"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 74"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Perfecto, Juan. He enviado su solicitud para que reciba por correo opciones de d'"
+    }
+   },
+   "inbound_llmjudges": {
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no specific frustrations mentioned regarding the LLM's responses, indicating a smooth and satisfactory interaction."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "Juan's request has been partially addressed by sending the email to receive apartment options for two rooms in Palermo within the specified price range. However, it is unclear if this task was fully completed or if there are any unresolved blockers. The conversation does not provide information on whether the email was successfully sent or received a response. Additionally, no further assistance was given beyond addressing Juan's request."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.1,
+     "reason": "The input provided does not contain any tool calls or instructions for an agent to execute. Therefore, the evaluation criteria cannot be applied as there is no interaction with tools. The score of 1 reflects that while the task might have been communicated correctly (matching instruction appropriateness), it lacks the execution and tool usage required by the scoring system."
+    },
+    "session_completeness": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because the LLM did not provide any specific apartment prices within the requested range of sixty thousand to eighty thousand dollars, nor did it send this information via email as requested by the User."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "usefulness": {
+     "value": 0.6,
+     "reason": "El AI response es relevante y muestra intención de ayudar al usuario, proporcionando una respuesta directa a su solicitud. Sin embargo, faltan detalles como el contenido exacto del correo (por ejemplo, nombres de departamentos y precios específicos) que el usuario está buscando. La respuesta carece de información específica y detalle suficiente para ser considerada excepcional o excelente. Además, no se menciona cómo se comunicará el resultado con el usuario después de enviar la solicitud."
+    },
+    "answer_relevance": {
+     "value": 0.7,
+     "reason": "The answer partially addresses the user's request by sending an email with housing options. However, it does not fully meet the user’s need for immediate price information and lacks the specific range of $60,000 to $80,000 dollars that was requested in the input."
+    },
+    "conversational_coherence": {
+     "value": 0.8,
+     "reason": "The score is 0.8 because the LLM’s response focused on requesting more details rather than addressing the user’s specific inquiry about price ranges, indicating a lack of direct relevance."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot no fue consultado sobre precios directamente y dirigió al cliente a confirmar su solicitud por correo, sin necesidad de consultar con Grupo Proaco."
+    },
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "El bot detectó la intención del cliente y ejecutó el flujo correspondiente sin desviarse, enviando las opciones solicitadas al correo especificado."
+    },
+    "saludo_correcto": {
+     "value": 0.7,
+     "reason": "El bot inició con un saludo similar al oficial pero no exactamente el mismo."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.7,
+     "reason": "El bot solicita los datos una vez al final, pero repite el pedido y confirma la información dada por el cliente."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "La regla no se aplicó ya que el bot no listó propiedades al cliente."
+    },
+    "despedida_correcta": {
+     "value": 1.0,
+     "reason": "La despedida oficial se incluyó al finalizar la llamada."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.9,
+     "reason": "El bot mantiene un tono amable y claro, usando español rioplatense. Sin embargo, hay un leve tono seco en la pregunta final que podría mejorarse."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "despedida_correcta": {
+     "value": 1.0,
+     "reason": "La llamada finaliza con la despedida oficial del Grupo Proaco: 'Gracias por contactarse con el Grupo Proaco.'"
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot cumplió con la regla indicando al cliente que puede consultar Grupo Proaco si su consulta no es resuelta."
+    },
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "El bot cumplió con la regla al detectar la intención del cliente (precios de departamentos) y ejecutó el flujo correspondiente sin desviarse de lo que pidió."
+    },
+    "saludo_correcto": {
+     "value": 1.0,
+     "reason": "El bot inició la llamada con el saludo oficial del Grupo Proaco: 'En Grupo Proaco no publicamos precios...'"
+    },
+    "tono_espanol_argentino": {
+     "value": 1.0,
+     "reason": "El bot mantiene un tono amable, claro y servicial, utilizando español rioplatense (de Argentina). No usa español neutro forzado ni tono seco o poco amigable."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "No se presentó la situación de la regla. La llamada no involucró la lista de propiedades."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.5,
+     "reason": "El bot pidió los datos de contacto al principio y luego los repitió, violando la regla."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_resolve_intent"
+   ],
+   "tools": [
+    "proaco_resolve_intent",
+    "proaco_resolve_intent"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-2",
+  "suites": {
+   "inbound_heur": {
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 365"
+    },
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Claro, para poder ayudarle mejor, ¿podría indicarme cuál es su presupuesto aprox'"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "despedida_presente": {
+     "value": 0.0,
+     "reason": "último turno bot: 'Martín, para la próxima semana no tengo horarios disponibles después de las seis'"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    }
+   },
+   "inbound_llmjudges": {
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "El agente propuso opciones alternativas, lo cual es una buena práctica al no poder cumplir con la solicitud original. Sin embargo, el agente no tuvo una respuesta clara sobre si el cliente desea considerar estas opciones o si necesita más asistencia. La conversación se detuvo sin resolver completamente la consulta del usuario."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no indications of frustration in the provided data, suggesting that the LLM's responses adequately addressed the User’s needs and expectations throughout the conversation."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 1.0,
+     "reason": "The input appears to be a message in Spanish, and it does not contain any tool calls or actions that would need evaluation based on the provided criteria. Since there are no tool usage logs to assess, all steps related to tool selection, input well-formedness, output interpretation, and error recovery do not apply here. Therefore, a score of 10 is given as no incorrect usage of tools was detected."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "conversational_coherence": {
+     "value": 0.875,
+     "reason": "The score is 0.875 because the LLm continues to discuss availability instead of confirming the user’s preferred dates and times, making the conversation off-topic and less relevant."
+    },
+    "answer_relevance": {
+     "value": 0.15,
+     "reason": "The answer provided does not address the user's query about available properties within their budget. Instead, it focuses on scheduling consultations, which is completely unrelated to the user's request for property availability."
+    },
+    "session_completeness": {
+     "value": 0.666666667,
+     "reason": "The score is 0.6 because while the LLM addressed some of the user's goals by scheduling a call with an advisor, it failed to provide the required documentation for a mortgage directly, which was one of the primary needs expressed by the User."
+    },
+    "usefulness": {
+     "value": 0.2,
+     "reason": "The AI response is completely irrelevant to the user's query about purchasing a property within their budget. It provides scheduling information instead, which does not address any of the key factors such as helpfulness, relevance, accuracy, depth, or creativity."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "listado_max_3": {
+     "value": 0.5,
+     "reason": "El bot lista más de 3 propiedades al cliente y agrega información adicional no solicitada."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "El bot se despide al final con una despedida similar a la oficial pero no exactamente igual."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 0.8,
+     "reason": "El bot responde a consultas sin resolverlas y finalmente indica la posibilidad de consultar con Grupo Proaco, pero no proporciona directamente el enlace."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y servicial, pero no usa expresiones típicas del español rioplatense, sino una versión más formal."
+    },
+    "deteccion_intent": {
+     "value": 0.7,
+     "reason": "El bot cumple con detectar la intención del cliente y muestra una propuesta para avanzar (mostrar opciones de propiedades), pero se desvía al ofrecer múltiples sugerencias sobre el tipo de propiedad y documentación sin recibir confirmación, lo que puede indicar un desvío leve de la intención inicial del cliente."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.6,
+     "reason": "El bot solicita los datos al final pero repite el pedido y confirma la información proporcionada por el cliente."
+    },
+    "saludo_correcto": {
+     "value": 0.6,
+     "reason": "El bot inicia con un saludo general, pero no utiliza específicamente el saludo oficial del Grupo Proaco."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "listado_max_3": {
+     "value": 0.0,
+     "reason": "El bot no cumplió con la regla porque listó más de 3 propiedades por mensaje y agregó información extra como fotos y expensas."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.85,
+     "reason": "El bot mantiene un tono amable y servicial en español rioplatense, pero no utiliza suficiente variación ni entonación para ser completamente distintivo del español neutro forzado."
+    },
+    "saludo_correcto": {
+     "value": 0.0,
+     "reason": "El bot no saluda al iniciar la llamada con el saludo oficial del Grupo Proaco (Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?)."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "El bot no se enfrentó a una situación donde no pudiera resolver la consulta del cliente."
+    },
+    "deteccion_intent": {
+     "value": 0.5,
+     "reason": "El bot no ha ejecutado el flujo correspondiente una vez detectada la intención del cliente. En lugar de mostrar las opciones disponibles y continuar con la consulta de documentación para el crédito hipotecario, el bot continúa ofreciendo diferentes horarios para la llamada telefónica."
+    },
+    "pide_contacto_una_vez": {
+     "value": 1.0,
+     "reason": "El bot solicitó los datos de contacto del cliente (nombre, teléfono) exactamente UNA vez, al finalizar la llamada y antes del mensaje de despedida, sin confirmar la información que dio el cliente ni repetir el pedido."
+    },
+    "despedida_correcta": {
+     "value": 0.0,
+     "reason": "El bot no se despide con la despedida oficial del Grupo Proaco (Gracias por contactarse con el Grupo Proaco)."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "llamada-1",
+  "suites": {
+   "inbound_heur": {
+    "saludo_presente": {
+     "value": 0.0,
+     "reason": "primer turno bot: 'Claro, puedo ayudarle con eso. ¿Podría indicarme en qué ciudad está interesado p'"
+    },
+    "sin_loop_no_transferir": {
+     "value": 1.0,
+     "reason": "0 menciones de no-poder-transferir"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "sin_datos_aysa": {
+     "value": 1.0,
+     "reason": "sin referencia a AySA"
+    },
+    "url_derivacion_presente": {
+     "value": 0.0,
+     "reason": "url 'grupoproaco.com/unidades' ausente"
+    },
+    "despedida_presente": {
+     "value": 1.0,
+     "reason": "último turno bot: 'Martín, he solicitado que le envíen la información y las fotos del departamento '"
+    },
+    "adherencia_espanol": {
+     "value": 1.0,
+     "reason": "marcadores de español: 190"
+    }
+   },
+   "inbound_llmjudges": {
+    "usefulness": {
+     "value": 0.4,
+     "reason": "The response is not relevant to the user's request for information about available apartments in the city. It also uses a name (Martín) that was not part of the original query, making it seem as though the AI has lost context. The level of detail and helpfulness are insufficient, as no actual options or details about the available apartments were provided."
+    },
+    "conversational_coherence": {
+     "value": 1.0,
+     "reason": "The reason the relevancy score is 1.0 is because there are no irrelevancies in the conversation to report."
+    },
+    "user_frustration": {
+     "value": 0.0,
+     "reason": "The score is 0.0 because there are no messages indicating any frustration from the User, suggesting a smooth and satisfactory interaction with the LLM."
+    },
+    "answer_relevance": {
+     "value": 0.3,
+     "reason": "The answer does not directly address the user's query about available apartments in the city. Instead, it mentions sending information and photos to a specific location (Caballito) via email and suggests there might be other requests. This response is irrelevant as it deviates from the user's request for general information on available options."
+    },
+    "session_completeness": {
+     "value": 1.0,
+     "reason": "The score is 1.0 because the LLM provided comprehensive information on available departments in Buenos Aires within the specified price range and preferences, including photos and details of the selected department sent via email as requested by the User."
+    },
+    "agent_task_completion_judge": {
+     "value": 0.5,
+     "reason": "The agent partially met the goal by confirming that the request for information and photos of the department in Caballito has been sent to Martín's email. However, there is no clear indication that the actual task (sending the information) was fully completed or if Martín received the requested content. Additionally, the agent did not proactively ask about any other needs Martín might have, which could potentially improve customer satisfaction."
+    },
+    "moderation": {
+     "value": 0.0,
+     "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+    },
+    "agent_tool_correctness_judge": {
+     "value": 0.0,
+     "reason": "The provided log does not include any tool usage calls or steps that would be evaluated according to the criteria specified in the task. The message appears to be a customer service interaction, where no tools are used, and thus all evaluations fail."
+    }
+   },
+   "inbound_7reglas_juez1": {
+    "deteccion_intent": {
+     "value": 0.8,
+     "reason": "El bot detecta correctamente la intención inicial de ver departamentos disponibles, pero introduce una desviación al preguntar por el nombre antes de enviar la información solicitada."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "El bot cumplió con la regla al listar solo 3 opciones iniciales y no agregó propiedades adicionales sin una solicitud del cliente."
+    },
+    "saludo_correcto": {
+     "value": 0.8,
+     "reason": "El bot inició con un saludo pero faltó el nombre oficial del Grupo Proaco."
+    },
+    "pide_contacto_una_vez": {
+     "value": 0.6,
+     "reason": "El bot solicita los datos de contacto al final pero repite el pedido después del nombre."
+    },
+    "despedida_correcta": {
+     "value": 0.8,
+     "reason": "La despedida oficial se menciona al final de la transcripción, pero no con exactamente las palabras oficiales del Grupo Proaco."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "No se presentó una consulta que el bot no pudiera resolver."
+    },
+    "tono_espanol_argentino": {
+     "value": 0.8,
+     "reason": "El bot mantiene un tono amable y servicial, pero el uso de español neutro es perceptible en algunas respuestas como 'Le puedo listar...' y la repetición del nombre del cliente podría mejorarse para ser más natural."
+    }
+   },
+   "inbound_7reglas_juez2": {
+    "despedida_correcta": {
+     "value": 0.0,
+     "reason": "El bot no despidió al cliente con la despedida oficial del Grupo Proaco."
+    },
+    "deteccion_intent": {
+     "value": 1.0,
+     "reason": "El bot detectó la intención del cliente (ver departamentos disponibles) desde el inicio de la conversación y ejecutó un flujo correspondiente sin desviarse."
+    },
+    "tono_espanol_argentino": {
+     "value": 1.0,
+     "reason": "El bot mantiene un tono amable, claro y servicial, usando español rioplatense."
+    },
+    "deriva_web_si_no_sabe": {
+     "value": 1.0,
+     "reason": "La llamada terminó sin necesidad de consultar con Grupo Proaco."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "El bot listó solo 3 propiedades por mensaje y no agregó datos extra como fotos o orientaciones."
+    },
+    "saludo_correcto": {
+     "value": 0.8,
+     "reason": "El bot cumple con la regla de saludar al iniciar la llamada con el saludo oficial del Grupo Proaco. Sin embargo, no se verifica si este saludo es exactamente igual a 'Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?'"
+    },
+    "pide_contacto_una_vez": {
+     "value": 1.0,
+     "reason": "El bot solicita los datos de contacto del cliente (nombre, teléfono, mail) exactamente UNA vez al finalizar la llamada y antes del mensaje de despedida. No repite el pedido ni confirma la información que dio el cliente."
+    }
+   }
+  },
+  "flow": "inbound",
+  "metadata": {
+   "canal": "voz",
+   "origen": "google_sheets",
+   "intents": [
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "tools": [
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "proaco_list_intent",
+    "getCalDotComAvailability",
+    "getCalDotComAvailability",
+    "scheduleCalDotComAppointment"
+   ],
+   "proyecto": "proaco",
+   "flow": "inbound"
+  }
+ },
+ {
+  "llamada_id": "CAf8fa6d0fc16e2c0ae1208556778cbd2f",
+  "suites": {
+   "outbound_7reglas": {
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "no hubo listado"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    }
+   },
+   "outbound_llmjudges": {
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "agendamiento_cita": {
+     "value": 0.0,
+     "reason": "El cliente colgó sin mostrar interés y el bot no ofreció agendar una cita o derivarlo a un asesor."
+    },
+    "cliente_no_interesado": {
+     "value": 0.0,
+     "reason": "El bot no ha recibido una respuesta clara de interés o desinterés por parte del cliente y el cliente corta la llamada inmediatamente. No se puede evaluar su comportamiento en este caso."
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "no hubo listado"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    }
+   }
+  },
+  "flow": "outbound",
+  "metadata": {
+   "proyecto": "proaco",
+   "flow": "outbound",
+   "contacto": "Tipito Enojado",
+   "outcome": "too-short",
+   "duration": 25,
+   "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+   "campaign": "Grupo Proaco",
+   "externalId": "CAf8fa6d0fc16e2c0ae1208556778cbd2f",
+   "customFields": {
+    "direccion": "",
+    "user_name": "",
+    "user_email": null,
+    "nro_reclamo": "",
+    "user_interest": "",
+    "motivo_llamado": "Consultas generales",
+    "user_phone_number": ""
+   }
+  }
+ },
+ {
+  "llamada_id": "CAd7af8dc9b388be471478d07f0b379b7d",
+  "suites": {
+   "outbound_7reglas": {
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "listado_max_3": {
+     "value": 0.0,
+     "reason": "7 ítems listados (máx 3)"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    }
+   },
+   "outbound_llmjudges": {
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "agendamiento_cita": {
+     "value": 0.0,
+     "reason": "El bot no ofrece agendar una cita o derivar al cliente a un asesor después de que el cliente muestra interés en los departamentos disponibles. El bot se centra únicamente en proporcionar información y, aunque el cliente finalmente expresa un interés específico, el bot termina la llamada sin ofrecer una oportunidad para agendar una cita o derivarlo a un asesor."
+    },
+    "cliente_no_interesado": {
+     "value": 0.0,
+     "reason": "El bot no cumple con los criterios estipulados porque insiste en proporcionar más información y detalles después de que el cliente expresa claramente su desinterés (‘Quiero más departamentos disponibles’). El bot no cierra la llamada de manera cortés ni deja de insistir en hacer ofertas."
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "listado_max_3": {
+     "value": 0.0,
+     "reason": "7 ítems listados (máx 3)"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    }
+   }
+  },
+  "flow": "outbound",
+  "metadata": {
+   "proyecto": "proaco",
+   "flow": "outbound",
+   "contacto": "Valentina Pegrezt",
+   "outcome": "other",
+   "duration": 320,
+   "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+   "campaign": "Grupo Proaco",
+   "externalId": "CAd7af8dc9b388be471478d07f0b379b7d",
+   "customFields": {
+    "direccion": "",
+    "user_name": "Silvia Pérez",
+    "user_email": null,
+    "nro_reclamo": "",
+    "user_interest": "Departamentos (3 dormitorios): 1) “Departamentos con cochera - 2024”, Piso 00, Depto. 91 (134 m2, 163.900 USD); 2) “Departamentos Torre 02 - 2026”, Piso 06, Depto. 2 (178,35 m2, 254.900 USD); 3) “Departamentos Torre 05 - 2024”, Piso 002, Depto. B (142,42 m2, 259.000 USD); 4) “Departamentos Torre 05 - 2023”, Piso 006, Depto. E (131,79 m2, 259.000 USD); 5) “Departamentos Torre 03 - 2027”, Piso 06, Depto. 06 (178,28 m2, 300.258 USD); 6) **“Departamentos Torre 03 - 2027”, Piso 07, Depto. 05** (178,28 m2, 312.472 USD)",
+    "motivo_llamado": "Consulta y búsqueda de departamentos con tres habitaciones y envío de opciones disponibles",
+    "user_phone_number": "+5491161185165"
+   }
+  }
+ },
+ {
+  "llamada_id": "CAc57514332ee76b2150ec583f8a86735b",
+  "suites": {
+   "outbound_7reglas": {
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "0 ítems listados (máx 3)"
+    }
+   },
+   "outbound_llmjudges": {
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "0 ítems listados (máx 3)"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "cliente_no_interesado": {
+     "value": 0.0,
+     "reason": "El bot continúa ofreciendo opciones de casas después de que el cliente expresa claramente su desinterés y no quiere continuar con la conversación. No cierre la llamada cortésmente ni sin insistir o repetir la oferta, lo cual es un incumplimiento del criterio."
+    },
+    "agendamiento_cita": {
+     "value": 0.0,
+     "reason": "El bot no ofrece agendar una cita o derivar el lead a un asesor después del cliente expresa interés en comprar una casa. El cliente muestra interés, pero el bot solo proporciona información general sin ofrecer seguir con la agenda de una cita."
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    }
+   }
+  },
+  "flow": "outbound",
+  "metadata": {
+   "proyecto": "proaco",
+   "flow": "outbound",
+   "contacto": "Rafaela Carra",
+   "outcome": "other",
+   "duration": 41,
+   "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+   "campaign": "Grupo Proaco",
+   "externalId": "CAc57514332ee76b2150ec583f8a86735b",
+   "customFields": {
+    "direccion": "",
+    "user_name": "",
+    "user_email": null,
+    "nro_reclamo": "",
+    "user_interest": "El cliente indicó interés en comprar una casa. No se definió zona ni tipo específico; se adelantó que verían opciones más tarde.",
+    "motivo_llamado": "Consulta para compra de una casa (posponer opciones)",
+    "user_phone_number": ""
+   }
+  }
+ },
+ {
+  "llamada_id": "CA19ee8401e82785291c1d6e2bceb6d77d",
+  "suites": {
+   "outbound_7reglas": {
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "menciona_proposito": {
+     "value": 1.0,
+     "reason": "motivo mencionado"
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "0 ítems listados (máx 3)"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    }
+   },
+   "outbound_llmjudges": {
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "cliente_no_interesado": {
+     "value": 0.8,
+     "reason": "El bot identificó la desinterés del cliente cuando expresó 'proctmas' y 'No encontré', sin embargo, no cerró la llamada de manera cortés al intentar revisar los departamentos una vez más. El bot podría haber finalizado la llamada con un agradecimiento más cortés y directo, evitando insistir en ofrecer información que ya no era deseada por el cliente."
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "0 ítems listados (máx 3)"
+    },
+    "menciona_proposito": {
+     "value": 1.0,
+     "reason": "motivo mencionado"
+    },
+    "agendamiento_cita": {
+     "value": 0.0,
+     "reason": "El cliente expresa interés en ver propiedades, pero el bot no ofrece la opción de agendar una cita ni se le derivan a un asesor. En su lugar, el bot continúa con una conversación detallada sobre tipos de propiedades disponibles y finalmente ofrece un sitio web para más información."
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    }
+   }
+  },
+  "flow": "outbound",
+  "metadata": {
+   "proyecto": "proaco",
+   "flow": "outbound",
+   "contacto": "Marcelo Oviedo",
+   "outcome": "other",
+   "duration": 204,
+   "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+   "campaign": "Grupo Proaco",
+   "externalId": "CA19ee8401e82785291c1d6e2bceb6d77d",
+   "customFields": {
+    "direccion": "",
+    "user_name": "",
+    "user_email": null,
+    "nro_reclamo": "",
+    "user_interest": "Departamentos en emprendimientos (consulta inicial por hangar)",
+    "motivo_llamado": "Consulta e interés por propiedades, específicamente departamentos dentro de emprendimientos",
+    "user_phone_number": ""
+   }
+  }
+ },
+ {
+  "llamada_id": "CA1cc4b3a43b1c81376115825d86c44622",
+  "suites": {
+   "outbound_7reglas": {
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "no hubo listado"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    }
+   },
+   "outbound_llmjudges": {
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "agendamiento_cita": {
+     "value": 0.0,
+     "reason": "The client did not express interest in the bot's offer, and the bot did not attempt to schedule a meeting or direct the client to an advisor."
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "no hubo manifestación de no-interés"
+    },
+    "cliente_no_interesado": {
+     "value": 0.0,
+     "reason": "The bot did not acknowledge the client's expression of disinterest and instead proceeded to ask for assistance, which is contrary to the expected behavior."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "no hubo listado"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    }
+   }
+  },
+  "flow": "outbound",
+  "metadata": {
+   "proyecto": "proaco",
+   "flow": "outbound",
+   "contacto": "Rafaela Carra",
+   "outcome": "too-short",
+   "duration": 8,
+   "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+   "campaign": "Grupo Proaco",
+   "externalId": "CA1cc4b3a43b1c81376115825d86c44622",
+   "customFields": null
+  }
+ },
+ {
+  "llamada_id": "CA18a4abd08ab9818405d44a7e4c1b910f",
+  "suites": {
+   "outbound_7reglas": {
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "0 ítems listados (máx 3)"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "cierre cortés sin insistir"
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    }
+   },
+   "outbound_llmjudges": {
+    "menciona_proposito": {
+     "value": 0.0,
+     "reason": "no se menciona el motivo de la llamada"
+    },
+    "pide_consentimiento": {
+     "value": 0.0,
+     "reason": "no se pidió consentimiento para continuar"
+    },
+    "se_presenta": {
+     "value": 1.0,
+     "reason": "bot identificado"
+    },
+    "agendamiento_cita": {
+     "value": 0.0,
+     "reason": "El cliente expresa que no quiere hablar más con el bot, pero el bot no ofrece ninguna opción para agendar una cita o derivar al asesor. El bot pierde la oportunidad de mantener la conversación y ofrecer un servicio al cliente."
+    },
+    "tono_respetuoso": {
+     "value": 1.0,
+     "reason": "tono respetuoso"
+    },
+    "maneja_no_interes": {
+     "value": 1.0,
+     "reason": "cierre cortés sin insistir"
+    },
+    "cliente_no_interesado": {
+     "value": 0.0,
+     "reason": "El bot no responde correctamente al clienté cuando expresa que no quiere hablar más. En lugar de cerrar la llamada, el bot intenta repetir lo pedido, lo cual no se alinea con los criterios establecidos."
+    },
+    "listado_max_3": {
+     "value": 1.0,
+     "reason": "0 ítems listados (máx 3)"
+    },
+    "ofrece_agendar_cita": {
+     "value": 0.0,
+     "reason": "no se ofreció agendar cita"
+    }
+   }
+  },
+  "flow": "outbound",
+  "metadata": {
+   "proyecto": "proaco",
+   "flow": "outbound",
+   "contacto": "Charli Garcia",
+   "outcome": "do-not-call",
+   "duration": 49,
+   "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+   "campaign": "Grupo Proaco",
+   "externalId": "CA18a4abd08ab9818405d44a7e4c1b910f",
+   "customFields": {
+    "direccion": "",
+    "user_name": "",
+    "user_email": null,
+    "nro_reclamo": "",
+    "user_interest": "Casa con 2 dormitorios y 2 baños (consulta de opciones disponibles)",
+    "motivo_llamado": "Consulta por opciones de una casa con 2 dormitorios y 2 baños",
+    "user_phone_number": ""
+   }
+  }
+ }
+]

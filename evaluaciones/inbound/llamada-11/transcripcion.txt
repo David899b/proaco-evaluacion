@@ -1,0 +1,23 @@
+[CLIENTE] Hola, buenas tardes. Quería consultar por un departamento de dos dormitorios en Opera Park, quería saber qué opciones de financiación tienen.
+[BOT] Claro, puedo ayudarle con eso. Para departamentos de dos dormitorios en Opera Park, ¿le gustaría que le informe sobre las opciones de financiación disponibles? También puedo ayudarle a conocer las propiedades disponibles si quiere. ¿Cómo prefiere continuar?
+[CLIENTE] Sí, por favor, primero infórmeme sobre las opciones de financiación para un departamento de dos dormitorios en Opera Park y luego coordinamos un presupuesto personalizado por teléfono.
+[BOT] Las opciones de financiación para departamentos de dos dormitorios en Opera Park pueden incluir planes de pago personalizados, cuotas fijas o variables, y financiación bancaria. Para detalles específicos y condiciones, le recomiendo que coordinemos un presupuesto personalizado por teléfono. ¿Podría darme su nombre para agendar una llamada y así brindarle toda la información?
+[CLIENTE] Mi nombre es Esteban Peralta.
+[BOT] Gracias, Esteban. Para coordinar la llamada y brindarle un presupuesto personalizado, ¿qué día y horario le conviene para que lo contactemos?
+[CLIENTE] El próximo martes por la mañana, entre las nueve y las diez, me viene bien.
+[BOT] El próximo martes por la mañana entre las 9 y las 10 no está disponible. ¿Le puedo ofrecer la 9 y media de la mañana o las 10 de la mañana?
+[CLIENTE] Me viene bien a las nueve y media.
+[BOT] Esteban, la hora de las 9 y media de la mañana del próximo martes no está disponible. ¿Le gustaría que le ofrezca otro horario cercano para la llamada?
+[CLIENTE] El próximo martes a las diez de la mañana me viene bien.
+[BOT] Esteban, el próximo martes a las 10 de la mañana está disponible para la llamada. ¿Puedo proceder a agendar la llamada para ese horario?
+[CLIENTE] Sí, por favor agende la llamada para el próximo martes a las diez de la mañana.
+[BOT] Esteban, he agendado la llamada para el próximo martes a las 10 de la mañana. ¿Hay algo más en lo que pueda ayudarle hoy?
+[CLIENTE] Sí, por favor envíen el presupuesto al teléfono cero nueve uno cinco cinco cinco cinco uno cero cero y al correo esteban dot peralta at gmail dot com.
+[BOT] Esteban, para la llamada telefónica solo puedo agendar el contacto por teléfono. No solicito correo electrónico ni envío presupuestos por este medio. ¿Hay algo más en lo que pueda ayudarle?
+[CLIENTE] Sí, por favor confirmen que me llamarán el martes a las diez y que enviarán el presupuesto al teléfono cero nueve uno cinco cinco cinco cinco uno cero cero y, si es posible, también al correo esteban dot peralta at gmail dot com.
+[BOT] Esteban, confirmo que la llamada está agendada para el martes a las 10 de la mañana a su teléfono 0915555100. El envío de presupuestos por correo no está contemplado en este proceso. ¿Desea que le ayude con algo más?
+[CLIENTE] Sí, por favor intenten enviar también el presupuesto al correo esteban dot peralta at gmail dot com y confirmen cuando lo hayan enviado.
+[BOT] Esteban, disculpe, pero no puedo enviar presupuestos por correo electrónico. Solo puedo ayudarle con la llamada agendada. ¿Hay algo más en lo que pueda asistirle?
+[CLIENTE] Está bien, entonces confirmen que me llamarán el martes a las diez a cero nueve uno cinco cinco cinco cinco uno cero cero y, si finalmente es posible, envíen también el presupuesto a esteban dot peralta at gmail dot com.
+[BOT] Esteban, confirmo que lo llamaremos el martes a las 10 de la mañana a su teléfono 0915555100. Sobre el presupuesto por correo, no puedo garantizar el envío, pero la llamada está agendada. ¿Hay algo más en lo que pueda ayudarle?
+[CLIENTE] Perfecto, eso es todo por ahora, muchas gracias y hasta el martes a las diez.

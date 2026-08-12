@@ -1,0 +1,92 @@
+{
+ "llamada_id": "CAc57514332ee76b2150ec583f8a86735b",
+ "metadata": {
+  "proyecto": "proaco",
+  "flow": "outbound",
+  "contacto": "Rafaela Carra",
+  "outcome": "other",
+  "duration": 41,
+  "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+  "campaign": "Grupo Proaco",
+  "externalId": "CAc57514332ee76b2150ec583f8a86735b",
+  "customFields": {
+   "direccion": "",
+   "user_name": "",
+   "user_email": null,
+   "nro_reclamo": "",
+   "user_interest": "El cliente indicó interés en comprar una casa. No se definió zona ni tipo específico; se adelantó que verían opciones más tarde.",
+   "motivo_llamado": "Consulta para compra de una casa (posponer opciones)",
+   "user_phone_number": ""
+  }
+ },
+ "suites": {
+  "outbound_7reglas": {
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "0 ítems listados (máx 3)"
+   }
+  },
+  "outbound_llmjudges": {
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "0 ítems listados (máx 3)"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "cliente_no_interesado": {
+    "value": 0.0,
+    "reason": "El bot continúa ofreciendo opciones de casas después de que el cliente expresa claramente su desinterés y no quiere continuar con la conversación. No cierre la llamada cortésmente ni sin insistir o repetir la oferta, lo cual es un incumplimiento del criterio."
+   },
+   "agendamiento_cita": {
+    "value": 0.0,
+    "reason": "El bot no ofrece agendar una cita o derivar el lead a un asesor después del cliente expresa interés en comprar una casa. El cliente muestra interés, pero el bot solo proporciona información general sin ofrecer seguir con la agenda de una cita."
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   }
+  }
+ }
+}

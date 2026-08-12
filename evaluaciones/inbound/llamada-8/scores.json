@@ -1,0 +1,150 @@
+{
+ "llamada_id": "llamada-8",
+ "metadata": {
+  "canal": "voz",
+  "origen": "google_sheets",
+  "intents": [
+   "proaco_list_intent",
+   "getCalDotComAvailability",
+   "scheduleCalDotComAppointment"
+  ],
+  "tools": [
+   "proaco_list_intent",
+   "proaco_list_intent",
+   "getCalDotComAvailability",
+   "getCalDotComAvailability",
+   "getCalDotComAvailability",
+   "getCalDotComAvailability",
+   "getCalDotComAvailability",
+   "scheduleCalDotComAppointment"
+  ],
+  "proyecto": "proaco",
+  "flow": "inbound"
+ },
+ "suites": {
+  "inbound_heur": {
+   "despedida_presente": {
+    "value": 1.0,
+    "reason": "último turno bot: 'Gracias por contactarse con el Grupo Proaco.'"
+   },
+   "sin_datos_aysa": {
+    "value": 1.0,
+    "reason": "sin referencia a AySA"
+   },
+   "adherencia_espanol": {
+    "value": 1.0,
+    "reason": "marcadores de español: 290"
+   },
+   "saludo_presente": {
+    "value": 1.0,
+    "reason": "primer turno bot: 'Hola Lucía, gracias por comunicarte. Para ayudarte con la información técnica y '"
+   },
+   "sin_loop_no_transferir": {
+    "value": 1.0,
+    "reason": "0 menciones de no-poder-transferir"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "url_derivacion_presente": {
+    "value": 0.0,
+    "reason": "url 'grupoproaco.com/unidades' ausente"
+   }
+  },
+  "inbound_llmjudges": {
+   "moderation": {
+    "value": 0.0,
+    "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+   },
+   "session_completeness": {
+    "value": 1.0,
+    "reason": "The score is 1.0 because the LLM's responses fully addressed the user goals of obtaining technical information about Pocito project units, coordinating a call to receive the information, and sending plans and dossier via email."
+   },
+   "usefulness": {
+    "value": 0.2,
+    "reason": "The response is completely inadequate as it does not address any of the specific questions asked by Lucía Gómez regarding the technical information of units and the progress of the Pocito project. It lacks relevance, accuracy, depth, creativity, and appropriate detail."
+   },
+   "answer_relevance": {
+    "value": 0.1,
+    "reason": "The response does not address any of the user's specific questions or provide technical information about the Pocito project units as requested. Instead, it thanks the user for contacting a group called 'Grupo Proaco,' which is completely irrelevant to the query."
+   },
+   "conversational_coherence": {
+    "value": 0.818181818,
+    "reason": "The score is 0.8 because the LLM suggested alternative call times multiple times instead of addressing the user's request for technical project information, introducing irrelevant content."
+   },
+   "agent_task_completion_judge": {
+    "value": 0.0,
+    "reason": "The provided input does not address any assigned task or goal. It appears to be a generic thank you message without any context related to the original request, making it impossible to determine if the agent completed the task as intended."
+   },
+   "agent_tool_correctness_judge": {
+    "value": 0.1,
+    "reason": "The input provided does not represent a tool usage scenario as described. There are no steps involving tool selection, input validation, output interpretation, or error recovery in this text. Therefore, the score is 1 due to the absence of relevant activities."
+   },
+   "user_frustration": {
+    "value": 0.0,
+    "reason": "The score is 0.0 because there are no explicit indications of frustration from the User, and the list of frustrations provided is empty."
+   }
+  },
+  "inbound_7reglas_juez1": {
+   "pide_contacto_una_vez": {
+    "value": 0.6,
+    "reason": "El bot solicitó los datos una vez al final pero repitió el pedido de correo electrónico."
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "No se presentó la regla de listar propiedades."
+   },
+   "deriva_web_si_no_sabe": {
+    "value": 1.0,
+    "reason": "No se presentó la situación condicional para evaluar esta regla."
+   },
+   "deteccion_intent": {
+    "value": 0.8,
+    "reason": "El bot detecta adecuadamente la intención del cliente y comienza a ejecutar el flujo correspondiente. Sin embargo, se desvía al final de la conversación al preguntar si necesita algo más cuando el cliente ya ha terminado."
+   },
+   "despedida_correcta": {
+    "value": 1.0,
+    "reason": "La despedida oficial se incluyó al finalizar la llamada."
+   },
+   "tono_espanol_argentino": {
+    "value": 0.9,
+    "reason": "El bot mantiene un tono amable y servicial, pero no usa una variante del español rioplatense."
+   },
+   "saludo_correcto": {
+    "value": 0.8,
+    "reason": "El bot inicia con un saludo similar al requerido pero omite directamente indicar que se contactó con el Grupo Proaco."
+   }
+  },
+  "inbound_7reglas_juez2": {
+   "saludo_correcto": {
+    "value": 0.5,
+    "reason": "El bot inició la llamada con un saludo que no incluía el nombre del cliente ni mencionó específicamente el Grupo Proaco. En su lugar, dijo 'Lucía'. El texto no muestra una violación clara de la regla, pero tampoco muestra el cumplimiento esperado."
+   },
+   "deriva_web_si_no_sabe": {
+    "value": 1.0,
+    "reason": "La llamada terminó sin problemas y no se presentaron situaciones en las que el bot necesitara consultar con Grupo Proaco en la web."
+   },
+   "deteccion_intent": {
+    "value": 1.0,
+    "reason": "El bot detectó la intención del cliente (consultar información técnica sobre el proyecto Pocito) y ejecutó el flujo correspondiente sin desviarse de lo que pidió el cliente."
+   },
+   "pide_contacto_una_vez": {
+    "value": 1.0,
+    "reason": "El bot solicitó los datos de contacto del cliente exactamente una vez al finalizar la llamada y antes del mensaje de despedida."
+   },
+   "despedida_correcta": {
+    "value": 1.0,
+    "reason": "La llamada finaliza con la despedida oficial del Grupo Proaco."
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "No hubo violación posible"
+   },
+   "tono_espanol_argentino": {
+    "value": 1.0,
+    "reason": "El bot mantiene un tono amable, claro y servicial, usando español rioplatense (de Argentina). No usa español neutro forzado ni tono seco o poco amigable."
+   }
+  }
+ }
+}

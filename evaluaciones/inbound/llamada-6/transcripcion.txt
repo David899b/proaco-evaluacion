@@ -1,0 +1,32 @@
+[CLIENTE] Hola, buenas. Quería consultar por departamentos de un dormitorio en Nueva Córdoba y ver si puedo agendar una visita para esta semana.
+[BOT] Claro, puedo ayudarte con departamentos de un dormitorio en Nueva Córdoba. ¿Podrías indicarme qué días y horarios te vienen bien para la visita esta semana?
+[CLIENTE] Soy residente y estoy ocupada, así que me viene bien el miércoles por la tarde después de las seis o el sábado a las diez de la mañana.
+[BOT] El miércoles después de las seis no está disponible, pero puedo ofrecerte el jueves a las 11 de la mañana o el sábado a las 10 de la mañana. ¿Cuál te viene mejor?
+[CLIENTE] Perfecto, el sábado a las diez de la mañana me viene bien, ¿me podés confirmar la dirección del showroom?
+[BOT] Para la dirección del showroom y detalles específicos, te recomiendo consultar directamente en https://grupoproaco.com/unidades. Ahora, para agendar la visita el sábado a las 10 de la mañana, ¿podrías darme tu nombre para reservar?
+[CLIENTE] Soy Valentina Rossi.
+[BOT] Valentina, tu visita para el sábado a las 10 de la mañana está agendada. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Perfecto, ¿me podés confirmar la dirección exacta del showroom, por favor?
+[BOT] Para la dirección exacta del showroom, te sugiero consultar en https://grupoproaco.com/unidades donde encontrarás toda la información actualizada. ¿Quieres que te ayude con algo más?
+[CLIENTE] Perfecto, ¿me podés confirmar la dirección exacta del showroom en Nueva Córdoba, por favor?
+[BOT] Para la dirección exacta del showroom en Nueva Córdoba, te recomiendo visitar https://grupoproaco.com/unidades donde está toda la información detallada. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Sí, por favor ¿me pueden confirmar la dirección exacta del showroom en Nueva Córdoba y enviármela por mensaje de texto al número que figura en mi reserva?
+[BOT] Lamento no poder enviar mensajes de texto, pero para la dirección exacta del showroom en Nueva Córdoba, por favor consulta https://grupoproaco.com/unidades. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Perfecto, ¿me puede decir ahora la dirección exacta del showroom en Nueva Córdoba, por favor?
+[BOT] Para la dirección exacta del showroom en Nueva Córdoba, te recomiendo consultar en https://grupoproaco.com/unidades, donde está toda la información actualizada. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Por favor, ¿me puede decir la dirección exacta del showroom en Nueva Córdoba ahora mismo?
+[BOT] Disculpá, no tengo la dirección exacta del showroom en Nueva Córdoba. Podés consultarla en https://grupoproaco.com/unidades. ¿Querés que te ayude con algo más?
+[CLIENTE] Perfecto, ¿me podés dar ahora la dirección exacta o al menos un punto de referencia para llegar el sábado a las diez?
+[BOT] Lamento no contar con la dirección exacta o un punto de referencia, pero podés encontrar toda la información en https://grupoproaco.com/unidades. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Está bien, por favor envíen la dirección al correo asociado a mi reserva.
+[BOT] Para visitas telefónicas no solicito ni envío correos electrónicos. Te recomiendo consultar la dirección en https://grupoproaco.com/unidades. ¿Puedo ayudarte con algo más?
+[CLIENTE] Está bien, ¿me pueden decir el nombre del edificio o del showroom para poder buscarlo en el mapa antes de la visita?
+[BOT] Lamento no tener el nombre del edificio o showroom disponible. Te sugiero consultar esa información en https://grupoproaco.com/unidades. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] ¿Me pueden transferir ahora con alguien que me confirme la dirección exacta del showroom, por favor?
+[BOT] No puedo transferir llamadas, pero estoy aquí para ayudarte en lo que necesites. ¿Hay algo más en lo que pueda asistirte?
+[CLIENTE] Está bien, ¿pueden darme un teléfono de contacto o un correo para que me envíen la dirección exacta del showroom?
+[BOT] Para más información, podés consultar en https://grupoproaco.com/unidades. No tengo un teléfono o correo específico para enviarte la dirección. ¿Querés que te ayude con algo más?
+[CLIENTE] Entiendo, pero por favor confirmen si el showroom queda frente al Hospital de Urgencias o cerca de la Plaza España para que pueda ubicarlo en el mapa.
+[BOT] No dispongo de esa información exacta, te recomiendo verificar la ubicación en https://grupoproaco.com/unidades para mayor precisión. ¿Puedo ayudarte con algo más?
+[CLIENTE] Perfecto, entonces busco la dirección en la web; ¿me podés decir cuánto dura aproximadamente la visita al showroom para organizar mi guardia?
+[BOT] La duración aproximada de la visita al showroom suele ser de 30 a 45 minutos. ¿Querés que te ayude con algo más?

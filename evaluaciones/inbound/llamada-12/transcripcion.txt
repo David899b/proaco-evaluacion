@@ -1,0 +1,32 @@
+[CLIENTE] Hola, necesito ir a ver la obra de Pocito este sábado a las 10 AM, soy Mariana Rossi
+[BOT] Mariana, para el sábado a las 10 de la mañana no tengo disponibilidad exacta. ¿Le sirve a las 9 o a las 11 de la mañana?
+[CLIENTE] No, disculpe, me equivoqué, en realidad necesito la visita a la obra de Pocito el viernes por la tarde, ¿tienen disponibilidad?
+[BOT] Para el viernes por la tarde no tengo horarios disponibles. ¿Le gustaría que le ofrezca otro día o horario para la visita a la obra de Pocito?
+[CLIENTE] Sí, por favor intenten conseguirme un turno el viernes por la tarde a las cuatro.
+[BOT] El viernes a las 4 de la tarde no está disponible. ¿Le gustaría que le ofrezca otro horario cercano ese día o prefiere otro día?
+[CLIENTE] Por favor, busquen cualquier turno disponible el viernes por la tarde a partir de las cuatro y media.
+[BOT] El viernes por la tarde a partir de las 4 y media no hay turnos disponibles. ¿Le gustaría que le ofrezca opciones para otro día o horario?
+[CLIENTE] Sí, por favor anótenme en la lista de espera para cualquier turno del viernes por la tarde a partir de las cuatro y media.
+[BOT] Mariana, no puedo anotar en lista de espera, pero puedo ayudarle a buscar otro horario disponible o día para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones?
+[CLIENTE] Sí, por favor ofrézcanme cualquier otro horario disponible el viernes por la tarde.
+[BOT] Mariana, no hay turnos disponibles el viernes por la tarde para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones para otro día?
+[CLIENTE] Sí, por favor ofrézcanme cualquier turno disponible por la tarde el lunes o el martes de la semana que viene.
+[BOT] Mariana, no tengo turnos disponibles por la tarde ni el lunes ni el martes de la semana que viene para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones para otro día o horario?
+[CLIENTE] Sí, por favor búsquenme cualquier turno por la tarde el miércoles o el jueves de la semana que viene.
+[BOT] Mariana, no hay turnos disponibles por la tarde el miércoles ni el jueves de la semana que viene para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones para otro día o horario?
+[CLIENTE] Dale, anoten cualquier turno el miércoles por la mañana y si se libera algo el viernes por la tarde avísenme urgente.
+[BOT] Mariana, no hay turnos disponibles el miércoles por la mañana para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones para otro día o horario?
+[CLIENTE] Sí, por favor búsquenme cualquier turno el viernes por la tarde y si no hay, cualquier tarde de la semana que viene y avísenme urgente si se libera algo el viernes.
+[BOT] Mariana, no hay turnos disponibles el viernes por la tarde. ¿Le gustaría que le ofrezca opciones para cualquier tarde de la semana que viene?
+[CLIENTE] Sí, por favor búsquenme cualquier turno por la tarde la semana que viene y avísenme urgente si se libera algo el viernes.
+[BOT] Mariana, no hay turnos disponibles por la tarde la semana que viene para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones para otro horario o día?
+[CLIENTE] Perfecto, búsquenme cualquier turno por la mañana la semana que viene y avísenme urgente si se libera el viernes por la tarde.
+[BOT] Mariana, no hay turnos disponibles por la mañana la semana que viene para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones para otro horario o día?
+[CLIENTE] Sí, por favor búsquenme cualquier turno por la tarde la semana que viene y avísenme urgente si se libera algo el viernes por la tarde.
+[BOT] Mariana, no hay turnos disponibles por la tarde la semana que viene para la visita a la obra de Pocito. ¿Le gustaría que le ofrezca opciones para otro horario o día?
+[CLIENTE] Sí, búsquenme cualquier turno por la mañana la semana que viene y avísenme urgente si se libera algo el viernes por la tarde, por favor.
+[BOT] Mariana, no hay turnos disponibles ni por la mañana ni por la tarde la semana que viene para la visita a la obra de Pocito. ¿Le gustaría que le ayude con otra consulta o propiedad? También, por favor, ¿me puede dejar un número de contacto para avisarle si se libera algo el viernes por la tarde?
+[CLIENTE] Sí, mi número es cero nueve uno uno cinco cinco cinco uno dos tres cuatro.
+[BOT] Gracias, Mariana. He tomado nota de su número para avisarle si se libera algún turno el viernes por la tarde. ¿Hay algo más en lo que pueda ayudarle hoy?
+[CLIENTE] Sí, por favor confirmen que la visita a la obra de Pocito quedó para el viernes por la tarde y no para el sábado a las diez de la mañana.
+[BOT] Mariana, no se pudo reservar la visita para el viernes por la tarde ni para el sábado a las diez de la mañana. ¿Le gustaría que le ayude a buscar otro horario disponible?

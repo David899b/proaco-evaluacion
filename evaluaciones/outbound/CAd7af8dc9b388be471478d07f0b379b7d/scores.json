@@ -1,0 +1,92 @@
+{
+ "llamada_id": "CAd7af8dc9b388be471478d07f0b379b7d",
+ "metadata": {
+  "proyecto": "proaco",
+  "flow": "outbound",
+  "contacto": "Valentina Pegrezt",
+  "outcome": "other",
+  "duration": 320,
+  "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+  "campaign": "Grupo Proaco",
+  "externalId": "CAd7af8dc9b388be471478d07f0b379b7d",
+  "customFields": {
+   "direccion": "",
+   "user_name": "Silvia Pérez",
+   "user_email": null,
+   "nro_reclamo": "",
+   "user_interest": "Departamentos (3 dormitorios): 1) “Departamentos con cochera - 2024”, Piso 00, Depto. 91 (134 m2, 163.900 USD); 2) “Departamentos Torre 02 - 2026”, Piso 06, Depto. 2 (178,35 m2, 254.900 USD); 3) “Departamentos Torre 05 - 2024”, Piso 002, Depto. B (142,42 m2, 259.000 USD); 4) “Departamentos Torre 05 - 2023”, Piso 006, Depto. E (131,79 m2, 259.000 USD); 5) “Departamentos Torre 03 - 2027”, Piso 06, Depto. 06 (178,28 m2, 300.258 USD); 6) **“Departamentos Torre 03 - 2027”, Piso 07, Depto. 05** (178,28 m2, 312.472 USD)",
+   "motivo_llamado": "Consulta y búsqueda de departamentos con tres habitaciones y envío de opciones disponibles",
+   "user_phone_number": "+5491161185165"
+  }
+ },
+ "suites": {
+  "outbound_7reglas": {
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "listado_max_3": {
+    "value": 0.0,
+    "reason": "7 ítems listados (máx 3)"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   }
+  },
+  "outbound_llmjudges": {
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "agendamiento_cita": {
+    "value": 0.0,
+    "reason": "El bot no ofrece agendar una cita o derivar al cliente a un asesor después de que el cliente muestra interés en los departamentos disponibles. El bot se centra únicamente en proporcionar información y, aunque el cliente finalmente expresa un interés específico, el bot termina la llamada sin ofrecer una oportunidad para agendar una cita o derivarlo a un asesor."
+   },
+   "cliente_no_interesado": {
+    "value": 0.0,
+    "reason": "El bot no cumple con los criterios estipulados porque insiste en proporcionar más información y detalles después de que el cliente expresa claramente su desinterés (‘Quiero más departamentos disponibles’). El bot no cierra la llamada de manera cortés ni deja de insistir en hacer ofertas."
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "listado_max_3": {
+    "value": 0.0,
+    "reason": "7 ítems listados (máx 3)"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   }
+  }
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "llamada_id": "CA18a4abd08ab9818405d44a7e4c1b910f",
+ "metadata": {
+  "proyecto": "proaco",
+  "flow": "outbound",
+  "contacto": "Charli Garcia",
+  "outcome": "do-not-call",
+  "duration": 49,
+  "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+  "campaign": "Grupo Proaco",
+  "externalId": "CA18a4abd08ab9818405d44a7e4c1b910f",
+  "customFields": {
+   "direccion": "",
+   "user_name": "",
+   "user_email": null,
+   "nro_reclamo": "",
+   "user_interest": "Casa con 2 dormitorios y 2 baños (consulta de opciones disponibles)",
+   "motivo_llamado": "Consulta por opciones de una casa con 2 dormitorios y 2 baños",
+   "user_phone_number": ""
+  }
+ },
+ "suites": {
+  "outbound_7reglas": {
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "0 ítems listados (máx 3)"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "cierre cortés sin insistir"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   }
+  },
+  "outbound_llmjudges": {
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "agendamiento_cita": {
+    "value": 0.0,
+    "reason": "El cliente expresa que no quiere hablar más con el bot, pero el bot no ofrece ninguna opción para agendar una cita o derivar al asesor. El bot pierde la oportunidad de mantener la conversación y ofrecer un servicio al cliente."
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "cierre cortés sin insistir"
+   },
+   "cliente_no_interesado": {
+    "value": 0.0,
+    "reason": "El bot no responde correctamente al clienté cuando expresa que no quiere hablar más. En lugar de cerrar la llamada, el bot intenta repetir lo pedido, lo cual no se alinea con los criterios establecidos."
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "0 ítems listados (máx 3)"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   }
+  }
+ }
+}

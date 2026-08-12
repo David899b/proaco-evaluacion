@@ -1,0 +1,9 @@
+[CLIENTE] Necesito rápido precios de departamentos nuevos entre sesenta mil y ochenta mil dólares y que me los manden por correo.
+[BOT] En Grupo Proaco no publicamos precios. Para ayudarle mejor, ¿podría decirme en qué zona está interesado y qué tipo de departamento busca? También necesito su nombre y correo para que un asesor le envíe la información.
+[CLIENTE] Palermo, dos ambientes, soy Juan Pérez y mi correo es juan punto perez arroba gmail punto com.
+[BOT] Gracias, Juan. Un asesor de Grupo Proaco se pondrá en contacto con usted a la brevedad para enviarle información sobre departamentos de dos ambientes en Palermo. ¿Hay algo más en lo que pueda ayudarle?
+[CLIENTE] Envíenme por correo solo opciones entre sesenta mil y ochenta mil,—
+[BOT] Entiendo, Juan. Para avanzar con su solicitud, necesito confirmar que desea que un asesor le envíe por correo opciones de departamentos de dos ambientes en Palermo, dentro del rango de 60,000 a 80,000 dólares. ¿Es correcto?
+[CLIENTE] Sí, correcto, envíen a juan punto perez arroba gmail punto com solo opciones entre sesenta mil y ochenta mil, rápido.
+[BOT] Perfecto, Juan. He enviado su solicitud para que reciba por correo opciones de departamentos de dos ambientes en Palermo dentro del rango de 60,000 a 80,000 dólares. ¿Hay algo más en lo que pueda ayudarle?
+[CLIENTE] Listo, gracias

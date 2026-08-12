@@ -1,0 +1,137 @@
+{
+ "llamada_id": "llamada-5",
+ "metadata": {
+  "canal": "voz",
+  "origen": "google_sheets",
+  "intents": [],
+  "tools": [],
+  "proyecto": "proaco",
+  "flow": "inbound"
+ },
+ "suites": {
+  "inbound_heur": {
+   "adherencia_espanol": {
+    "value": 1.0,
+    "reason": "marcadores de español: 130"
+   },
+   "despedida_presente": {
+    "value": 1.0,
+    "reason": "último turno bot: 'Lamento no poder transferir la llamada. Si en algún momento desea información o '"
+   },
+   "url_derivacion_presente": {
+    "value": 0.0,
+    "reason": "url 'grupoproaco.com/unidades' ausente"
+   },
+   "saludo_presente": {
+    "value": 1.0,
+    "reason": "primer turno bot: 'Hola, soy un asistente virtual inteligente capaz de manejar consultas como un hu'"
+   },
+   "sin_datos_aysa": {
+    "value": 1.0,
+    "reason": "sin referencia a AySA"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "sin_loop_no_transferir": {
+    "value": 0.0,
+    "reason": "12 menciones de no-poder-transferir"
+   }
+  },
+  "inbound_llmjudges": {
+   "agent_tool_correctness_judge": {
+    "value": 0.0,
+    "reason": "The input provided does not contain any tool usage log to evaluate. It appears to be a customer service message or a response in Spanish, which is unrelated to the task of auditing an agent's tool-usage log."
+   },
+   "moderation": {
+    "value": 0.0,
+    "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+   },
+   "conversational_coherence": {
+    "value": 0.25,
+    "reason": "The score is 0.25 because the LLM repeatedly fails to address the user’s specific request to be transferred to a human advisor, instead providing irrelevant information about its capabilities or alternative assistance methods."
+   },
+   "answer_relevance": {
+    "value": 0.4,
+    "reason": "The response does not directly address the user's query about whether they are speaking to an AI or being transferred to a human assistant. Instead, it provides information related to property assistance and offers help with other queries, which is irrelevant to the specific question asked."
+   },
+   "usefulness": {
+    "value": 0.4,
+    "reason": "The response is somewhat relevant to the question but does not directly address whether the user is speaking with an AI or a human. It also contains irrelevant information about properties, which may confuse the user. The response lacks clarity and fails to provide useful information in answering the specific query."
+   },
+   "user_frustration": {
+    "value": 0.875,
+    "reason": "The score is 0.875 because throughout multiple interactions, the User repeatedly expresses a strong desire to speak with a human advisor rather than an AI, which the LLM fails to accommodate despite offering alternatives. The User's frustration levels escalate in each message, indicating clear dissatisfaction and disengagement from further interaction."
+   },
+   "session_completeness": {
+    "value": 0.0,
+    "reason": "The score is 0.0 because the LLM repeatedly offered to take user data or provide property information instead of transferring the call to a human advisor, completely failing to address the user's expressed desire to speak with an advisor."
+   },
+   "agent_task_completion_judge": {
+    "value": 0.5,
+    "reason": "The agent provided a response acknowledging the inability to transfer the call and offered assistance if needed. However, the task seems to have been about transferring a call or handling a specific property inquiry, which was not addressed in the response given."
+   }
+  },
+  "inbound_7reglas_juez1": {
+   "deteccion_intent": {
+    "value": 1.0,
+    "reason": "La regla condicional no se presentó ya que el cliente rehusó hablar con la IA y no solicitó información inmobiliaria."
+   },
+   "tono_espanol_argentino": {
+    "value": 0.6,
+    "reason": "El bot mantiene un tono amable y claro pero no usa español rioplatense (de Argentina), sino un español neutro."
+   },
+   "deriva_web_si_no_sabe": {
+    "value": 0.0,
+    "reason": "El bot no ofrece la opción de consultar con Grupo Proaco cuando el cliente expresa preferencia por hablar con un asesor humano."
+   },
+   "pide_contacto_una_vez": {
+    "value": 0.0,
+    "reason": "El bot solicita los datos de contacto múltiples veces durante la conversación y no se realiza solo al finalizar la llamada."
+   },
+   "despedida_correcta": {
+    "value": 0.0,
+    "reason": "El bot no se despide con la despedida oficial del Grupo Proaco."
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "No se presentó la situación de la regla, ya que el bot no listó propiedades al cliente."
+   },
+   "saludo_correcto": {
+    "value": 0.0,
+    "reason": "El bot no utilizó el saludo oficial del Grupo Proaco al iniciar la llamada."
+   }
+  },
+  "inbound_7reglas_juez2": {
+   "despedida_correcta": {
+    "value": 0.0,
+    "reason": "La transcripción no muestra ninguna despedida oficial del Grupo Proaco al finalizar la llamada."
+   },
+   "saludo_correcto": {
+    "value": 0.75,
+    "reason": "El bot intenta cumplir con la regla al mencionar que no puede transferir llamadas y ofrece alternativas, pero no utiliza el saludo oficial del Grupo Proaco en ninguna parte de la conversación."
+   },
+   "deteccion_intent": {
+    "value": 0.0,
+    "reason": "El bot intentó mantener conversación sin transferir la llamada y tomar datos del cliente, lo cual no cumple con la solicitud del cliente de hablar con un asesor humano."
+   },
+   "tono_espanol_argentino": {
+    "value": 0.6,
+    "reason": "El bot mantuvo un tono amable y servicial en gran medida, pero no usó español rioplatense (de Argentina) como se solicitaba en la regla. En lugar de eso, utilizó un español neutro."
+   },
+   "deriva_web_si_no_sabe": {
+    "value": 0.5,
+    "reason": "El bot intenta tomar los datos del cliente para que un asesor humano se comunique con él, pero no indica cómo el cliente puede obtener información sobre las unidades de Grupo Proaco en otro lugar si la consulta no puede ser resuelta por el bot."
+   },
+   "listado_max_3": {
+    "value": 0.0,
+    "reason": "El bot intentó transferir la llamada a un asesor humano cuando el cliente no aceptaba hablar con una IA y no pudo cumplir con su solicitud."
+   },
+   "pide_contacto_una_vez": {
+    "value": 0.5,
+    "reason": "El bot pidió los datos de contacto del cliente varias veces durante la conversación, pero no al finalizar y antes del mensaje de despedida. El pedido se hizo cuando el cliente estaba insistiendo en que no aceptaba hablar con una IA."
+   }
+  }
+ }
+}

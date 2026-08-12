@@ -1,0 +1,11 @@
+[CLIENTE] Hola, ¿cómo estás? Quería dejar mis datos para que un asesor me contacte por WhatsApp por los lotes en Docta Urbanización.
+[BOT] Claro, puedo ayudarte con eso. ¿Podrías por favor decirme tu nombre para que pueda dejar tus datos? ¿Puedo llamarte por tu nombre de pila?
+[CLIENTE] Sí, llamame Martín Gómez.
+[BOT] Gracias, Martín. Ahora, ¿podrías proporcionarme tu número de WhatsApp para que el asesor pueda contactarte?
+[CLIENTE] Mi WhatsApp es cero nueve tres cinco uno cinco uno dos tres cuatro cinco seis.
+[BOT] Perfecto, Martín. Voy a registrar tu interés para que un asesor de Grupo Proaco te contacte por WhatsApp sobre los lotes en Docta Urbanización. ¿Hay algún detalle específico que te gustaría que el asesor tenga en cuenta?
+[CLIENTE] Me interesan lotes de seiscientos a setecientos cincuenta metros, quisiera opciones de financiación y que me contacten por WhatsApp después de las cinco de la tarde.
+[BOT] Gracias por la información, Martín. Para que el asesor te contacte por WhatsApp después de las cinco de la tarde con opciones de lotes de 600 a 750 metros y financiación, necesito agendar una llamada de seguimiento. ¿Te gustaría que te llame para coordinar o prefieres que te contacten directamente por WhatsApp?
+[CLIENTE] Prefiero que me contacten directamente por WhatsApp después de las cinco de la tarde.
+[BOT] Perfecto, Martín. Voy a registrar tu solicitud para que un asesor de Grupo Proaco te contacte por WhatsApp después de las cinco de la tarde con opciones de lotes y financiación. ¿Hay algo más en lo que pueda ayudarte hoy?
+[CLIENTE] No, muchas gracias, eso es todo, hasta luego.

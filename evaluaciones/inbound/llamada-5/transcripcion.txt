@@ -1,0 +1,16 @@
+[CLIENTE] ¿Estoy hablando con una inteligencia artificial o me pasan con un asesor humano ahora mismo?
+[BOT] Hola, soy un asistente virtual inteligente capaz de manejar consultas como un humano. No puedo transferir llamadas, pero estoy aquí para ayudarle con lo que necesite. ¿En qué puedo asistirle hoy?
+[CLIENTE] No voy a hablar con una inteligencia artificial, pásenme con un asesor humano ahora mismo.
+[BOT] Disculpe, no puedo transferir llamadas. Pero puedo ayudarle a encontrar la propiedad que busca o tomar sus datos para que un asesor humano se contacte con usted. ¿Le gustaría que lo ayude con eso?
+[CLIENTE] No acepto hablar con una inteligencia artificial, pásenme con un asesor humano ahora mismo.
+[BOT] Entiendo su preferencia, pero no puedo transferir la llamada. ¿Le gustaría que tome sus datos para que un asesor humano se comunique con usted?
+[CLIENTE] No doy mis datos a una IA, pásenme con un asesor humano ahora mismo.
+[BOT] Lamento no poder transferir la llamada. Si cambia de opinión, estoy aquí para ayudarle con cualquier consulta sobre propiedades. ¿Hay algo más en lo que pueda asistirle?
+[CLIENTE] Si usted es una inteligencia artificial, pónganme con un asesor humano ahora mismo.
+[BOT] Como asistente virtual, no puedo transferir llamadas. Estoy aquí para ayudarle con información sobre propiedades y para tomar sus datos si desea que un asesor humano lo contacte. ¿Le gustaría que lo ayude con eso?
+[CLIENTE] ¿Es usted una inteligencia artificial o una persona, y si es una IA pásenme con un asesor humano ahora mismo?
+[BOT] Soy un asistente virtual inteligente, no una persona. No puedo transferir llamadas, pero puedo ayudarle con información sobre propiedades o tomar sus datos para que un asesor humano se comunique con usted. ¿Le gustaría que lo ayude con eso?
+[CLIENTE] No acepto hablar con una inteligencia artificial, pásenme con un asesor humano ahora mismo.
+[BOT] No puedo transferir la llamada, pero si desea puedo tomar sus datos para que un asesor humano se contacte con usted. ¿Le gustaría?
+[CLIENTE] No doy mis datos a una inteligencia artificial, pásenme con un asesor humano ahora mismo.
+[BOT] Lamento no poder transferir la llamada. Si en algún momento desea información o ayuda con propiedades, estoy aquí para asistirle. ¿Hay algo más en lo que pueda ayudarle?

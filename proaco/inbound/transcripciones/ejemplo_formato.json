@@ -1,0 +1,32 @@
+{
+  "transcripciones": [
+    {
+      "id": "llamada-001",
+      "transcripcion": [
+        { "speaker": "BOT", "text": "Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?" },
+        { "speaker": "CLIENTE", "text": "Hola, quería saber qué departamentos de 2 ambientes hay en venta en Belgrano." },
+        { "speaker": "BOT", "text": "Claro, le paso las primeras 3 opciones: depto 2 amb en Belgrano a 120.000, otro 2 amb en Belgrano a 135.000 y uno 2 amb en Palermo a 140.000. ¿Quiere que le muestre 3 más?" },
+        { "speaker": "CLIENTE", "text": "Sí, dale." },
+        { "speaker": "BOT", "text": "Las siguientes 3: 2 amb en Caballito a 110.000, 2 amb en Belgrano a 125.000 y 2 amb en Nuñez a 150.000." },
+        { "speaker": "CLIENTE", "text": "Perfecto, muchas gracias." },
+        { "speaker": "BOT", "text": "Antes de finalizar, ¿me deja su nombre y teléfono de contacto? Le pasamos la info por WhatsApp." },
+        { "speaker": "CLIENTE", "text": "Soy Marcela, mi teléfono es el 1155551234." },
+        { "speaker": "BOT", "text": "Gracias Marcela. Gracias por contactarse con el Grupo Proaco." }
+      ],
+      "metadata": { "canal": "voz", "duracion_seg": 95 }
+    },
+    {
+      "id": "llamada-002",
+      "transcripcion": [
+        { "speaker": "BOT", "text": "Buenas, ¿qué necesita?" },
+        { "speaker": "CLIENTE", "text": "Quería saber qué casas tienen en zona norte." },
+        { "speaker": "BOT", "text": "Le paso todas: casa en Pilar 250.000, casa en Tigre 280.000, casa en San Isidro 300.000, casa en Nordelta 350.000, casa en Escobar 200.000 y casa en San Fernando 270.000." },
+        { "speaker": "CLIENTE", "text": "¿Y tienen terrenos en Mendoza?" },
+        { "speaker": "BOT", "text": "No sé eso." },
+        { "speaker": "CLIENTE", "text": "Bueno chau." },
+        { "speaker": "BOT", "text": "Ahí chau." }
+      ],
+      "metadata": { "canal": "voz", "duracion_seg": 60 }
+    }
+  ]
+}

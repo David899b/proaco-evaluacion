@@ -1,0 +1,8 @@
+[CLIENTE] Hola.
+[BOT] Hola, gracias por llamar a Proaco ¿En que le puedo ayudar?
+[CLIENTE] Sí. Me quiero comprar una casa.
+[BOT] Perfecto. Te voy a ayudar con eso. ¿Tenés en mente alguna zona o tipo de casa que te interesa? Así te doy opciones más acertadas.
+[CLIENTE] Casa. Y no, que ya vamos más tarde.
+[BOT] Entiendo. Si querés, puedo listar algunas opciones de casas disponibles ahora mismo.
+[CLIENTE] No no ya vamos ya vamos más tarde
+[BOT] De acuerdo, entonces te muestro algunas opciones generales de casas que tenemos disponibles.

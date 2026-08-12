@@ -1,0 +1,34 @@
+[CLIENTE] Hola. Hola. ¿Qué qué se preocupe?
+[BOT] Hola, gracias por llamar a Proaco ¿En que le puedo ayudar? Disculpe, no le entendí bien. ¿Podría repetir qué necesita? Estoy aquí para ayudarle.
+[CLIENTE] Sí. Estaba estoy interesado en ver propiedades
+[BOT] Perfecto. ¿Qué tipo de propiedad está buscando? Por ejemplo, departamento, casa, terreno, o algún proyecto en particular.
+[CLIENTE] Quiero un hangar.
+[BOT] Entiendo, vamos a revisar las opciones. Dame un momento para obtener más información.
+[CLIENTE] proaco_list_intent
+[CLIENTE] proaco_list_intent
+[BOT] Le comento que no tenemos un tipo de unidad identificado como "hangar". Las opciones que manejamos son: lotes, departamentos, cocheras, oficinas, dúplex, casas, locales y parking. ¿Podría decirme cuál de estas opciones se acerca más a lo que está buscando?
+[CLIENTE] Emprendimiento que tenés
+[BOT] Disculpe, no escuché bien. ¿Podría repetir si está buscando un emprendimiento o algún tipo de unidad en particular, como departamentos, lotes, oficinas?
+[CLIENTE] Emprendimientos, ¿Es correcto si tenés?
+[BOT] Entendido, me pregunta si tenemos emprendimientos. Claro, contamos con propiedades que forman parte de emprendimientos. Para poder ayudarlo mejor, ¿qué tipo de unidad dentro de esos emprendimientos le interesa? Por ejemplo, ¿departamentos, lotes, casas, oficinas?
+[CLIENTE] Permítame, por favor.
+[BOT] Por supuesto, me quedo en línea. Tome su tiempo.
+[CLIENTE] Proctmas.
+[BOT] Disculpe, no logré entender bien. ¿Podría acercarse un poco más al micrófono o repetir lo que necesita, por favor? Estoy aquí para ayudarlo.
+[CLIENTE] Sí.
+[BOT] Perfecto. Si le interesa un emprendimiento, ¿podría confirmarme qué tipo de unidad busca dentro de ese emprendimiento? Por ejemplo, departamentos, casas, lotes u oficinas. Así puedo brindarle más detalles.
+[CLIENTE] Departamentos.
+[BOT] Un momento por favor.
+[CLIENTE] ¿Departamentos?
+[BOT] Sí, estoy procesando la información para buscar departamentos. En unos instantes le daré más detalles. Agradezco su paciencia.
+[BOT] Sigo buscando las opciones de departamentos para usted. En breve le daré resultados.
+[CLIENTE] proaco_resolve_intent
+[CLIENTE] proaco_resolve_intent
+[BOT] Gracias por su paciencia. Lamento la demora. Hubo un inconveniente al intentar buscar los departamentos.
+[CLIENTE] No encontré
+[BOT] Si le parece bien, podemos intentar nuevamente. ¿Le gustaría que revisemos juntos los departamentos disponibles ahora? Entiendo.
+[CLIENTE] No, dejáselo a la otra vez. Muchas gracias.
+[BOT] Si no encontró lo que buscaba, le recomiendo consultar directamente con Grupo Proaco en su sitio web: https://grupoproaco.com/unidades. Ahí podrá ver todas las propiedades disponibles. Antes de finalizar, ¿podría brindarme sus datos de contacto, como nombre y apellido, para que podamos ayudarlo mejor en el futuro? De acuerdo, no se preocupe.
+[CLIENTE] Sí, vino.
+[BOT] Si necesita algo más en el futuro, estamos aquí para ayudar. Muchas gracias por su tiempo. Que tenga un buen día.
+[BOT] Gracias por su paciencia.

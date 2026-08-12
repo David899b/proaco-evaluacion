@@ -1,0 +1,502 @@
+[
+  {
+    "id": "CA18a4abd08ab9818405d44a7e4c1b910f",
+    "transcripcion": [
+      {
+        "speaker": "CLIENTE",
+        "text": "Hello?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Hola, gracias por llamar a Proaco ¿En que le puedo ayudar?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Hola. Quiso saber sobre una casa con dos dormitorios"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "y dos baños?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Perfecto, vamos a ver las opciones disponibles para una casa con dos dormitorios y dos baños. Un momento mientras lo reviso."
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Escuchen."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Disculpame, no te escuché bien. ¿Podrías repetir eso, por favor? Quizás hablando un poco más cerca del micrófono."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "No mejor, hay más"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Yo no quiero hablar más contigo."
+      }
+    ],
+    "metadata": {
+      "proyecto": "proaco",
+      "flow": "outbound",
+      "contacto": "Charli Garcia",
+      "outcome": "do-not-call",
+      "duration": 49,
+      "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+      "campaign": "Grupo Proaco",
+      "externalId": "CA18a4abd08ab9818405d44a7e4c1b910f",
+      "customFields": {
+        "direccion": "",
+        "user_name": "",
+        "user_email": null,
+        "nro_reclamo": "",
+        "user_interest": "Casa con 2 dormitorios y 2 baños (consulta de opciones disponibles)",
+        "motivo_llamado": "Consulta por opciones de una casa con 2 dormitorios y 2 baños",
+        "user_phone_number": ""
+      }
+    }
+  },
+  {
+    "id": "CA1cc4b3a43b1c81376115825d86c44622",
+    "transcripcion": [
+      {
+        "speaker": "CLIENTE",
+        "text": "I'm not"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Hola, gracias por llamar a Proaco ¿En que le puedo ayudar?"
+      }
+    ],
+    "metadata": {
+      "proyecto": "proaco",
+      "flow": "outbound",
+      "contacto": "Rafaela Carra",
+      "outcome": "too-short",
+      "duration": 8,
+      "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+      "campaign": "Grupo Proaco",
+      "externalId": "CA1cc4b3a43b1c81376115825d86c44622",
+      "customFields": null
+    }
+  },
+  {
+    "id": "CA19ee8401e82785291c1d6e2bceb6d77d",
+    "transcripcion": [
+      {
+        "speaker": "CLIENTE",
+        "text": "Hola. Hola. ¿Qué qué se preocupe?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Hola, gracias por llamar a Proaco ¿En que le puedo ayudar? Disculpe, no le entendí bien. ¿Podría repetir qué necesita? Estoy aquí para ayudarle."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Sí. Estaba estoy interesado en ver propiedades"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Perfecto. ¿Qué tipo de propiedad está buscando? Por ejemplo, departamento, casa, terreno, o algún proyecto en particular."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Quiero un hangar."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Entiendo, vamos a revisar las opciones. Dame un momento para obtener más información."
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_list_intent"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_list_intent"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Le comento que no tenemos un tipo de unidad identificado como \"hangar\". Las opciones que manejamos son: lotes, departamentos, cocheras, oficinas, dúplex, casas, locales y parking. ¿Podría decirme cuál de estas opciones se acerca más a lo que está buscando?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Emprendimiento que tenés"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Disculpe, no escuché bien. ¿Podría repetir si está buscando un emprendimiento o algún tipo de unidad en particular, como departamentos, lotes, oficinas?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Emprendimientos, ¿Es correcto si tenés?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Entendido, me pregunta si tenemos emprendimientos. Claro, contamos con propiedades que forman parte de emprendimientos. Para poder ayudarlo mejor, ¿qué tipo de unidad dentro de esos emprendimientos le interesa? Por ejemplo, ¿departamentos, lotes, casas, oficinas?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Permítame, por favor."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Por supuesto, me quedo en línea. Tome su tiempo."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Proctmas."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Disculpe, no logré entender bien. ¿Podría acercarse un poco más al micrófono o repetir lo que necesita, por favor? Estoy aquí para ayudarlo."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Sí."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Perfecto. Si le interesa un emprendimiento, ¿podría confirmarme qué tipo de unidad busca dentro de ese emprendimiento? Por ejemplo, departamentos, casas, lotes u oficinas. Así puedo brindarle más detalles."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Departamentos."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Un momento por favor."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "¿Departamentos?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sí, estoy procesando la información para buscar departamentos. En unos instantes le daré más detalles. Agradezco su paciencia."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sigo buscando las opciones de departamentos para usted. En breve le daré resultados."
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Gracias por su paciencia. Lamento la demora. Hubo un inconveniente al intentar buscar los departamentos."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "No encontré"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Si le parece bien, podemos intentar nuevamente. ¿Le gustaría que revisemos juntos los departamentos disponibles ahora? Entiendo."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "No, dejáselo a la otra vez. Muchas gracias."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Si no encontró lo que buscaba, le recomiendo consultar directamente con Grupo Proaco en su sitio web: https://grupoproaco.com/unidades. Ahí podrá ver todas las propiedades disponibles. Antes de finalizar, ¿podría brindarme sus datos de contacto, como nombre y apellido, para que podamos ayudarlo mejor en el futuro? De acuerdo, no se preocupe."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Sí, vino."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Si necesita algo más en el futuro, estamos aquí para ayudar. Muchas gracias por su tiempo. Que tenga un buen día."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Gracias por su paciencia."
+      }
+    ],
+    "metadata": {
+      "proyecto": "proaco",
+      "flow": "outbound",
+      "contacto": "Marcelo Oviedo",
+      "outcome": "other",
+      "duration": 204,
+      "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+      "campaign": "Grupo Proaco",
+      "externalId": "CA19ee8401e82785291c1d6e2bceb6d77d",
+      "customFields": {
+        "direccion": "",
+        "user_name": "",
+        "user_email": null,
+        "nro_reclamo": "",
+        "user_interest": "Departamentos en emprendimientos (consulta inicial por hangar)",
+        "motivo_llamado": "Consulta e interés por propiedades, específicamente departamentos dentro de emprendimientos",
+        "user_phone_number": ""
+      }
+    }
+  },
+  {
+    "id": "CAc57514332ee76b2150ec583f8a86735b",
+    "transcripcion": [
+      {
+        "speaker": "CLIENTE",
+        "text": "Hola."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Hola, gracias por llamar a Proaco ¿En que le puedo ayudar?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Sí. Me quiero comprar una casa."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Perfecto. Te voy a ayudar con eso. ¿Tenés en mente alguna zona o tipo de casa que te interesa? Así te doy opciones más acertadas."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Casa. Y no, que ya vamos más tarde."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Entiendo. Si querés, puedo listar algunas opciones de casas disponibles ahora mismo."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "No no ya vamos ya vamos más tarde"
+      },
+      {
+        "speaker": "BOT",
+        "text": "De acuerdo, entonces te muestro algunas opciones generales de casas que tenemos disponibles."
+      }
+    ],
+    "metadata": {
+      "proyecto": "proaco",
+      "flow": "outbound",
+      "contacto": "Rafaela Carra",
+      "outcome": "other",
+      "duration": 41,
+      "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+      "campaign": "Grupo Proaco",
+      "externalId": "CAc57514332ee76b2150ec583f8a86735b",
+      "customFields": {
+        "direccion": "",
+        "user_name": "",
+        "user_email": null,
+        "nro_reclamo": "",
+        "user_interest": "El cliente indicó interés en comprar una casa. No se definió zona ni tipo específico; se adelantó que verían opciones más tarde.",
+        "motivo_llamado": "Consulta para compra de una casa (posponer opciones)",
+        "user_phone_number": ""
+      }
+    }
+  },
+  {
+    "id": "CAd7af8dc9b388be471478d07f0b379b7d",
+    "transcripcion": [
+      {
+        "speaker": "BOT",
+        "text": "Hola, gracias por llamar a Proaco ¿En que le puedo ayudar?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Estoy buscando un departamento"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "con tres habitaciones."
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_list_intent"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_list_intent"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Hola. Estoy en un"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Hola, ya estoy buscando departamentos con tres habitaciones para vos. Dame un momento y te voy contando si tenemos opciones disponibles. Encontré varias opciones interesantes. Te leo las primeras tres: Primero: Proyecto “Departamentos con cochera - 2024”."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Piso 00, Departamento 91. Tiene 3 dormitorios, 2 baños, 134 metros cuadrados. Entrega inmediata en 2024 y su precio es 163.900 dólares. Segundo: Proyecto “Departamentos Torre 02 - 2026”. Piso 06, Departamento 2. Cuenta con 3 dormitorios, 3 baños, 178,35 metros cuadrados. Entrega en 2026, y el precio es 254.900 dólares. Tercero: Proyecto “Departamentos Torre 05 - 2024”. Piso 002, Departamento B. Tiene 3 dormitorios, 2 baños, 142,42 metros cuadrados. Entrega inmediata en 2024 y el precio es 259.000 dólares. ¿Alguno de estos te interesa o querés saber más detalles?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "un"
+      },
+      {
+        "speaker": "BOT",
+        "text": "¿Te gustaría que te cuente más detalles sobre alguna de estas opciones o prefieres que te lea más departamentos disponibles?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Quiero ver más departamentos disponibles."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Quiero más departamentos disponibles."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sigo sin escucharte bien."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Quiero más departamentos disponibles."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Por favor, podrías repetir lo que dijiste."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Más departamentos disponibles."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Estoy acá para ayudarte."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Perfecto."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Te leo tres más:"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Cuarto:"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Proyecto “Departamentos Torre 05 - 2023”, Piso 006, Departamento E. Tiene 3 dormitorios, 2 baños, 131,79 metros cuadrados. Entrega inmediata en 2023. El precio es 259.000 dólares. Quinto: Proyecto “Departamentos Torre 03 - 2027”, Piso 06, Departamento 06. Tiene 3 dormitorios, 3 baños, 178,28 metros cuadrados. Posesión en 2027, con financiación hasta 36 cuotas. Precio: 300.258 dólares. Sexto: Proyecto “Departamentos Torre 03 - 2027”, Piso 07, Departamento 05. También con 3 dormitorios, 3 baños, 178,28 metros cuadrados. Posesión 2027, con financiación hasta 36 cuotas. Precio: 312.472 dólares. ¿Alguno de estos te interesa o querés que te cuente más? Esas eran todas las opciones de departamentos con tres habitaciones que encontré. Ahora, ¿alguno de todos los que mencioné te interesó en particular para que avancemos con más detalles? Si querés, puedo ayudarte a avanzar con alguno de los departamentos que mencionamos. ¿Te interesa alguno en especial o hay algo más que quieras consultar? Disculpame, no se escuchó bien. ¿Podrías repetir cuál de los departamentos te interesó o qué otra consulta tenés? No te escuché claramente. ¿Podrías repetir cuál departamento te interesa o si necesitás más información? Disculpá, no te escuché bien. ¿Podrías repetir cuál departamento te interesa o si querés más detalles? No te escuché bien. ¿Podrías repetir cuál departamento te interesó o en qué más puedo ayudarte?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Me interesa el seis."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Perfecto, el departamento del proyecto “Departamentos Torre 03 - 2027”, Piso 07, Departamento 05, con 3 dormitorios, 3 baños, 178,28 metros cuadrados y un precio de 312.472 dólares. Ahora necesito tus datos de contacto para avanzar. ¿Me decís tu nombre por favor?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Mi nombre es"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Silvia Pérez."
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "proaco_resolve_intent"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Perfecto, Silvia. Ya hemos registrado tu solicitud. Un agente se pondrá en contacto con vos pronto. ¿Hay algo más en lo que te pueda ayudar?"
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "No."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Está todo perfecto. Muchas gracias."
+      },
+      {
+        "speaker": "CLIENTE",
+        "text": "Gracias."
+      },
+      {
+        "speaker": "BOT",
+        "text": "La llamada ya se completó exitosamente. Si necesitás algo más en el futuro, no dudes en volver a contactarnos. ¡Que tengas un excelente día!"
+      }
+    ],
+    "metadata": {
+      "proyecto": "proaco",
+      "flow": "outbound",
+      "contacto": "Valentina Pegrezt",
+      "outcome": "other",
+      "duration": 320,
+      "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+      "campaign": "Grupo Proaco",
+      "externalId": "CAd7af8dc9b388be471478d07f0b379b7d",
+      "customFields": {
+        "direccion": "",
+        "user_name": "Silvia Pérez",
+        "user_email": null,
+        "nro_reclamo": "",
+        "user_interest": "Departamentos (3 dormitorios): 1) “Departamentos con cochera - 2024”, Piso 00, Depto. 91 (134 m2, 163.900 USD); 2) “Departamentos Torre 02 - 2026”, Piso 06, Depto. 2 (178,35 m2, 254.900 USD); 3) “Departamentos Torre 05 - 2024”, Piso 002, Depto. B (142,42 m2, 259.000 USD); 4) “Departamentos Torre 05 - 2023”, Piso 006, Depto. E (131,79 m2, 259.000 USD); 5) “Departamentos Torre 03 - 2027”, Piso 06, Depto. 06 (178,28 m2, 300.258 USD); 6) **“Departamentos Torre 03 - 2027”, Piso 07, Depto. 05** (178,28 m2, 312.472 USD)",
+        "motivo_llamado": "Consulta y búsqueda de departamentos con tres habitaciones y envío de opciones disponibles",
+        "user_phone_number": "+5491161185165"
+      }
+    }
+  },
+  {
+    "id": "CAf8fa6d0fc16e2c0ae1208556778cbd2f",
+    "transcripcion": [
+      {
+        "speaker": "BOT",
+        "text": "Hola, ¿qué tal? Soy parte del equipo de Grupo Proaco. ¿En qué te puedo ayudar hoy?"
+      },
+      {
+        "speaker": "TOOL",
+        "text": "hangup"
+      }
+    ],
+    "metadata": {
+      "proyecto": "proaco",
+      "flow": "outbound",
+      "contacto": "Tipito Enojado",
+      "outcome": "too-short",
+      "duration": 25,
+      "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+      "campaign": "Grupo Proaco",
+      "externalId": "CAf8fa6d0fc16e2c0ae1208556778cbd2f",
+      "customFields": {
+        "direccion": "",
+        "user_name": "",
+        "user_email": null,
+        "nro_reclamo": "",
+        "user_interest": "",
+        "motivo_llamado": "Consultas generales",
+        "user_phone_number": ""
+      }
+    }
+  }
+]

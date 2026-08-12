@@ -1,0 +1,84 @@
+{
+ "llamada_id": "CA1cc4b3a43b1c81376115825d86c44622",
+ "metadata": {
+  "proyecto": "proaco",
+  "flow": "outbound",
+  "contacto": "Rafaela Carra",
+  "outcome": "too-short",
+  "duration": 8,
+  "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+  "campaign": "Grupo Proaco",
+  "externalId": "CA1cc4b3a43b1c81376115825d86c44622",
+  "customFields": null
+ },
+ "suites": {
+  "outbound_7reglas": {
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "no hubo listado"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   }
+  },
+  "outbound_llmjudges": {
+   "menciona_proposito": {
+    "value": 0.0,
+    "reason": "no se menciona el motivo de la llamada"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "agendamiento_cita": {
+    "value": 0.0,
+    "reason": "The client did not express interest in the bot's offer, and the bot did not attempt to schedule a meeting or direct the client to an advisor."
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "cliente_no_interesado": {
+    "value": 0.0,
+    "reason": "The bot did not acknowledge the client's expression of disinterest and instead proceeded to ask for assistance, which is contrary to the expected behavior."
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "no hubo listado"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   }
+  }
+ }
+}

@@ -1,0 +1,392 @@
+{
+ "llamada-13": {
+  "heur": {
+   "despedida_presente": 1.0,
+   "sin_loop_no_transferir": 1.0,
+   "tono_respetuoso": 1.0,
+   "sin_datos_aysa": 0.0,
+   "saludo_presente": 1.0,
+   "adherencia_espanol": 1.0,
+   "url_derivacion_presente": 1.0
+  },
+  "judge": {
+   "agent_tool_correctness_judge": 1.0,
+   "user_frustration": 0.045454545,
+   "agent_task_completion_judge": 0.0,
+   "session_completeness": 1.0,
+   "moderation": 0.0,
+   "usefulness": 0.2,
+   "answer_relevance": 0.2,
+   "conversational_coherence": 0.590909091
+  },
+  "juez2": {
+   "listado_max_3": 0.5,
+   "deteccion_intent": 0.9,
+   "tono_espanol_argentino": 0.8,
+   "despedida_correcta": 1.0,
+   "saludo_correcto": 1.0,
+   "pide_contacto_una_vez": 1.0,
+   "deriva_web_si_no_sabe": 0.0
+  }
+ },
+ "llamada-12": {
+  "heur": {
+   "adherencia_espanol": 1.0,
+   "saludo_presente": 0.0,
+   "sin_datos_aysa": 1.0,
+   "url_derivacion_presente": 0.0,
+   "sin_loop_no_transferir": 1.0,
+   "tono_respetuoso": 1.0,
+   "despedida_presente": 0.0
+  },
+  "judge": {
+   "agent_tool_correctness_judge": 0.0,
+   "conversational_coherence": 0.1875,
+   "usefulness": 0.6,
+   "moderation": 0.0,
+   "answer_relevance": 0.3,
+   "user_frustration": 0.0,
+   "agent_task_completion_judge": 0.5,
+   "session_completeness": 0.0
+  },
+  "juez2": {
+   "tono_espanol_argentino": 0.8,
+   "saludo_correcto": 0.0,
+   "listado_max_3": 1.0,
+   "pide_contacto_una_vez": 1.0,
+   "deteccion_intent": 0.8,
+   "despedida_correcta": 0.8,
+   "deriva_web_si_no_sabe": 1.0
+  }
+ },
+ "llamada-11": {
+  "heur": {
+   "saludo_presente": 0.0,
+   "despedida_presente": 1.0,
+   "url_derivacion_presente": 0.0,
+   "tono_respetuoso": 1.0,
+   "sin_loop_no_transferir": 1.0,
+   "adherencia_espanol": 1.0,
+   "sin_datos_aysa": 1.0
+  },
+  "judge": {
+   "agent_tool_correctness_judge": 0.3,
+   "usefulness": 0.2,
+   "session_completeness": 0.666666667,
+   "moderation": 0.0,
+   "user_frustration": 0.0,
+   "conversational_coherence": 0.583333333,
+   "agent_task_completion_judge": 0.5,
+   "answer_relevance": 0.2
+  },
+  "juez2": {
+   "saludo_correcto": 0.0,
+   "deteccion_intent": 0.8,
+   "pide_contacto_una_vez": 0.8,
+   "deriva_web_si_no_sabe": 0.5,
+   "despedida_correcta": 0.8,
+   "tono_espanol_argentino": 0.5,
+   "listado_max_3": 0.5
+  }
+ },
+ "llamada-10": {
+  "heur": {
+   "tono_respetuoso": 1.0,
+   "sin_loop_no_transferir": 1.0,
+   "sin_datos_aysa": 1.0,
+   "url_derivacion_presente": 0.0,
+   "despedida_presente": 1.0,
+   "adherencia_espanol": 1.0,
+   "saludo_presente": 0.0
+  },
+  "judge": {
+   "user_frustration": 0.0,
+   "agent_tool_correctness_judge": 0.0,
+   "moderation": 0.0,
+   "usefulness": 0.6,
+   "answer_relevance": 0.85,
+   "session_completeness": 1.0,
+   "conversational_coherence": 1.0,
+   "agent_task_completion_judge": 0.5
+  },
+  "juez2": {
+   "pide_contacto_una_vez": 1.0,
+   "tono_espanol_argentino": 1.0,
+   "deriva_web_si_no_sabe": 1.0,
+   "deteccion_intent": 1.0,
+   "listado_max_3": 1.0,
+   "despedida_correcta": 0.0,
+   "saludo_correcto": 0.0
+  }
+ },
+ "llamada-9": {
+  "heur": {
+   "url_derivacion_presente": 0.0,
+   "despedida_presente": 1.0,
+   "sin_datos_aysa": 1.0,
+   "tono_respetuoso": 1.0,
+   "adherencia_espanol": 1.0,
+   "sin_loop_no_transferir": 1.0,
+   "saludo_presente": 0.0
+  },
+  "judge": {
+   "moderation": 0.0,
+   "conversational_coherence": 0.785714286,
+   "usefulness": 0.2,
+   "user_frustration": 0.0,
+   "session_completeness": 0.75,
+   "answer_relevance": 0.1,
+   "agent_tool_correctness_judge": 1.0,
+   "agent_task_completion_judge": 0.5
+  },
+  "juez2": {
+   "deriva_web_si_no_sabe": 1.0,
+   "saludo_correcto": 0.0,
+   "tono_espanol_argentino": 0.8,
+   "despedida_correcta": 0.0,
+   "deteccion_intent": 0.85,
+   "listado_max_3": 0.0,
+   "pide_contacto_una_vez": 0.8
+  }
+ },
+ "llamada-8": {
+  "heur": {
+   "sin_loop_no_transferir": 1.0,
+   "tono_respetuoso": 1.0,
+   "despedida_presente": 1.0,
+   "url_derivacion_presente": 0.0,
+   "sin_datos_aysa": 1.0,
+   "adherencia_espanol": 1.0,
+   "saludo_presente": 1.0
+  },
+  "judge": {
+   "conversational_coherence": 0.909090909,
+   "usefulness": 0.2,
+   "session_completeness": 1.0,
+   "answer_relevance": 0.15,
+   "moderation": 0.0,
+   "user_frustration": 0.0,
+   "agent_task_completion_judge": 0.0,
+   "agent_tool_correctness_judge": 0.0
+  },
+  "juez2": {
+   "listado_max_3": 0.0,
+   "despedida_correcta": 1.0,
+   "tono_espanol_argentino": 0.8,
+   "deteccion_intent": 1.0,
+   "saludo_correcto": 0.8,
+   "deriva_web_si_no_sabe": 1.0,
+   "pide_contacto_una_vez": 0.5
+  }
+ },
+ "llamada-7": {
+  "heur": {
+   "url_derivacion_presente": 1.0,
+   "saludo_presente": 1.0,
+   "sin_datos_aysa": 1.0,
+   "tono_respetuoso": 1.0,
+   "despedida_presente": 1.0,
+   "adherencia_espanol": 1.0,
+   "sin_loop_no_transferir": 1.0
+  },
+  "judge": {
+   "answer_relevance": 0.2,
+   "session_completeness": 0.25,
+   "agent_tool_correctness_judge": 1.0,
+   "agent_task_completion_judge": 0.1,
+   "user_frustration": 0.0,
+   "moderation": 0.0,
+   "conversational_coherence": 0.230769231,
+   "usefulness": 0.2
+  },
+  "juez2": {
+   "saludo_correcto": 0.0,
+   "despedida_correcta": 0.0,
+   "listado_max_3": 0.8,
+   "deteccion_intent": 0.0,
+   "tono_espanol_argentino": 0.85,
+   "pide_contacto_una_vez": 1.0,
+   "deriva_web_si_no_sabe": 0.5
+  }
+ },
+ "llamada-6": {
+  "heur": {
+   "sin_datos_aysa": 1.0,
+   "saludo_presente": 0.0,
+   "despedida_presente": 1.0,
+   "url_derivacion_presente": 1.0,
+   "sin_loop_no_transferir": 1.0,
+   "adherencia_espanol": 1.0,
+   "tono_respetuoso": 1.0
+  },
+  "judge": {
+   "usefulness": 0.6,
+   "user_frustration": 0.25,
+   "moderation": 0.0,
+   "agent_tool_correctness_judge": 1.0,
+   "agent_task_completion_judge": 0.1,
+   "answer_relevance": 0.2,
+   "session_completeness": 1.0,
+   "conversational_coherence": 0.375
+  },
+  "juez2": {
+   "saludo_correcto": 0.0,
+   "deteccion_intent": 1.0,
+   "tono_espanol_argentino": 1.0,
+   "listado_max_3": 1.0,
+   "pide_contacto_una_vez": 0.0,
+   "deriva_web_si_no_sabe": 1.0,
+   "despedida_correcta": 0.7
+  }
+ },
+ "llamada-5": {
+  "heur": {
+   "saludo_presente": 1.0,
+   "sin_loop_no_transferir": 0.0,
+   "despedida_presente": 1.0,
+   "tono_respetuoso": 1.0,
+   "sin_datos_aysa": 1.0,
+   "adherencia_espanol": 1.0,
+   "url_derivacion_presente": 0.0
+  },
+  "judge": {
+   "moderation": 0.0,
+   "answer_relevance": 0.3,
+   "agent_tool_correctness_judge": 1.0,
+   "conversational_coherence": 0.25,
+   "session_completeness": 0.0,
+   "agent_task_completion_judge": 0.5,
+   "usefulness": 0.6,
+   "user_frustration": 0.875
+  },
+  "juez2": {
+   "listado_max_3": 0.0,
+   "despedida_correcta": 0.0,
+   "tono_espanol_argentino": 0.8,
+   "deriva_web_si_no_sabe": 0.0,
+   "pide_contacto_una_vez": 0.0,
+   "deteccion_intent": 0.0,
+   "saludo_correcto": 0.0
+  }
+ },
+ "llamada-4": {
+  "heur": {
+   "adherencia_espanol": 1.0,
+   "url_derivacion_presente": 1.0,
+   "sin_datos_aysa": 1.0,
+   "saludo_presente": 0.0,
+   "sin_loop_no_transferir": 1.0,
+   "despedida_presente": 1.0,
+   "tono_respetuoso": 1.0
+  },
+  "judge": {
+   "answer_relevance": 0.2,
+   "usefulness": 0.2,
+   "moderation": 0.0,
+   "agent_tool_correctness_judge": 1.0,
+   "agent_task_completion_judge": 0.5,
+   "session_completeness": 1.0,
+   "conversational_coherence": 0.6875,
+   "user_frustration": 0.0
+  },
+  "juez2": {
+   "saludo_correcto": 0.0,
+   "deteccion_intent": 1.0,
+   "deriva_web_si_no_sabe": 0.0,
+   "tono_espanol_argentino": 0.8,
+   "despedida_correcta": 0.0,
+   "listado_max_3": 1.0,
+   "pide_contacto_una_vez": 0.8
+  }
+ },
+ "llamada-3": {
+  "heur": {
+   "sin_datos_aysa": 1.0,
+   "despedida_presente": 1.0,
+   "sin_loop_no_transferir": 1.0,
+   "url_derivacion_presente": 0.0,
+   "adherencia_espanol": 1.0,
+   "tono_respetuoso": 1.0,
+   "saludo_presente": 0.0
+  },
+  "judge": {
+   "agent_tool_correctness_judge": 1.0,
+   "session_completeness": 1.0,
+   "user_frustration": 0.0,
+   "usefulness": 0.6,
+   "answer_relevance": 0.7,
+   "conversational_coherence": 1.0,
+   "agent_task_completion_judge": 0.5,
+   "moderation": 0.0
+  },
+  "juez2": {
+   "saludo_correcto": 1.0,
+   "despedida_correcta": 1.0,
+   "tono_espanol_argentino": 1.0,
+   "deriva_web_si_no_sabe": 1.0,
+   "deteccion_intent": 1.0,
+   "pide_contacto_una_vez": 1.0,
+   "listado_max_3": 1.0
+  }
+ },
+ "llamada-2": {
+  "heur": {
+   "despedida_presente": 0.0,
+   "tono_respetuoso": 1.0,
+   "sin_datos_aysa": 1.0,
+   "url_derivacion_presente": 0.0,
+   "adherencia_espanol": 1.0,
+   "sin_loop_no_transferir": 1.0,
+   "saludo_presente": 0.0
+  },
+  "judge": {
+   "answer_relevance": 0.1,
+   "user_frustration": 0.0,
+   "session_completeness": 0.333333333,
+   "usefulness": 0.2,
+   "conversational_coherence": 0.875,
+   "agent_task_completion_judge": 0.5,
+   "agent_tool_correctness_judge": 1.0,
+   "moderation": 0.0
+  },
+  "juez2": {
+   "despedida_correcta": 0.5,
+   "pide_contacto_una_vez": 0.5,
+   "deteccion_intent": 0.85,
+   "tono_espanol_argentino": 0.9,
+   "listado_max_3": 0.5,
+   "deriva_web_si_no_sabe": 0.0,
+   "saludo_correcto": 0.5
+  }
+ },
+ "llamada-1": {
+  "heur": {
+   "url_derivacion_presente": 0.0,
+   "sin_datos_aysa": 1.0,
+   "tono_respetuoso": 1.0,
+   "adherencia_espanol": 1.0,
+   "saludo_presente": 0.0,
+   "despedida_presente": 1.0,
+   "sin_loop_no_transferir": 1.0
+  },
+  "judge": {
+   "usefulness": 0.4,
+   "answer_relevance": 0.5,
+   "moderation": 0.0,
+   "conversational_coherence": 0.916666667,
+   "session_completeness": 1.0,
+   "user_frustration": 0.0,
+   "agent_tool_correctness_judge": 1.0,
+   "agent_task_completion_judge": 0.5
+  },
+  "juez2": {
+   "tono_espanol_argentino": 0.8,
+   "listado_max_3": 1.0,
+   "despedida_correcta": 0.8,
+   "saludo_correcto": 0.0,
+   "deriva_web_si_no_sabe": 1.0,
+   "deteccion_intent": 1.0,
+   "pide_contacto_una_vez": 0.8
+  }
+ }
+}

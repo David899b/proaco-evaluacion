@@ -1,0 +1,11 @@
+[CLIENTE] Hello?
+[BOT] Hola, gracias por llamar a Proaco ¿En que le puedo ayudar?
+[CLIENTE] Hola. Quiso saber sobre una casa con dos dormitorios
+[CLIENTE] y dos baños?
+[BOT] Perfecto, vamos a ver las opciones disponibles para una casa con dos dormitorios y dos baños. Un momento mientras lo reviso.
+[CLIENTE] proaco_resolve_intent
+[CLIENTE] proaco_resolve_intent
+[CLIENTE] Escuchen.
+[BOT] Disculpame, no te escuché bien. ¿Podrías repetir eso, por favor? Quizás hablando un poco más cerca del micrófono.
+[CLIENTE] No mejor, hay más
+[CLIENTE] Yo no quiero hablar más contigo.

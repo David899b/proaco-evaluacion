@@ -1,0 +1,2 @@
+[BOT] Hola, ¿qué tal? Soy parte del equipo de Grupo Proaco. ¿En qué te puedo ayudar hoy?
+[CLIENTE] hangup

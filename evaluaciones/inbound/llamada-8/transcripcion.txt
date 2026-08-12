@@ -1,0 +1,22 @@
+[CLIENTE] Hola, buenas. Mi nombre es Lucía Gómez, soy arquitecta de acá de Córdoba y quería consultar sobre el desarrollo del proyecto Pocito. ¿Me podrías dar información técnica de las unidades y cómo viene la obra?
+[BOT] Hola Lucía, gracias por comunicarte. Para ayudarte con la información técnica y el avance de obra del proyecto Pocito, ¿podrías indicarme qué detalles específicos te interesan de las unidades? Así te doy la información precisa.
+[CLIENTE] Me interesan la cantidad y tipologías de unidades con sus superficies y distribuciones, orientación y fachada, detalles constructivos y terminaciones, disponibilidad de cocheras y bauleras, planos de plantas tipo y penthouses, el avance de obra por hitos y el porcentaje de ventas, y por favor registren mi contacto para enviarme los planos y el dossier.
+[BOT] Lucía, voy a gestionar toda esa información técnica y el avance del proyecto Pocito para vos, además de registrar tu contacto para enviarte los planos y el dossier. Para poder continuar, ¿me podés confirmar tu número de teléfono o algún otro dato de contacto?
+[CLIENTE] Mi celular es cero nueve tres cinco uno dos ocho cuatro siete seis y el correo para enviarme los planos es lucia punto gomez arroba ejemplo punto com
+[BOT] Gracias, Lucía. Para coordinar mejor, ¿te gustaría que te llamemos para brindarte toda la información o preferís que te enviemos los detalles por correo? También puedo ayudarte a agendar una llamada si querés.
+[CLIENTE] Prefiero que me envíen por correo los planos y el dossier y que coordinemos una llamada breve mañana por la tarde entre las cuatro y las seis.
+[BOT] Lucía, para mañana viernes entre las 4 y las 6 de la tarde, ¿podrías indicarme una hora exacta dentro de ese rango para la llamada? Así verifico disponibilidad y te la agendo. Mientras tanto, te enviaremos por correo los planos y el dossier.
+[CLIENTE] A las cuatro y cuarto me viene perfecto.
+[BOT] Lucía, la hora de las 4 y cuarto de la tarde no está disponible para la llamada. Tengo disponibles las 4 de la tarde o las 4 y media de la tarde. ¿Cuál te viene mejor?
+[CLIENTE] Me viene mejor a las cuatro y media.
+[BOT] Lucía, para el viernes 7 de agosto a las 4 y media de la tarde, no tengo disponibilidad confirmada en este momento. ¿Querés que te ofrezca otras opciones cercanas de horario para la llamada?
+[CLIENTE] Sí, por favor, ¿me pueden agendar a las cuatro y, si no está disponible, a las cinco?
+[BOT] Lucía, para el viernes 7 de agosto tengo disponibles las 4 de la tarde y las 5 de la tarde para la llamada. ¿Confirmás la llamada a las 4 de la tarde?
+[CLIENTE] Confirmo la llamada para el viernes siete de agosto a las cuatro de la tarde.
+[BOT] Lucía, la llamada para el viernes 7 de agosto a las 4 de la tarde está agendada. Te enviaremos por correo los planos y el dossier del proyecto Pocito. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Perfecto, por favor incluyan en el correo las plantas tipo y los penthouses con superficies y distribuciones, la orientación y fachadas, los detalles constructivos y de terminaciones, la disponibilidad de cocheras y bauleras y el porcentaje de ventas actual.
+[BOT] Lucía, incluiré en el correo las plantas tipo y penthouses con superficies y distribuciones, orientación y fachadas, detalles constructivos y de terminaciones, disponibilidad de cocheras y bauleras, y el porcentaje de ventas actual. ¿Necesitás algo más?
+[CLIENTE] Sí, por favor incluyan además la memoria técnica, un presupuesto orientativo y el plan de pagos, y confirmen por correo cuando lo envíen.
+[BOT] Lucía, incluiré también la memoria técnica, presupuesto orientativo y plan de pagos en el correo, y te confirmaremos por correo cuando lo enviemos. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Perfecto, no hace falta nada más por ahora, muchas gracias y quedo a la espera de la confirmación por correo.
+[BOT] Gracias por contactarse con el Grupo Proaco.

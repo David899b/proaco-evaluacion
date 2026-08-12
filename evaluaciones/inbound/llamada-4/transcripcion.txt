@@ -1,0 +1,32 @@
+[CLIENTE] Hola, quiero comprar un departamento
+[BOT] Perfecto, ¿podrías contarme para qué uso buscas el departamento? ¿Será para vivienda propia, inversión o algo más?
+[CLIENTE] Es para vivienda propia, queremos mudarnos con mi esposa.
+[BOT] Muy bien, ¿tienen alguna zona o barrio de Córdoba en mente donde les gustaría el departamento?
+[CLIENTE] Preferimos Nueva Córdoba o cerca del centro, idealmente a no más de diez minutos en auto.
+[BOT] Excelente elección. ¿Buscan un departamento nuevo en construcción, ya terminado o están abiertos a ambas opciones?
+[CLIENTE] Estamos abiertos a ambas opciones, pero preferimos uno ya terminado y listo para mudarnos en seis meses.
+[BOT] Perfecto, para avanzar y que un asesor comercial pueda contactarte, ¿me podrías decir tu nombre, por favor?
+[CLIENTE] Marcelo Oviedo.
+[BOT] Gracias, Marcelo. Ahora, para que el asesor pueda comunicarse contigo, ¿podrías proporcionarme tu número de teléfono?
+[CLIENTE] Mi número es uno cinco seis siete cuatro siete uno cuatro siete dos.
+[BOT] Gracias, Marcelo. Para confirmar, tu número es +15657471472. Ahora voy a derivar tu consulta a un asesor comercial para que te contacte pronto. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Sí, por favor envíenme por correo la lista de departamentos disponibles en Nueva Córdoba o cerca del centro, que estén listos para mudarnos en seis meses y el rango de precios; mi correo es marcelo punto oviedo arroba concentrix punto com
+[BOT] Marcelo, para consultas comerciales y envío de información, te recomiendo visitar https://grupoproaco.com/unidades donde podrás ver las opciones disponibles. ¿Quieres que un asesor te contacte para ayudarte con detalles y precios?
+[CLIENTE] Sí, por favor envíen la lista a marcelo punto oviedo arroba concentrix punto com y que un asesor me contacte.
+[BOT] Perfecto, Marcelo. Para que el asesor pueda enviarte la información y contactarte, necesito confirmar tu número de teléfono. ¿Podrías confirmarlo, por favor?
+[CLIENTE] Sí, es uno cinco seis siete cuatro siete uno cuatro siete dos.
+[BOT] Disculpá, Marcelo, hubo un problema al enviar tu solicitud. Intento ayudarte nuevamente. ¿Querés que un asesor te contacte para enviarte la lista de departamentos disponibles y detalles?
+[CLIENTE] Sí, por favor confirmen que envíen la lista a marcelo punto oviedo arroba concentrix punto com y que me contacten al uno cinco seis siete cuatro siete uno cuatro siete dos.
+[BOT] Marcelo, disculpá, no pude enviar la solicitud en este momento. Te sugiero visitar https://grupoproaco.com/unidades para ver las opciones. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Sí, por favor intenten enviar la lista ahora a marcelo punto oviedo arroba concentrix punto com y que me llamen al uno cinco seis siete cuatro siete uno cuatro siete dos.
+[BOT] Marcelo, disculpá, no pude enviar la solicitud en este momento. Te recomiendo visitar https://grupoproaco.com/unidades para ver las opciones disponibles. ¿Hay algo más en lo que pueda ayudarte?
+[CLIENTE] Por favor, intenten enviar ahora la lista a marcelo punto oviedo arroba concentrix punto com y confirmen con una llamada al uno cinco seis siete cuatro siete uno cuatro siete dos cuando esté enviada.
+[BOT] Marcelo, para coordinar una llamada de asesoramiento, ¿qué día y horario te vendría bien para que te llamen?
+[CLIENTE] El martes por la tarde entre las cuatro y las seis me viene bien.
+[BOT] Marcelo, el martes por la tarde entre las 4 y las 6 no tiene disponibilidad exacta. ¿Podrías indicarme una hora específica dentro de ese rango que prefieras para la llamada?
+[CLIENTE] A las cuatro y media del martes, por favor.
+[BOT] Marcelo, a las cuatro y media del martes no está disponible. Tengo disponibles las 4 PM o las 5 PM del martes por la tarde. ¿Cuál prefieres?
+[CLIENTE] Prefiero a las cinco, por favor.
+[BOT] Marcelo, el martes a las cinco de la tarde está disponible para la llamada. Ahora, por favor, confirmame tu nombre completo para agendar la cita.
+[CLIENTE] Marcelo Oviedo.
+[BOT] Marcelo, la llamada para asesoramiento quedó agendada para el martes a las cinco de la tarde. ¿Hay algo más en lo que pueda ayudarte?

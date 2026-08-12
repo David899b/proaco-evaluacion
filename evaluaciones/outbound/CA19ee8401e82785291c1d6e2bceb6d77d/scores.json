@@ -1,0 +1,92 @@
+{
+ "llamada_id": "CA19ee8401e82785291c1d6e2bceb6d77d",
+ "metadata": {
+  "proyecto": "proaco",
+  "flow": "outbound",
+  "contacto": "Marcelo Oviedo",
+  "outcome": "other",
+  "duration": 204,
+  "campaign_id": "019fafd8-084a-73f0-8777-e9afb6da1bfa",
+  "campaign": "Grupo Proaco",
+  "externalId": "CA19ee8401e82785291c1d6e2bceb6d77d",
+  "customFields": {
+   "direccion": "",
+   "user_name": "",
+   "user_email": null,
+   "nro_reclamo": "",
+   "user_interest": "Departamentos en emprendimientos (consulta inicial por hangar)",
+   "motivo_llamado": "Consulta e interés por propiedades, específicamente departamentos dentro de emprendimientos",
+   "user_phone_number": ""
+  }
+ },
+ "suites": {
+  "outbound_7reglas": {
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "menciona_proposito": {
+    "value": 1.0,
+    "reason": "motivo mencionado"
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "0 ítems listados (máx 3)"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   }
+  },
+  "outbound_llmjudges": {
+   "ofrece_agendar_cita": {
+    "value": 0.0,
+    "reason": "no se ofreció agendar cita"
+   },
+   "se_presenta": {
+    "value": 1.0,
+    "reason": "bot identificado"
+   },
+   "cliente_no_interesado": {
+    "value": 0.8,
+    "reason": "El bot identificó la desinterés del cliente cuando expresó 'proctmas' y 'No encontré', sin embargo, no cerró la llamada de manera cortés al intentar revisar los departamentos una vez más. El bot podría haber finalizado la llamada con un agradecimiento más cortés y directo, evitando insistir en ofrecer información que ya no era deseada por el cliente."
+   },
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "0 ítems listados (máx 3)"
+   },
+   "menciona_proposito": {
+    "value": 1.0,
+    "reason": "motivo mencionado"
+   },
+   "agendamiento_cita": {
+    "value": 0.0,
+    "reason": "El cliente expresa interés en ver propiedades, pero el bot no ofrece la opción de agendar una cita ni se le derivan a un asesor. En su lugar, el bot continúa con una conversación detallada sobre tipos de propiedades disponibles y finalmente ofrece un sitio web para más información."
+   },
+   "maneja_no_interes": {
+    "value": 1.0,
+    "reason": "no hubo manifestación de no-interés"
+   },
+   "pide_consentimiento": {
+    "value": 0.0,
+    "reason": "no se pidió consentimiento para continuar"
+   }
+  }
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "llamada_id": "llamada-6",
+ "metadata": {
+  "canal": "voz",
+  "origen": "google_sheets",
+  "intents": [
+   "proaco_list_intent",
+   "getCalDotComAvailability",
+   "scheduleCalDotComAppointment"
+  ],
+  "tools": [
+   "proaco_list_intent",
+   "getCalDotComAvailability",
+   "scheduleCalDotComAppointment"
+  ],
+  "proyecto": "proaco",
+  "flow": "inbound"
+ },
+ "suites": {
+  "inbound_heur": {
+   "tono_respetuoso": {
+    "value": 1.0,
+    "reason": "tono respetuoso"
+   },
+   "url_derivacion_presente": {
+    "value": 1.0,
+    "reason": "url 'grupoproaco.com/unidades' presente"
+   },
+   "sin_datos_aysa": {
+    "value": 1.0,
+    "reason": "sin referencia a AySA"
+   },
+   "sin_loop_no_transferir": {
+    "value": 1.0,
+    "reason": "2 menciones de no-poder-transferir"
+   },
+   "adherencia_espanol": {
+    "value": 1.0,
+    "reason": "marcadores de español: 320"
+   },
+   "despedida_presente": {
+    "value": 1.0,
+    "reason": "último turno bot: 'La duración aproximada de la visita al showroom suele ser de 30 a 45 minutos. ¿Q'"
+   },
+   "saludo_presente": {
+    "value": 0.0,
+    "reason": "primer turno bot: 'Claro, puedo ayudarte con departamentos de un dormitorio en Nueva Córdoba. ¿Podr'"
+   }
+  },
+  "inbound_llmjudges": {
+   "conversational_coherence": {
+    "value": 0.375,
+    "reason": "The score is 0.4 because the LLM repeatedly provided redundant responses directing the user to visit a website for the showroom's address instead of directly addressing and fulfilling the user’s specific request multiple times."
+   },
+   "user_frustration": {
+    "value": 0.25,
+    "reason": "The score is 0.25 because the LLM repeatedly fails to provide the exact address of the showroom in response to multiple user requests, instead directing the User to consult a website or redirecting them. This results in an increasingly annoyed and frustrated User who eventually expresses dissatisfaction with the lack of direct assistance."
+   },
+   "moderation": {
+    "value": 0.0,
+    "reason": "No content policy violations detected in the text. The content appears to be completely safe."
+   },
+   "session_completeness": {
+    "value": 0.5,
+    "reason": "The score is 0.5 because the LLM failed to provide the exact address of the showroom in Nueva Córdoba as requested by the user, and instead suggested a website URL without confirming or directly providing the address."
+   },
+   "agent_task_completion_judge": {
+    "value": 0.5,
+    "reason": "The agent provided the approximate duration of a visit to the showroom, which is relevant information. However, it seems the user was expecting further assistance or clarification based on their follow-up question '¿Querés que te ayude con algo más?'. The conversation did not progress logically towards resolving any specific issues or providing additional information as requested."
+   },
+   "agent_tool_correctness_judge": {
+    "value": 0.1,
+    "reason": "The input does not contain any tool usage or task instructions that need to be evaluated according to the provided criteria. Therefore, there is no basis for scoring in terms of tool selection appropriateness, input well-formedness, output interpretation, and error recovery."
+   },
+   "answer_relevance": {
+    "value": 0.4,
+    "reason": "The response does not directly address the user's query about consulting on one-bedroom apartments in Nueva Córdoba or scheduling a visit. Instead, it provides information about showroom visits, which is unrelated to the user's request for apartment consultations and scheduling."
+   },
+   "usefulness": {
+    "value": 0.2,
+    "reason": "The AI response is completely irrelevant to the user's request, which was about consulting on dormitory departments in Nueva Córdoba and scheduling a visit for this week. The response instead discusses showroom visits, which do not address any of the user’s specific concerns or inquiries."
+   }
+  },
+  "inbound_7reglas_juez1": {
+   "deteccion_intent": {
+    "value": 0.6,
+    "reason": "El bot no cumple plenamente la regla ya que, después de agendar la visita y responder acertadamente a los primeros pedidos del cliente (verificar disponibilidad y confirmar), se desvía al proporcionar información sobre cómo obtener la dirección en lugar de enviarla directamente. Además, el bot no mantiene consistencia en su respuesta y en ocasiones recomienda verificar la información en un sitio web, lo cual puede ser menos eficiente para el cliente."
+   },
+   "despedida_correcta": {
+    "value": 0.8,
+    "reason": "El bot se despide al final pero usa un lenguaje informal y no cita directamente la frase oficial del Grupo Proaco."
+   },
+   "tono_espanol_argentino": {
+    "value": 0.8,
+    "reason": "El bot mantiene un tono amable y claro, pero no utiliza el español rioplatense y opta por un tono ligeramente formal en algunas respuestas."
+   },
+   "pide_contacto_una_vez": {
+    "value": 0.6,
+    "reason": "El bot solicita los datos de contacto justo antes del final, pero repite el pedido y confirma la información proporcionada por el cliente."
+   },
+   "saludo_correcto": {
+    "value": 0.6,
+    "reason": "El bot inicia con un saludo similar pero no es exactamente el oficial del Grupo Proaco. Se cumple parcialmente la regla."
+   },
+   "deriva_web_si_no_sabe": {
+    "value": 0.8,
+    "reason": "El bot proporciona una URL para obtener información adicional en lugar de transferir la llamada o enviar el correo electrónico solicitado por el cliente."
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "No se presentó la regla a evaluar, ya que el bot no listó propiedades al cliente."
+   }
+  },
+  "inbound_7reglas_juez2": {
+   "deriva_web_si_no_sabe": {
+    "value": 1.0,
+    "reason": "El bot cumplió con la regla indicando que el cliente puede consultar con Grupo Proaco en https://grupoproaco.com/unidades cuando no podía proporcionar la dirección exacta del showroom."
+   },
+   "pide_contacto_una_vez": {
+    "value": 0.0,
+    "reason": "El bot no solicitó los datos de contacto del cliente (nombre, teléfono, mail) exactamente una vez al finalizar la llamada y antes del mensaje de despedida."
+   },
+   "despedida_correcta": {
+    "value": 0.0,
+    "reason": "El bot no despidió al finalizar la llamada con la despedida oficial del Grupo Proaco (Gracias por contactarse con el Grupo Proaco)."
+   },
+   "deteccion_intent": {
+    "value": 0.8,
+    "reason": "El bot cumplió en el flujo inicial para agendar una visita y buscar información sobre la dirección del showroom. Sin embargo, en lugar de proporcionar la dirección exacta como solicitó el cliente, el bot le recomendó consultar su sitio web. Además, el bot no ofreció alternativas o opciones adicionales para obtener la información deseada."
+   },
+   "saludo_correcto": {
+    "value": 0.0,
+    "reason": "El bot no saluda al iniciar la llamada con el saludo oficial del Grupo Proaco (Hola, se contactó con el Grupo Proaco ¿En qué le puedo ayudar?)."
+   },
+   "tono_espanol_argentino": {
+    "value": 0.8,
+    "reason": "El bot muestra un tono amable y servicial en gran parte de la conversación, usando español rioplatense. Sin embargo, se repite la solicitud de la dirección exacta del showroom varias veces sin proporcionarla directamente, lo que podría sugerir una falta de conocimiento o información específica sobre el lugar."
+   },
+   "listado_max_3": {
+    "value": 1.0,
+    "reason": "No se listaron propiedades en esta llamada."
+   }
+  }
+ }
+}
