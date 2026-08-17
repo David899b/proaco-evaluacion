@@ -1,0 +1,63 @@
+{
+  "llamada_id": "llamada-13",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_list_intent",
+      "getCalDotComAvailability"
+    ],
+    "tools": [
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.75,
+      "reason": "El bot dice 'Hola, se contacto con el Grupo Proaco' al inicio de la llamada, pero no incluye la frase completa 'se contactó con el Grupo Proaco', omitiendo la palabra 'contacto'. A pesar de que agrega información después del saludo oficial, cumple con la mayoría de los criterios establecidos."
+    },
+    "despedida_correcta": {
+      "value": 0.25,
+      "reason": "La despedida del bot no es la última intervención y no contiene exactamente 'Gracias por contactarse con el Grupo Proaco'. Aunque menciona 'Gracias' al final, falta la mención específica de 'contactarse con el Grupo Proaco', lo que la califica como una despedida genérica."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.5,
+      "reason": "El bot solicitó el nombre del cliente (Roberto) para coordinar la llamada, pero lo hizo repetidamente durante la conversación. Aunque finalmente obtuvo el nombre y un teléfono de contacto, no cumplió con la regla de solicitar estos datos solo una vez al finalizar la llamada."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.75,
+      "reason": "El bot usa expresiones rioplatenses como 'compadre' en varias intervenciones, lo cual es positivo. Sin embargo, el tono se vuelve más formal y neutro al final de la transcripción, especialmente cuando no puede ayudar directamente a la cliente, usando frases como 'no tengo información de turnos disponibles', lo que reduce la puntuación."
+    },
+    "deteccion_intent": {
+      "value": 0.5,
+      "reason": "El bot detectó correctamente la intención del cliente de ver propiedades en Opera al principio pero luego se desvió para tratar temas no solicitados como chatas y horarios de llamada. Aunque finalmente el bot ofreció opciones relevantes (propiedades), la desviación inicial reduce la puntuación."
+    },
+    "listado_max_3": {
+      "value": 0.75,
+      "reason": "El bot listó correctamente tres opciones de departamentos con sus precios en una intervención, pero luego se desvió al proporcionar más información no solicitada y al intentar coordinar la llamada antes de que el cliente estuviera listo para ello."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 0.5,
+      "reason": "El bot deriva a WhatsApp pero no a la web, lo que cumple parcialmente con la regla. El bot indica que puede consultar en https://grupoproaco.com/unidades, pero también ofrece llamar al teléfono de ventas para consultas comerciales, lo cual es una alternativa válida pero no se ajusta completamente a la regla especificada."
+    }
+  },
+  "avg": 0.5714285714285714
+}

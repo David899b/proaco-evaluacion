@@ -1,0 +1,54 @@
+{
+  "llamada_id": "llamada-1",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "tools": [
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.25,
+      "reason": "El bot no cumple con el saludo oficial requerido al inicio de la llamada. En lugar de 'Hola, se contactó con el Grupo Proaco', el bot comienza directamente preguntando por la ciudad del cliente."
+    },
+    "despedida_correcta": {
+      "value": 0.75,
+      "reason": "La despedida '¿Hay algo más en lo que pueda ayudarle hoy?' es la última intervención del bot y menciona Grupo Proaco implícitamente, pero no contiene exactamente la frase 'Gracias por contactarse con el Grupo Proaco'."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.75,
+      "reason": "El bot pide los datos de contacto (nombre y teléfono) una sola vez al finalizar la llamada, pero no cumple con el criterio de no pedir confirmación/repeticiones innecesarias de datos ya dados. Además, solicita el email después del pedido inicial de nombre y teléfono, lo que podría considerarse un pedido adicional."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.75,
+      "reason": "El bot mantiene un tono amable y claro, usando expresiones rioplatenses como 'Martín' y 'gracias'. Sin embargo, no utiliza modismos argentinos explícitos como 'dale', 'bárbaro', o 'claro que sí', lo cual reduce la puntuación."
+    },
+    "deteccion_intent": {
+      "value": 0.75,
+      "reason": "El bot identificó correctamente la intención del cliente de ver departamentos disponibles en Buenos Aires y le pidió detalles adicionales para filtrar las opciones. Sin embargo, el bot desvió ligeramente al preguntar por la ciudad inicialmente, cuando el cliente ya había especificado que estaba interesado en la ciudad de Buenos Aires."
+    },
+    "listado_max_3": {
+      "value": 0.75,
+      "reason": "El bot listó correctamente tres opciones de departamentos, pero incluyó información no solicitada como el monto de las expensas para una opción, lo que descalifica un punto. No se cumplió con la regla de no incluir datos extra no solicitados."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 1.0,
+      "reason": "En toda la transcripción, el bot responde de manera efectiva a todas las consultas del cliente y no se deriva cuando puede proporcionar información relevante."
+    }
+  },
+  "avg": 0.7142857142857143
+}

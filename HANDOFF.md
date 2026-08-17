@@ -34,7 +34,9 @@ proaco-evaluacion/
 │   │   ├── metricas_proaco_outbound.py
 │   │   └── transcripciones/
 │   └── correr_todas.py            # orquestador Opik
-├── deepeval/                      # Código evaluación con DeepEval
+├── langsmith/                     # Código evaluación con LangSmith
+│   └── inbound/
+│       └── evaluar.py             # juez mejorado + logging a LangSmith API
 │   └── inbound/
 │       └── deepeval_eval.py       # juez mejorado (rúbrica + CoT + anclas)
 ├── shared/                        # Código compartido
@@ -90,8 +92,20 @@ python scripts/generar_docx.py
 # Generar PDF completo
 python scripts/generar_pdf_completo.py
 
-# Opik UI
-open http://localhost:5173
+# ── LangSmith ─────────────────────────────────────────
+# Evaluar + logear a LangSmith (sin SDK, solo requests)
+export LANGCHAIN_API_KEY="lsv2_..."
+python langsmith/inbound/evaluar.py
+
+# Groq cloud
+export GROQ_API_KEY="gsk_..."
+python langsmith/inbound/evaluar.py --modelo groq/qwen/qwen3.6-27b
+
+# Solo una llamada
+python langsmith/inbound/evaluar.py --solo llamada-1
+
+# Ver en LangSmith UI
+open https://smith.langchain.com
 ```
 
 ---

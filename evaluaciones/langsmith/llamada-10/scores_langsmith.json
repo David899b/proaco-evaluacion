@@ -1,0 +1,46 @@
+{
+  "llamada_id": "llamada-10",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_list_intent"
+    ],
+    "tools": [
+      "proaco_list_intent"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.25,
+      "reason": "El bot menciona 'Grupo Proaco' pero no utiliza el saludo oficial 'Hola, se contactó con el Grupo Proaco', sino que agrega información antes del saludo."
+    },
+    "despedida_correcta": {
+      "value": 0.25,
+      "reason": "La despedida del bot no incluye la frase 'Gracias por contactarse con el Grupo Proaco', sino una despedida genérica que menciona a Grupo Proaco al final de su intervención."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.75,
+      "reason": "El bot solicitó los datos de contacto (nombre y número de WhatsApp) una sola vez al principio de la llamada. Aunque no se repite el pedido ni confirma los datos ya proporcionados, no está cerca del final de la conversación."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.5,
+      "reason": "El bot usa el nombre del cliente ('Martín') de forma amable y cortés, pero no incluye expresiones rioplatenses ni modismos argentinos como 'dale' o 'bárbaro'. Además, mantiene un tono servicial pero no es tan amigable como en la puntuación más alta."
+    },
+    "deteccion_intent": {
+      "value": 0.75,
+      "reason": "El bot detectó correctamente la intención del cliente (lotes en Docta Urbanización) y ejecutó el flujo correspondiente solicitado por el cliente, pidiendo datos para contactarlo posteriormente. Sin embargo, no ofertó opciones específicas de lotes como se esperaría según los criterios de evaluación."
+    },
+    "listado_max_3": {
+      "value": 1.0,
+      "reason": "El bot no listó ninguna propiedad ya que el cliente no solicitó información sobre lotes inmediatamente y la conversación se centró en la solicitud de contacto posterior."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 1.0,
+      "reason": "El bot no intentó derivar a la URL o indicar directamente a Grupo Proaco para consultas, ya que todas las preguntas del cliente fueron resueltas y el bot ofreció asistencia por WhatsApp."
+    }
+  },
+  "avg": 0.6428571428571429
+}

@@ -1,0 +1,47 @@
+{
+  "llamada_id": "llamada-3",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_resolve_intent"
+    ],
+    "tools": [
+      "proaco_resolve_intent",
+      "proaco_resolve_intent"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.25,
+      "reason": "El bot menciona 'Grupo Proaco' pero no inicia la llamada con el saludo oficial completo 'Hola, se contactó con el Grupo Proaco', sino que agrega información antes del saludo."
+    },
+    "despedida_correcta": {
+      "value": 0.75,
+      "reason": "La despedida 'Gracias, Juan. Un asesor de Grupo Proaco se pondrá en contacto con usted a la brevedad para enviarle información sobre departamentos de dos ambientes en Palermo.' no es la última intervención del bot y contiene más texto que el requerido pero menciona al Grupo Proaco."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.75,
+      "reason": "El bot solicitó nombre y teléfono al principio de la llamada pero luego repitió el pedido de correo electrónico. A pesar de esto, el pedido se hizo una sola vez cerca del final de la llamada."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.5,
+      "reason": "El bot usa un tono amable y cortés, pero no incluye expresiones rioplatenses ni modismos argentinos como 'dale' o 'bárbaro'. Además, el uso de 'Juan' en lugar de 'usted' es consistente, aunque no se usan modismos locales."
+    },
+    "deteccion_intent": {
+      "value": 1.0,
+      "reason": "El bot identificó correctamente la intención del cliente (enviar opciones de departamentos por correo) y respondió alineado con esa intención, sin desviar el tema ni ofrecer información no solicitada."
+    },
+    "listado_max_3": {
+      "value": 1.0,
+      "reason": "El bot no listó ninguna propiedad y cumplió con la regla ya que el cliente no pidió opciones inmediatas por voz."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 1.0,
+      "reason": "El bot no intentó derivar la consulta ya que pudo resolverla proporcionando información y enviando el correo electrónico solicitado."
+    }
+  },
+  "avg": 0.75
+}

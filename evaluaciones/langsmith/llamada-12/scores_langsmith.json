@@ -1,0 +1,60 @@
+{
+  "llamada_id": "llamada-12",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "tools": [
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.25,
+      "reason": "El bot no realizó ningún saludo al inicio de la llamada y comenzó directamente con la consulta sobre disponibilidad de turnos."
+    },
+    "despedida_correcta": {
+      "value": 0.25,
+      "reason": "La despedida 'Gracias, Mariana. He tomado nota de su número para avisarle si se libera algún turno el viernes por la tarde.' no cumple con la regla ya que no contiene la frase exacta 'Gracias por contactarse con el Grupo Proaco'. Aunque es una despedida final, no incluye la mención al Grupo Proaco y carece de la frase 'Gracias por contactarse'."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.75,
+      "reason": "El bot solicitó datos de contacto al finalizar la llamada, pidiendo nombre y teléfono. Sin embargo, el pedido no fue realizado solo una vez ya que se repitió en múltiples ocasiones durante la conversación. Además, el bot confirmó los datos proporcionados por el cliente, lo cual no es permitido según las reglas."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.5,
+      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'María', pero no utiliza modismos rioplatenses como 'dale'. El bot es cortante al final de la conversación, diciendo que no se pudo reservar ninguna visita y ofreciendo ayuda con otra consulta o propiedad, lo cual no cumple con el criterio de ser servicial en todo momento."
+    },
+    "deteccion_intent": {
+      "value": 0.0,
+      "reason": "El bot no detecta correctamente la intención del cliente (ver la obra) y desvía constantemente el flujo de la conversación hacia la búsqueda de turnos para visitar la obra, sin ofrecer opciones relevantes o alineadas con lo solicitado por el cliente. El cliente solo pide confirmar una visita que no se pudo realizar debido a la falta de disponibilidad."
+    },
+    "listado_max_3": {
+      "value": 1.0,
+      "reason": "La transcripción no muestra ninguna interacción donde el bot liste propiedades inmobiliarias, por lo tanto, se cumple la regla condicional de que si nunca lista propiedades (el cliente no pidió)."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 0.5,
+      "reason": "El bot no puede resolver la consulta sobre disponibilidad y ofrece alternativas como ofrecer opciones para otros días o horarios, pero no menciona la URL ni indica que lo consulte con Grupo Proaco directamente."
+    }
+  },
+  "avg": 0.4642857142857143
+}

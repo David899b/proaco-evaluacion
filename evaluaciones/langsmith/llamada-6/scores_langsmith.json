@@ -1,0 +1,50 @@
+{
+  "llamada_id": "llamada-6",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "tools": [
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.25,
+      "reason": "El bot no realizó el saludo oficial 'Hola, se contactó con el Grupo Proaco' al inicio de la llamada. En su lugar, comenzó directamente a responder al cliente con información sobre departamentos y horarios."
+    },
+    "despedida_correcta": {
+      "value": 0.25,
+      "reason": "La despedida '¿Puedo ayudarte con algo más?' no es la última intervención del bot y no contiene la frase 'Gracias por contactarse con el Grupo Proaco'."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.25,
+      "reason": "El bot pide datos de contacto (nombre) solo una vez cerca del final de la llamada, pero solicita confirmación innecesaria y no pide teléfono ni email. Además, el pedido de información se hace en un contexto donde el cliente ya ha proporcionado su nombre durante la conversación."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.75,
+      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'claro que sí' y '¿Puedo ayudarte con algo más?'. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'tú' sin consistencia. No se observa el uso de expresiones típicas del español rioplatense como 'dale', 'bárbaro', o 'claro'."
+    },
+    "deteccion_intent": {
+      "value": 0.75,
+      "reason": "El bot identificó correctamente la intención del cliente (consultar departamentos y agendar visita) en el primer mensaje. Sin embargo, se desvió al final de la conversación al no proporcionar la dirección exacta solicitada por el cliente, que era un tema no solicitado anteriormente."
+    },
+    "listado_max_3": {
+      "value": 1.0,
+      "reason": "El bot no listó ninguna propiedad y cumplió con la regla ya que el cliente no solicitó información sobre propiedades de un dormitorio en Nueva Córdoba."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 1.0,
+      "reason": "El bot resuelve todas las consultas del cliente sin necesidad de derivar y no se queda sin respuesta en ningún momento."
+    }
+  },
+  "avg": 0.6071428571428571
+}

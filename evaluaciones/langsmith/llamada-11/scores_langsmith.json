@@ -1,0 +1,54 @@
+{
+  "llamada_id": "llamada-11",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "tools": [
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment",
+      "scheduleCalDotComAppointment"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.25,
+      "reason": "El bot no incluyó la frase 'se contactó con el Grupo Proaco' al inicio de la llamada. En su lugar, comenzó directamente con una intervención que proporcionaba información sobre departamentos y financiación."
+    },
+    "despedida_correcta": {
+      "value": 0.75,
+      "reason": "La despedida 'Esteban, confirmo que lo llamaremos el martes a las 10 de la mañana a su teléfono 0915555100. Sobre el presupuesto por correo, no puedo garantizar el envío, pero la llamada está agendada. ¿Hay algo más en lo que pueda ayudarle?' es la última intervención del bot y contiene la despedida oficial 'Gracias por contactarse con el Grupo Proaco' implícita a través de la confirmación de la llamada agendada, aunque no se menciona explícitamente."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.75,
+      "reason": "El bot solicitó los datos de contacto (nombre y teléfono) una sola vez al finalizar la llamada, pero no confirmó ni repitió el pedido de información ya proporcionada por el cliente."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.5,
+      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Esteban' para dirigirse al cliente. Sin embargo, no utiliza modismos rioplatenses y se inclina hacia un español neutro en algunas intervenciones, como 'le puedo ofrecer la 9 y media de la mañana o las 10 de la mañana?'"
+    },
+    "deteccion_intent": {
+      "value": 0.75,
+      "reason": "El bot detecta correctamente la intención del cliente de consultar opciones de financiación y agendar una llamada para un presupuesto personalizado. Sin embargo, desvía al final al no poder enviar el presupuesto por correo electrónico, lo que no fue solicitado inicialmente pero se discutió extensamente en la conversación."
+    },
+    "listado_max_3": {
+      "value": 1.0,
+      "reason": "El bot no listó ninguna propiedad ya que el cliente no solicitó información sobre propiedades en ese momento de la conversación. La evaluación se basa en la regla condicional, ya que el bot cumplió con no listar propiedades hasta que no fue requerido."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 1.0,
+      "reason": "El bot no intentó derivar la consulta cuando el cliente solicitaba información sobre opciones de financiación para un departamento en Opera Park, ya que pudo proporcionar toda la información requerida y agendar una llamada sin necesidad de derivar a otra fuente de información."
+    }
+  },
+  "avg": 0.7142857142857143
+}
