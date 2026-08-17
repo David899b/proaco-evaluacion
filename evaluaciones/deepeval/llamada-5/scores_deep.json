@@ -1,0 +1,42 @@
+{
+  "llamada_id": "llamada-5",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [],
+    "tools": [],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.0,
+      "reason": "El bot no realizó el saludo oficial del Grupo Proaco al inicio de la llamada."
+    },
+    "despedida_correcta": {
+      "value": 0.25,
+      "reason": "La despedida del bot aparece en medio de la conversación y no es la última intervención. El texto completo sería 'Lamento no poder transferir la llamada. Si en algún momento desea información o ayuda con propiedades, estoy aquí para asistirle.'"
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.0,
+      "reason": "El bot nunca pide datos de contacto del cliente durante la transcripción."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.25,
+      "reason": "El bot usa un tono amable y ofrece ayuda, pero no utiliza expresiones rioplatenses ni modismos argentinos. Además, el tono es cortante al final de la transcripción."
+    },
+    "deteccion_intent": {
+      "value": 0.0,
+      "reason": "El bot no detecta la intención del cliente de manera clara y se desvía constantemente al hablar sobre transferencia de llamadas y dar datos, en lugar de buscar información inmobiliaria."
+    },
+    "listado_max_3": {
+      "value": 1.0,
+      "reason": "El bot no lista ninguna propiedad ya que el cliente rechaza interactuar con él y solo busca ser transferido a un asesor humano. Esto cumple con la regla condicional de no listar propiedades si el cliente no las pidió."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 0.5,
+      "reason": "El bot ofrece alternativas como ayudar con información sobre propiedades o tomar datos, pero no deriva claramente a la URL ni indica directamente contactarse con Grupo Proaco cuando el cliente insiste en hablar con un asesor humano."
+    }
+  },
+  "avg": 0.2857142857142857
+}

@@ -1,0 +1,55 @@
+{
+  "llamada_id": "llamada-8",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "tools": [
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.75,
+      "reason": "El bot menciona 'se contactó con el Grupo Proaco' al inicio, pero agrega información antes del saludo oficial, lo que no cumple con la regla."
+    },
+    "despedida_correcta": {
+      "value": 1.0,
+      "reason": "El bot cumple exactamente con la regla al despedirse con 'Gracias por contactarse con el Grupo Proaco' y siendo esta la última intervención del diálogo."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.75,
+      "reason": "El bot solicitó los datos de contacto (nombre y teléfono) una sola vez al finalizar la llamada, pero no confirmó explícitamente que los datos fueron correctos o completos."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.5,
+      "reason": "El bot usa un tono amable y claro, pero no utiliza expresiones rioplatenses como 'dale' o 'bárbaro'. Aunque es cortés, no cumple con el criterio de usar modismos argentinos explícitos."
+    },
+    "deteccion_intent": {
+      "value": 0.75,
+      "reason": "El bot identificó correctamente la intención del cliente en su primer mensaje (consultar información técnica y agendar una llamada). Sin embargo, el bot desvió ligeramente al solicitar un número de teléfono antes de obtener toda la información requerida por el cliente. A pesar de esto, el bot finalmente cumplió con las peticiones del cliente en su mayoría."
+    },
+    "listado_max_3": {
+      "value": 1.0,
+      "reason": "El bot no listó ninguna propiedad en la transcripción, ya que el cliente solicitó información técnica y el avance de obra del proyecto Pocito, no propiedades inmobiliarias. Por lo tanto, se cumple con la regla condicional de no listar propiedades cuando no se solicitan."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 1.0,
+      "reason": "El bot resolvió todas las consultas del cliente sin necesidad de derivar y no se presentaron situaciones donde el bot no pudiera resolver la consulta."
+    }
+  },
+  "avg": 0.8214285714285714
+}

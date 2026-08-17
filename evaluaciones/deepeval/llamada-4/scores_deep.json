@@ -1,0 +1,52 @@
+{
+  "llamada_id": "llamada-4",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_resolve_intent",
+      "getCalDotComAvailability"
+    ],
+    "tools": [
+      "proaco_resolve_intent",
+      "proaco_resolve_intent",
+      "proaco_resolve_intent",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.5,
+      "reason": "El bot menciona 'Grupo Proaco' pero no en la primera intervención y no utiliza exactamente la frase 'se contactó con el Grupo Proaco'. En su lugar, inicia con una pregunta genérica 'Perfecto, ¿podrías contarme para qué uso buscas el departamento? ¿Será para vivienda propia, inversión o algo más?', lo que no cumple con los criterios establecidos."
+    },
+    "despedida_correcta": {
+      "value": 0.75,
+      "reason": "La despedida 'Marcelo, la llamada para asesoramiento quedó agendada para el martes a las cinco de la tarde.' es la última intervención del bot y contiene la frase 'Gracias por contactarse con el Grupo Proaco', aunque no está en el final exacto de la conversación."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.5,
+      "reason": "El bot solicitó datos de contacto (nombre y teléfono) pero repitió el pedido después del primer intento, no cumpliendo con el criterio de no repetir confirmaciones innecesarias de datos ya dados."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.5,
+      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Marcelo' para referirse al cliente. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'Marcelo', lo que reduce la puntuación. No se observa español neutro forzado ni tono seco o poco amigable en el diálogo."
+    },
+    "deteccion_intent": {
+      "value": 0.5,
+      "reason": "El bot detecta correctamente la intención del cliente (comprar un departamento) y responde alineado con esa intención durante gran parte de la conversación. Sin embargo, el bot desvía la conversación para solicitar detalles adicionales que no fueron solicitados inicialmente por el cliente, como su número de teléfono varias veces. Además, el bot finalmente agendó una cita sin haber recibido toda la información necesaria del cliente (como el rango de precios), lo cual indica un desvío en la conversación no solicitado."
+    },
+    "listado_max_3": {
+      "value": 0.5,
+      "reason": "El bot listó 3 propiedades pero incluyó información no solicitada como el rango de precios y ofertó mostrar más opciones si hay disponibles, aunque no se mencionaron explícitamente en la transcripción. Además, el bot no cumplió con la regla de no incluir fotos, expensas ni orientaciones."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 0.75,
+      "reason": "El bot derivó al cliente a visitar https://grupoproaco.com/unidades cuando no pudo enviar la solicitud por problemas técnicos. Sin embargo, el mensaje podría haber sido más claro y directo en mencionar la URL o indicar que lo consulte con Grupo Proaco directamente."
+    }
+  },
+  "avg": 0.5714285714285714
+}

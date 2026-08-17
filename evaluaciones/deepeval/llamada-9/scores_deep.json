@@ -1,0 +1,59 @@
+{
+  "llamada_id": "llamada-9",
+  "metadata": {
+    "canal": "voz",
+    "origen": "google_sheets",
+    "intents": [
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "tools": [
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "proaco_list_intent",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment",
+      "getCalDotComAvailability",
+      "getCalDotComAvailability",
+      "scheduleCalDotComAppointment"
+    ],
+    "proyecto": "proaco",
+    "flow": "inbound"
+  },
+  "scores": {
+    "saludo_correcto": {
+      "value": 0.25,
+      "reason": "El bot no realizó el saludo oficial 'Hola, se contactó con el Grupo Proaco' al inicio de la llamada. En su lugar, comenzó directamente con una intervención sobre la búsqueda de lotes o departamentos."
+    },
+    "despedida_correcta": {
+      "value": 0.75,
+      "reason": "La despedida 'Gracias, Julián' no cumple con la regla exacta requerida, pero se encuentra entre las dos últimas intervenciones y contiene el nombre del cliente, lo que le da un puntaje cercano a 0.75."
+    },
+    "pide_contacto_una_vez": {
+      "value": 0.5,
+      "reason": "El bot solicitó datos de contacto (nombre y teléfono) pero lo hizo múltiples veces durante la llamada, no cumpliendo con el criterio de hacerlo solo una vez cerca del final."
+    },
+    "tono_espanol_argentino": {
+      "value": 0.75,
+      "reason": "El bot mantiene un tono amable y claro, usando expresiones rioplatenses como 'Julián' y 'gracias'. Sin embargo, no utiliza modismos típicos del español rioplatense como 'dale', 'bárbaro', etc., lo que reduce el puntaje. Además, mantiene un tono servicial pero no es tan amigable como en la puntuación más alta."
+    },
+    "deteccion_intent": {
+      "value": 0.75,
+      "reason": "El bot detecta correctamente la intención del cliente (lotes en Córdoba) y responde alineado con esa intención. Sin embargo, el bot desvió ligeramente al preguntar por departamentos antes de obtener más detalles, lo que no cumple completamente con los criterios de evaluación."
+    },
+    "listado_max_3": {
+      "value": 0.75,
+      "reason": "El bot listó tres opciones de lotes con el precio, metros cuadrados y tiempo estimado de escrituración, cumpliendo con el criterio de listar hasta tres propiedades por intervención. Sin embargo, no ofreció mostrar más opciones si hubiera, lo que le resta un punto. Además, el bot no incluyó fotos, expensas ni datos adicionales no solicitados, pero no se mencionaron estas reglas explícitamente en la transcripción."
+    },
+    "deriva_web_si_no_sabe": {
+      "value": 0.5,
+      "reason": "El bot no puede resolver la consulta sobre lotes en Mendoza, pero ofrece llamar al cliente para obtener esa información. No se deriva a una URL específica ni menciona directamente contactarse con Grupo Proaco."
+    }
+  },
+  "avg": 0.6071428571428571
+}

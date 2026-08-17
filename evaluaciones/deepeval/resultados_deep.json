@@ -1,0 +1,716 @@
+{
+  "tool": "deepeval",
+  "judge": "juez_mejorado",
+  "model": "ollama/qwen2.5:7b",
+  "n_llamadas": 13,
+  "promedios": {
+    "deriva_web_si_no_sabe": 0.7692307692307693,
+    "despedida_correcta": 0.5384615384615384,
+    "deteccion_intent": 0.5769230769230769,
+    "listado_max_3": 0.8653846153846154,
+    "pide_contacto_una_vez": 0.5769230769230769,
+    "saludo_correcto": 0.3269230769230769,
+    "tono_espanol_argentino": 0.5576923076923077
+  },
+  "global_avg": 0.6016483516483516,
+  "por_llamada": [
+    {
+      "llamada_id": "llamada-1",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot no cumple con el saludo oficial requerido al inicio de la llamada. En lugar de 'Hola, se contactó con el Grupo Proaco', el bot comienza directamente preguntando por la ciudad del cliente."
+        },
+        "despedida_correcta": {
+          "value": 0.75,
+          "reason": "La despedida '¿Hay algo más en lo que pueda ayudarle hoy?' es la última intervención del bot y menciona Grupo Proaco implícitamente, pero no contiene exactamente la frase 'Gracias por contactarse con el Grupo Proaco'."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.75,
+          "reason": "El bot pide los datos de contacto (nombre y teléfono) una sola vez al finalizar la llamada, pero no cumple con el criterio de no pedir confirmación/repeticiones innecesarias de datos ya dados. Además, solicita el email después del pedido inicial de nombre y teléfono, lo que podría considerarse un pedido adicional."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.75,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones rioplatenses como 'Martín' y 'gracias'. Sin embargo, no utiliza modismos argentinos explícitos como 'dale', 'bárbaro', o 'claro que sí', lo cual reduce la puntuación."
+        },
+        "deteccion_intent": {
+          "value": 0.75,
+          "reason": "El bot identificó correctamente la intención del cliente de ver departamentos disponibles en Buenos Aires y le pidió detalles adicionales para filtrar las opciones. Sin embargo, el bot desvió ligeramente al preguntar por la ciudad inicialmente, cuando el cliente ya había especificado que estaba interesado en la ciudad de Buenos Aires."
+        },
+        "listado_max_3": {
+          "value": 0.75,
+          "reason": "El bot listó correctamente tres opciones de departamentos, pero incluyó información no solicitada como el monto de las expensas para una opción, lo que descalifica un punto. No se cumplió con la regla de no incluir datos extra no solicitados."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 1.0,
+          "reason": "En toda la transcripción, el bot responde de manera efectiva a todas las consultas del cliente y no se deriva cuando puede proporcionar información relevante."
+        }
+      },
+      "avg": 0.7142857142857143
+    },
+    {
+      "llamada_id": "llamada-2",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot menciona 'Grupo Proaco' pero no utiliza exactamente la frase oficial 'Hola, se contactó con el Grupo Proaco', sino que comienza con 'Claro, para poder ayudarle mejor, ¿podría indicarme cuál es su presupuesto aproximado para la compra de la propiedad?'. Además, agrega información antes del saludo oficial."
+        },
+        "despedida_correcta": {
+          "value": 0.25,
+          "reason": "La despedida no se encuentra entre las últimas intervenciones del bot y no contiene la frase 'Gracias por contactarse con el Grupo Proaco'."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.5,
+          "reason": "El bot pide datos de contacto (nombre y teléfono) pero lo hace repetidamente durante la conversación, no cumpliendo con el criterio de hacerlo solo una vez cerca del final de la llamada."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Martín' y 'claro'. Sin embargo, no utiliza modismos rioplatenses y se inclina hacia un español neutro en algunas intervenciones, como 'Le gustaría que le ofrezca opciones para otro día o horario?'. Además, el tono es cortante al final de la transcripción, sin ofrecer alternativas claras y amigables."
+        },
+        "deteccion_intent": {
+          "value": 0.5,
+          "reason": "El bot detectó correctamente la intención del cliente de buscar departamentos y ofreció opciones relevantes. Sin embargo, se desvió al final de la conversación al preguntar sobre disponibilidad en horarios que ya estaban agendados o no tenían disponibles, lo cual no era necesario según las indicaciones iniciales del cliente."
+        },
+        "listado_max_3": {
+          "value": 0.5,
+          "reason": "El bot listó más de 3 propiedades (4) y proporcionó información no solicitada como la documentación para el crédito hipotecario, aunque cumplió con la solicitud del cliente de buscar departamentos de dos ambientes con balcón y cochera."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.5,
+          "reason": "El bot no puede resolver la consulta sobre disponibilidad específica y ofrece llamar para coordinar una asesoría personalmente con Grupo Proaco, cumpliendo parcialmente con la regla al ofrecer alternativa pero sin derivar directamente a la URL o indicar claramente que se puede consultar en el sitio web."
+        }
+      },
+      "avg": 0.42857142857142855
+    },
+    {
+      "llamada_id": "llamada-3",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_resolve_intent"
+        ],
+        "tools": [
+          "proaco_resolve_intent",
+          "proaco_resolve_intent"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot menciona 'Grupo Proaco' pero no inicia la llamada con el saludo oficial completo 'Hola, se contactó con el Grupo Proaco', sino que agrega información antes del saludo."
+        },
+        "despedida_correcta": {
+          "value": 0.75,
+          "reason": "La despedida 'Gracias, Juan. Un asesor de Grupo Proaco se pondrá en contacto con usted a la brevedad para enviarle información sobre departamentos de dos ambientes en Palermo.' no es la última intervención del bot y contiene más texto que el requerido pero menciona al Grupo Proaco."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.75,
+          "reason": "El bot solicitó nombre y teléfono al principio de la llamada pero luego repitió el pedido de correo electrónico. A pesar de esto, el pedido se hizo una sola vez cerca del final de la llamada."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot usa un tono amable y cortés, pero no incluye expresiones rioplatenses ni modismos argentinos como 'dale' o 'bárbaro'. Además, el uso de 'Juan' en lugar de 'usted' es consistente, aunque no se usan modismos locales."
+        },
+        "deteccion_intent": {
+          "value": 1.0,
+          "reason": "El bot identificó correctamente la intención del cliente (enviar opciones de departamentos por correo) y respondió alineado con esa intención, sin desviar el tema ni ofrecer información no solicitada."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no listó ninguna propiedad y cumplió con la regla ya que el cliente no pidió opciones inmediatas por voz."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 1.0,
+          "reason": "El bot no intentó derivar la consulta ya que pudo resolverla proporcionando información y enviando el correo electrónico solicitado."
+        }
+      },
+      "avg": 0.75
+    },
+    {
+      "llamada_id": "llamada-4",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_resolve_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_resolve_intent",
+          "proaco_resolve_intent",
+          "proaco_resolve_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.5,
+          "reason": "El bot menciona 'Grupo Proaco' pero no en la primera intervención y no utiliza exactamente la frase 'se contactó con el Grupo Proaco'. En su lugar, inicia con una pregunta genérica 'Perfecto, ¿podrías contarme para qué uso buscas el departamento? ¿Será para vivienda propia, inversión o algo más?', lo que no cumple con los criterios establecidos."
+        },
+        "despedida_correcta": {
+          "value": 0.75,
+          "reason": "La despedida 'Marcelo, la llamada para asesoramiento quedó agendada para el martes a las cinco de la tarde.' es la última intervención del bot y contiene la frase 'Gracias por contactarse con el Grupo Proaco', aunque no está en el final exacto de la conversación."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.5,
+          "reason": "El bot solicitó datos de contacto (nombre y teléfono) pero repitió el pedido después del primer intento, no cumpliendo con el criterio de no repetir confirmaciones innecesarias de datos ya dados."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Marcelo' para referirse al cliente. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'Marcelo', lo que reduce la puntuación. No se observa español neutro forzado ni tono seco o poco amigable en el diálogo."
+        },
+        "deteccion_intent": {
+          "value": 0.5,
+          "reason": "El bot detecta correctamente la intención del cliente (comprar un departamento) y responde alineado con esa intención durante gran parte de la conversación. Sin embargo, el bot desvía la conversación para solicitar detalles adicionales que no fueron solicitados inicialmente por el cliente, como su número de teléfono varias veces. Además, el bot finalmente agendó una cita sin haber recibido toda la información necesaria del cliente (como el rango de precios), lo cual indica un desvío en la conversación no solicitado."
+        },
+        "listado_max_3": {
+          "value": 0.5,
+          "reason": "El bot listó 3 propiedades pero incluyó información no solicitada como el rango de precios y ofertó mostrar más opciones si hay disponibles, aunque no se mencionaron explícitamente en la transcripción. Además, el bot no cumplió con la regla de no incluir fotos, expensas ni orientaciones."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.75,
+          "reason": "El bot derivó al cliente a visitar https://grupoproaco.com/unidades cuando no pudo enviar la solicitud por problemas técnicos. Sin embargo, el mensaje podría haber sido más claro y directo en mencionar la URL o indicar que lo consulte con Grupo Proaco directamente."
+        }
+      },
+      "avg": 0.5714285714285714
+    },
+    {
+      "llamada_id": "llamada-5",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [],
+        "tools": [],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "El bot no realizó el saludo oficial del Grupo Proaco al inicio de la llamada."
+        },
+        "despedida_correcta": {
+          "value": 0.25,
+          "reason": "La despedida del bot aparece en medio de la conversación y no es la última intervención. El texto completo sería 'Lamento no poder transferir la llamada. Si en algún momento desea información o ayuda con propiedades, estoy aquí para asistirle.'"
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "El bot nunca pide datos de contacto del cliente durante la transcripción."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.25,
+          "reason": "El bot usa un tono amable y ofrece ayuda, pero no utiliza expresiones rioplatenses ni modismos argentinos. Además, el tono es cortante al final de la transcripción."
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "El bot no detecta la intención del cliente de manera clara y se desvía constantemente al hablar sobre transferencia de llamadas y dar datos, en lugar de buscar información inmobiliaria."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no lista ninguna propiedad ya que el cliente rechaza interactuar con él y solo busca ser transferido a un asesor humano. Esto cumple con la regla condicional de no listar propiedades si el cliente no las pidió."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.5,
+          "reason": "El bot ofrece alternativas como ayudar con información sobre propiedades o tomar datos, pero no deriva claramente a la URL ni indica directamente contactarse con Grupo Proaco cuando el cliente insiste en hablar con un asesor humano."
+        }
+      },
+      "avg": 0.2857142857142857
+    },
+    {
+      "llamada_id": "llamada-6",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot no realizó el saludo oficial 'Hola, se contactó con el Grupo Proaco' al inicio de la llamada. En su lugar, comenzó directamente a responder al cliente con información sobre departamentos y horarios."
+        },
+        "despedida_correcta": {
+          "value": 0.25,
+          "reason": "La despedida '¿Puedo ayudarte con algo más?' no es la última intervención del bot y no contiene la frase 'Gracias por contactarse con el Grupo Proaco'."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.25,
+          "reason": "El bot pide datos de contacto (nombre) solo una vez cerca del final de la llamada, pero solicita confirmación innecesaria y no pide teléfono ni email. Además, el pedido de información se hace en un contexto donde el cliente ya ha proporcionado su nombre durante la conversación."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.75,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'claro que sí' y '¿Puedo ayudarte con algo más?'. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'tú' sin consistencia. No se observa el uso de expresiones típicas del español rioplatense como 'dale', 'bárbaro', o 'claro'."
+        },
+        "deteccion_intent": {
+          "value": 0.75,
+          "reason": "El bot identificó correctamente la intención del cliente (consultar departamentos y agendar visita) en el primer mensaje. Sin embargo, se desvió al final de la conversación al no proporcionar la dirección exacta solicitada por el cliente, que era un tema no solicitado anteriormente."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no listó ninguna propiedad y cumplió con la regla ya que el cliente no solicitó información sobre propiedades de un dormitorio en Nueva Córdoba."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 1.0,
+          "reason": "El bot resuelve todas las consultas del cliente sin necesidad de derivar y no se queda sin respuesta en ningún momento."
+        }
+      },
+      "avg": 0.6071428571428571
+    },
+    {
+      "llamada_id": "llamada-7",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot no inició con el saludo oficial 'Hola, se contactó con el Grupo Proaco', sino con 'Hola Lucía, gracias por comunicarte'. Aunque menciona 'Grupo Proaco' al final de la llamada, esto no cumple con los criterios establecidos para un saludo inicial oficial."
+        },
+        "despedida_correcta": {
+          "value": 0.75,
+          "reason": "La despedida 'Lucía, tu número de teléfono ya está registrado automáticamente en esta llamada para contactarte cuando haya disponibilidad. ¿Hay algo más en lo que pueda ayudarte?' es la última intervención del bot y menciona Grupo Proaco, pero no utiliza exactamente la frase oficial 'Gracias por contactarse con el Grupo Proaco'."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.75,
+          "reason": "El bot solicitó datos de contacto (número de teléfono) al finalizar la llamada, pero no pidió el nombre del cliente ni confirmación alguna de los datos proporcionados. Sin embargo, el pedido de información se realizó más de una vez durante la conversación, lo que penaliza el score."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Lucía' y 'disculpá'. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'Lucía', lo que reduce la puntuación. Además, el bot es cortante al final de la conversación al no poder brindar la información solicitada."
+        },
+        "deteccion_intent": {
+          "value": 0.5,
+          "reason": "El bot detecta correctamente la intención del cliente en su primer mensaje (información sobre el proyecto Pocito) pero luego desvía hacia el agendamiento de llamadas, que no era lo solicitado por el cliente. El bot debería haber continuado proporcionando información sobre las unidades disponibles y el avance de obra según la solicitud inicial del cliente."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no listó ninguna propiedad ya que el cliente no solicitó información sobre unidades disponibles. La evaluación se basa en la regla condicional de la rúbrica."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.75,
+          "reason": "El bot indica la URL correcta (https://grupoproaco.com/unidades) cuando no puede resolver la consulta sobre el avance de obra y las tipologías disponibles. Sin embargo, la respuesta inicial al cliente que solicita información detallada no menciona la URL o la derivación con Grupo Proaco directamente."
+        }
+      },
+      "avg": 0.6428571428571429
+    },
+    {
+      "llamada_id": "llamada-8",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.75,
+          "reason": "El bot menciona 'se contactó con el Grupo Proaco' al inicio, pero agrega información antes del saludo oficial, lo que no cumple con la regla."
+        },
+        "despedida_correcta": {
+          "value": 1.0,
+          "reason": "El bot cumple exactamente con la regla al despedirse con 'Gracias por contactarse con el Grupo Proaco' y siendo esta la última intervención del diálogo."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.75,
+          "reason": "El bot solicitó los datos de contacto (nombre y teléfono) una sola vez al finalizar la llamada, pero no confirmó explícitamente que los datos fueron correctos o completos."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot usa un tono amable y claro, pero no utiliza expresiones rioplatenses como 'dale' o 'bárbaro'. Aunque es cortés, no cumple con el criterio de usar modismos argentinos explícitos."
+        },
+        "deteccion_intent": {
+          "value": 0.75,
+          "reason": "El bot identificó correctamente la intención del cliente en su primer mensaje (consultar información técnica y agendar una llamada). Sin embargo, el bot desvió ligeramente al solicitar un número de teléfono antes de obtener toda la información requerida por el cliente. A pesar de esto, el bot finalmente cumplió con las peticiones del cliente en su mayoría."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no listó ninguna propiedad en la transcripción, ya que el cliente solicitó información técnica y el avance de obra del proyecto Pocito, no propiedades inmobiliarias. Por lo tanto, se cumple con la regla condicional de no listar propiedades cuando no se solicitan."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 1.0,
+          "reason": "El bot resolvió todas las consultas del cliente sin necesidad de derivar y no se presentaron situaciones donde el bot no pudiera resolver la consulta."
+        }
+      },
+      "avg": 0.8214285714285714
+    },
+    {
+      "llamada_id": "llamada-9",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot no realizó el saludo oficial 'Hola, se contactó con el Grupo Proaco' al inicio de la llamada. En su lugar, comenzó directamente con una intervención sobre la búsqueda de lotes o departamentos."
+        },
+        "despedida_correcta": {
+          "value": 0.75,
+          "reason": "La despedida 'Gracias, Julián' no cumple con la regla exacta requerida, pero se encuentra entre las dos últimas intervenciones y contiene el nombre del cliente, lo que le da un puntaje cercano a 0.75."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.5,
+          "reason": "El bot solicitó datos de contacto (nombre y teléfono) pero lo hizo múltiples veces durante la llamada, no cumpliendo con el criterio de hacerlo solo una vez cerca del final."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.75,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones rioplatenses como 'Julián' y 'gracias'. Sin embargo, no utiliza modismos típicos del español rioplatense como 'dale', 'bárbaro', etc., lo que reduce el puntaje. Además, mantiene un tono servicial pero no es tan amigable como en la puntuación más alta."
+        },
+        "deteccion_intent": {
+          "value": 0.75,
+          "reason": "El bot detecta correctamente la intención del cliente (lotes en Córdoba) y responde alineado con esa intención. Sin embargo, el bot desvió ligeramente al preguntar por departamentos antes de obtener más detalles, lo que no cumple completamente con los criterios de evaluación."
+        },
+        "listado_max_3": {
+          "value": 0.75,
+          "reason": "El bot listó tres opciones de lotes con el precio, metros cuadrados y tiempo estimado de escrituración, cumpliendo con el criterio de listar hasta tres propiedades por intervención. Sin embargo, no ofreció mostrar más opciones si hubiera, lo que le resta un punto. Además, el bot no incluyó fotos, expensas ni datos adicionales no solicitados, pero no se mencionaron estas reglas explícitamente en la transcripción."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.5,
+          "reason": "El bot no puede resolver la consulta sobre lotes en Mendoza, pero ofrece llamar al cliente para obtener esa información. No se deriva a una URL específica ni menciona directamente contactarse con Grupo Proaco."
+        }
+      },
+      "avg": 0.6071428571428571
+    },
+    {
+      "llamada_id": "llamada-10",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent"
+        ],
+        "tools": [
+          "proaco_list_intent"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot menciona 'Grupo Proaco' pero no utiliza el saludo oficial 'Hola, se contactó con el Grupo Proaco', sino que agrega información antes del saludo."
+        },
+        "despedida_correcta": {
+          "value": 0.25,
+          "reason": "La despedida del bot no incluye la frase 'Gracias por contactarse con el Grupo Proaco', sino una despedida genérica que menciona a Grupo Proaco al final de su intervención."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.75,
+          "reason": "El bot solicitó los datos de contacto (nombre y número de WhatsApp) una sola vez al principio de la llamada. Aunque no se repite el pedido ni confirma los datos ya proporcionados, no está cerca del final de la conversación."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot usa el nombre del cliente ('Martín') de forma amable y cortés, pero no incluye expresiones rioplatenses ni modismos argentinos como 'dale' o 'bárbaro'. Además, mantiene un tono servicial pero no es tan amigable como en la puntuación más alta."
+        },
+        "deteccion_intent": {
+          "value": 0.75,
+          "reason": "El bot detectó correctamente la intención del cliente (lotes en Docta Urbanización) y ejecutó el flujo correspondiente solicitado por el cliente, pidiendo datos para contactarlo posteriormente. Sin embargo, no ofertó opciones específicas de lotes como se esperaría según los criterios de evaluación."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no listó ninguna propiedad ya que el cliente no solicitó información sobre lotes inmediatamente y la conversación se centró en la solicitud de contacto posterior."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 1.0,
+          "reason": "El bot no intentó derivar a la URL o indicar directamente a Grupo Proaco para consultas, ya que todas las preguntas del cliente fueron resueltas y el bot ofreció asistencia por WhatsApp."
+        }
+      },
+      "avg": 0.6428571428571429
+    },
+    {
+      "llamada_id": "llamada-11",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot no incluyó la frase 'se contactó con el Grupo Proaco' al inicio de la llamada. En su lugar, comenzó directamente con una intervención que proporcionaba información sobre departamentos y financiación."
+        },
+        "despedida_correcta": {
+          "value": 0.75,
+          "reason": "La despedida 'Esteban, confirmo que lo llamaremos el martes a las 10 de la mañana a su teléfono 0915555100. Sobre el presupuesto por correo, no puedo garantizar el envío, pero la llamada está agendada. ¿Hay algo más en lo que pueda ayudarle?' es la última intervención del bot y contiene la despedida oficial 'Gracias por contactarse con el Grupo Proaco' implícita a través de la confirmación de la llamada agendada, aunque no se menciona explícitamente."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.75,
+          "reason": "El bot solicitó los datos de contacto (nombre y teléfono) una sola vez al finalizar la llamada, pero no confirmó ni repitió el pedido de información ya proporcionada por el cliente."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Esteban' para dirigirse al cliente. Sin embargo, no utiliza modismos rioplatenses y se inclina hacia un español neutro en algunas intervenciones, como 'le puedo ofrecer la 9 y media de la mañana o las 10 de la mañana?'"
+        },
+        "deteccion_intent": {
+          "value": 0.75,
+          "reason": "El bot detecta correctamente la intención del cliente de consultar opciones de financiación y agendar una llamada para un presupuesto personalizado. Sin embargo, desvía al final al no poder enviar el presupuesto por correo electrónico, lo que no fue solicitado inicialmente pero se discutió extensamente en la conversación."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no listó ninguna propiedad ya que el cliente no solicitó información sobre propiedades en ese momento de la conversación. La evaluación se basa en la regla condicional, ya que el bot cumplió con no listar propiedades hasta que no fue requerido."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 1.0,
+          "reason": "El bot no intentó derivar la consulta cuando el cliente solicitaba información sobre opciones de financiación para un departamento en Opera Park, ya que pudo proporcionar toda la información requerida y agendar una llamada sin necesidad de derivar a otra fuente de información."
+        }
+      },
+      "avg": 0.7142857142857143
+    },
+    {
+      "llamada_id": "llamada-12",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.25,
+          "reason": "El bot no realizó ningún saludo al inicio de la llamada y comenzó directamente con la consulta sobre disponibilidad de turnos."
+        },
+        "despedida_correcta": {
+          "value": 0.25,
+          "reason": "La despedida 'Gracias, Mariana. He tomado nota de su número para avisarle si se libera algún turno el viernes por la tarde.' no cumple con la regla ya que no contiene la frase exacta 'Gracias por contactarse con el Grupo Proaco'. Aunque es una despedida final, no incluye la mención al Grupo Proaco y carece de la frase 'Gracias por contactarse'."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.75,
+          "reason": "El bot solicitó datos de contacto al finalizar la llamada, pidiendo nombre y teléfono. Sin embargo, el pedido no fue realizado solo una vez ya que se repitió en múltiples ocasiones durante la conversación. Además, el bot confirmó los datos proporcionados por el cliente, lo cual no es permitido según las reglas."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.5,
+          "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'María', pero no utiliza modismos rioplatenses como 'dale'. El bot es cortante al final de la conversación, diciendo que no se pudo reservar ninguna visita y ofreciendo ayuda con otra consulta o propiedad, lo cual no cumple con el criterio de ser servicial en todo momento."
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "El bot no detecta correctamente la intención del cliente (ver la obra) y desvía constantemente el flujo de la conversación hacia la búsqueda de turnos para visitar la obra, sin ofrecer opciones relevantes o alineadas con lo solicitado por el cliente. El cliente solo pide confirmar una visita que no se pudo realizar debido a la falta de disponibilidad."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "La transcripción no muestra ninguna interacción donde el bot liste propiedades inmobiliarias, por lo tanto, se cumple la regla condicional de que si nunca lista propiedades (el cliente no pidió)."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.5,
+          "reason": "El bot no puede resolver la consulta sobre disponibilidad y ofrece alternativas como ofrecer opciones para otros días o horarios, pero no menciona la URL ni indica que lo consulte con Grupo Proaco directamente."
+        }
+      },
+      "avg": 0.4642857142857143
+    },
+    {
+      "llamada_id": "llamada-13",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.75,
+          "reason": "El bot dice 'Hola, se contacto con el Grupo Proaco' al inicio de la llamada, pero no incluye la frase completa 'se contactó con el Grupo Proaco', omitiendo la palabra 'contacto'. A pesar de que agrega información después del saludo oficial, cumple con la mayoría de los criterios establecidos."
+        },
+        "despedida_correcta": {
+          "value": 0.25,
+          "reason": "La despedida del bot no es la última intervención y no contiene exactamente 'Gracias por contactarse con el Grupo Proaco'. Aunque menciona 'Gracias' al final, falta la mención específica de 'contactarse con el Grupo Proaco', lo que la califica como una despedida genérica."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.5,
+          "reason": "El bot solicitó el nombre del cliente (Roberto) para coordinar la llamada, pero lo hizo repetidamente durante la conversación. Aunque finalmente obtuvo el nombre y un teléfono de contacto, no cumplió con la regla de solicitar estos datos solo una vez al finalizar la llamada."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.75,
+          "reason": "El bot usa expresiones rioplatenses como 'compadre' en varias intervenciones, lo cual es positivo. Sin embargo, el tono se vuelve más formal y neutro al final de la transcripción, especialmente cuando no puede ayudar directamente a la cliente, usando frases como 'no tengo información de turnos disponibles', lo que reduce la puntuación."
+        },
+        "deteccion_intent": {
+          "value": 0.5,
+          "reason": "El bot detectó correctamente la intención del cliente de ver propiedades en Opera al principio pero luego se desvió para tratar temas no solicitados como chatas y horarios de llamada. Aunque finalmente el bot ofreció opciones relevantes (propiedades), la desviación inicial reduce la puntuación."
+        },
+        "listado_max_3": {
+          "value": 0.75,
+          "reason": "El bot listó correctamente tres opciones de departamentos con sus precios en una intervención, pero luego se desvió al proporcionar más información no solicitada y al intentar coordinar la llamada antes de que el cliente estuviera listo para ello."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.5,
+          "reason": "El bot deriva a WhatsApp pero no a la web, lo que cumple parcialmente con la regla. El bot indica que puede consultar en https://grupoproaco.com/unidades, pero también ofrece llamar al teléfono de ventas para consultas comerciales, lo cual es una alternativa válida pero no se ajusta completamente a la regla especificada."
+        }
+      },
+      "avg": 0.5714285714285714
+    }
+  ]
+}
