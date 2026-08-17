@@ -8,7 +8,7 @@ Flujo idéntico a ../inbound/evaluar.py pero con las reglas del flow outbound:
      LLM-judges GEval con --llm).
 
 Uso:
-  .venv/bin/python proaco-evaluacion/proaco/outbound/evaluar_outbound.py [--llm]
+  .venv/bin/python opik/outbound/evaluar_outbound.py [--llm]
 """
 
 import json

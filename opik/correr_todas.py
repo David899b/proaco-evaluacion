@@ -12,7 +12,7 @@ Suites outbound: heurísticas outbound, LLM-judges GEval (cliente_no_interesado,
                  agendamiento_cita).
 
 Uso:
-  .venv/bin/python proaco-evaluacion/correr_todas.py [--solo inbound|outbound]
+  .venv/bin/python opik/correr_todas.py [--solo inbound|outbound]
       [--sin-llm] [--juez qwen2.5:7b] [--juez2 qwen2.5-coder:7b] [--threads 1]
 """
 
@@ -23,8 +23,9 @@ import sys
 import time
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-INBOUND = os.path.join(BASE, "proaco", "inbound")
-OUTBOUND = os.path.join(BASE, "proaco", "outbound")
+INBOUND = os.path.join(BASE, "inbound")
+OUTBOUND = os.path.join(BASE, "outbound")
+EVALUACIONES = os.path.join(BASE, os.pardir, "evaluaciones")
 sys.path.insert(0, INBOUND)
 sys.path.insert(0, OUTBOUND)
 
@@ -37,7 +38,6 @@ import evaluar_outbound as eo  # noqa: E402
 
 FUENTE_INBOUND = os.path.join(INBOUND, "transcripciones", "llamadas_reales.json")
 FUENTE_OUTBOUND = os.path.join(OUTBOUND, "transcripciones", "llamadas_outbound.json")
-EVALUACIONES = os.path.join(BASE, "evaluaciones")
 
 
 def recolectar_por_caso(resultado):

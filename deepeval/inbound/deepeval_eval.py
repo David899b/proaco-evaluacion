@@ -1,14 +1,18 @@
 """
-Evaluación del voicebot Proaco con DeepEval (juez Groq qwen3.6-27b).
+Evaluación del voicebot Proaco con DeepEval (juez mejorado).
 
 Métrica custom que llama directamente al modelo con prompts mejorados
-(rúbrica + CoT + anclas de score). Maneja rate limits y parsing JSON.
+(rúbrica + CoT + anclas de score). Soporta Ollama local y Groq cloud.
 
 Uso:
-  export GROQ_API_KEY="gsk_..."
-  .venv/bin/python proaco-evaluacion/proaco/inbound/deepeval_eval.py [--solo llamada-1]
+  # Ollama local (sin API key):
+  .venv/bin/python deepeval/inbound/evaluar.py
 
-Requiere: pip install deepeval + GROQ_API_KEY en el entorno.
+  # Groq cloud (requiere API key):
+  export GROQ_API_KEY="gsk_..."
+  .venv/bin/python deepeval/inbound/evaluar.py --modelo groq/qwen/qwen3.6-27b
+
+Requiere: pip install deepeval
 """
 
 import json
@@ -17,13 +21,15 @@ import sys
 import time
 import re
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROACO = os.path.dirname(BASE_DIR)
-EVALUACIONES = os.path.join(PROACO, "evaluaciones")
-DEEPEVAL_DIR = os.path.join(EVALUACIONES, "deepeval")
-FUENTE = os.path.join(PROACO, "proaco", "inbound", "transcripciones", "llamadas_reales.json")
+INBOUND_DIR = os.path.dirname(os.path.abspath(__file__))
+DEEPEVAL_DIR = os.path.dirname(INBOUND_DIR)
+ROOT = os.path.dirname(DEEPEVAL_DIR)
+EVALUACIONES = os.path.join(ROOT, "evaluaciones")
+DEEPEVAL_OUT = os.path.join(EVALUACIONES, "deepeval")
+SHARED = os.path.join(ROOT, "shared")
+FUENTE = os.path.join(ROOT, "opik", "inbound", "transcripciones", "llamadas_reales.json")
 DEFAULT_MODEL = "ollama/qwen2.5:7b"
-sys.path.insert(0, os.path.join(PROACO, "proaco"))
+sys.path.insert(0, SHARED)
 from juez_mejorado import REGLAS_PROACO, build_system_prompt, build_evaluation_prompt
 
 # ── Cargar transcripciones ─────────────────────────────────────────────────────
@@ -162,7 +168,7 @@ def main():
     print(f"Modelo juez: {args.modelo}")
     print(f"Métricas: {', '.join(REGLAS_PROACO.keys())}")
 
-    os.makedirs(DEEPEVAL_DIR, exist_ok=True)
+    os.makedirs(DEEPEVAL_OUT, exist_ok=True)
 
     resultados = []
     for i, item in enumerate(items):
@@ -184,7 +190,7 @@ def main():
         }
         resultados.append(resultado)
 
-        carpeta = os.path.join(DEEPEVAL_DIR, llamada_id)
+        carpeta = os.path.join(DEEPEVAL_OUT, llamada_id)
         os.makedirs(carpeta, exist_ok=True)
         with open(os.path.join(carpeta, "scores_deep.json"), "w", encoding="utf-8") as f:
             json.dump(resultado, f, ensure_ascii=False, indent=2)
@@ -216,7 +222,7 @@ def main():
         "global_avg": global_avg,
         "por_llamada": resultados,
     }
-    out_path = os.path.join(DEEPEVAL_DIR, "resultados_deep.json")
+    out_path = os.path.join(DEEPEVAL_OUT, "resultados_deep.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(consolidado, f, ensure_ascii=False, indent=2)
     print(f"\nResultados guardados en: {out_path}")

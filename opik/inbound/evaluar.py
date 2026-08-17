@@ -11,7 +11,7 @@ Formato de transcripción:
   TXT:   archivos con turnos "[BOT] ..." / "[CLIENTE] ..." (el nombre del archivo es el id)
 
 Uso:
-  .venv/bin/python proaco-evaluacion/evaluar.py [ruta_dataset|ruta_archivo|carpeta]
+  .venv/bin/python opik/inbound/evaluar.py [ruta_dataset|ruta_archivo|carpeta]
 """
 
 import json

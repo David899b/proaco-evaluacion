@@ -9,7 +9,7 @@ Flujo:
 
 Uso:
   export LULA_API_KEY="api-..."
-  .venv/bin/python proaco-evaluacion/proaco/outbound/exportar_outbound.py [--campaign "Grupo Proaco"] [--size 100]
+  .venv/bin/python opik/outbound/exportar_outbound.py [--campaign "Grupo Proaco"] [--size 100]
 """
 
 import argparse
