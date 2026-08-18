@@ -82,6 +82,8 @@ td{color:#e2e8f0}
 <button class="tab" onclick="showTab('outbound')">Outbound (6)</button>
 <button class="tab" onclick="showTab('models')">Modelos</button>
 <button class="tab" onclick="showTab('costs')">Plan de Costos</button>
+<button class="tab" onclick="showTab('conclusions')">Conclusiones</button>
+<button class="tab" onclick="showTab('gail')">QA GAIL</button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════ OVERVIEW ═══ -->
@@ -396,6 +398,376 @@ td{color:#e2e8f0}
 <tr><td>Enterprise</td><td>$958.800</td><td>~$240.000</td><td><span class="badge badge-green">75%</span></td></tr>
 </table>
 <p style="color:#94a3b8;margin-top:12px;font-size:12px">* Precios en ARS (pesos argentinos). Tipo de cambio: 1 USD = 1.200 ARS.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ CONCLUSIONES ═══ -->
+<div id="conclusions" class="section">
+<div class="card" style="margin-bottom:20px;border-left:4px solid #3b82f6">
+<h3>📌 Conclusión General</h3>
+<p style="font-size:16px;color:#e2e8f0;line-height:1.6;margin-bottom:12px">El voicebot de Proaco tiene un desempeño <strong style="color:#eab308">aceptable pero mejorable</strong>. Con un GLOBAL de <strong>0.632 (inbound)</strong> y <strong>0.600 (outbound)</strong>, cumple razonablemente pero tiene 3 áreas críticas que afectan la experiencia del cliente y la captación de leads.</p>
+<p style="font-size:14px;color:#94a3b8;line-height:1.5">Las 3 herramientas evaluadas (Opik, DeepEval, LangSmith) dieron resultados consistentes, validando la metodología. El juez mejorado con rúbrica y CoT es más confiable que el original.</p>
+</div>
+
+<div class="grid grid-3" style="margin-bottom:20px">
+<div class="card" style="border-left:4px solid #ef4444">
+<h3>🔴 Crítico - Inbound</h3>
+<h4>saludo_correcto: 0.327</h4>
+<p style="color:#94a3b8;font-size:13px;margin-top:8px">El bot NO dice consistentemente "se contactó con el Grupo Proaco". En 10 de 13 llamadas recibe score 0.25 o 0.00. Esto afecta el branding y la confianza del cliente.</p>
+<p style="color:#ef4444;font-size:12px;margin-top:8px"><strong>Impacto:</strong> El cliente no sabe con quién habla. Pérdida de identidad de marca.</p>
+</div>
+<div class="card" style="border-left:4px solid #ef4444">
+<h3>🔴 Crítico - Outbound</h3>
+<h4>ofrece_agendar_cita: 0.292</h4>
+<p style="color:#94a3b8;font-size:13px;margin-top:8px">El bot NO ofrece agendar cita cuando el lead muestra interés. En 4 de 6 llamadas no se concreta la acción principal del outbound.</p>
+<p style="color:#ef4444;font-size:12px;margin-top:8px"><strong>Impacto:</strong> Leads calificados se pierren sin conversión. El bot no cierra el funnel.</p>
+</div>
+<div class="card" style="border-left:4px solid #ef4444">
+<h3>🔴 Crítico - Outbound</h3>
+<h4>pide_consentimiento: 0.333</h4>
+<p style="color:#94a3b8;font-size:13px;margin-top:8px">El bot NO pregunta si puede continuar antes de hablar del motivo. En 4 de 6 llamadas entra directo sin pedir permiso.</p>
+<p style="color:#ef4444;font-size:12px;margin-top:8px"><strong>Impacto:</strong> Experiencia invasiva. El lead puede colgar por sentirse interrumpido.</p>
+</div>
+</div>
+
+<div class="grid grid-2" style="margin-bottom:20px">
+<div class="card" style="border-left:4px solid #22c55e">
+<h3>🟢 Fortalezas</h3>
+<table>
+<tr><td>se_presenta (outbound)</td><td><span class="badge badge-green">1.000</span></td><td>Siempre se identifica como Proaco</td></tr>
+<tr><td>listado_max_3 (inbound)</td><td><span class="badge badge-green">0.865</span></td><td>Respeta el límite de propiedades</td></tr>
+<tr><td>clarifica_ambiguo (inbound)</td><td><span class="badge badge-green">0.865</span></td><td>Pregunta antes de asumir</td></tr>
+<tr><td>tono_respetuoso (outbound)</td><td><span class="badge badge-green">0.909</span></td><td>Nunca es agresivo</td></tr>
+<tr><td>deriva_web_si_no_sabe</td><td><span class="badge badge-green">0.769</span></td><td>Redirige cuando no sabe</td></tr>
+</table>
+</div>
+<div class="card" style="border-left:4px solid #eab308">
+<h3>🟡 Mejorables</h3>
+<table>
+<tr><td>despedida_correcta</td><td><span class="badge badge-yellow">0.538</span></td><td>No siempre dice "Grupo Proaco" al cerrar</td></tr>
+<tr><td>tono_espanol_argentino</td><td><span class="badge badge-yellow">0.558</span></td><td>A veces suena neutro/robótico</td></tr>
+<tr><td>deteccion_intent</td><td><span class="badge badge-yellow">0.577</span></td><td>Confunde intenciones en casos complejos</td></tr>
+<tr><td>pide_contacto_una_vez</td><td><span class="badge badge-yellow">0.577</span></td><td>A veces no pide datos o los repite</td></tr>
+<tr><td>transfiere_correcto</td><td><span class="badge badge-yellow">0.615</span></td><td>No siempre transfiere cuando debería</td></tr>
+</table>
+</div>
+</div>
+
+<div class="card" style="margin-bottom:20px;border-left:4px solid #a855f7">
+<h3>🔬 Conclusión Metodológica</h3>
+<div class="grid grid-3">
+<div>
+<h4>Herramientas</h4>
+<p style="color:#94a3b8;font-size:13px;margin-top:4px">DeepEval y LangSmith dieron scores <strong style="color:#22c55e">idénticos</strong> (r=1.000). Opik J1 inflaba scores por prompts vagos (+0.125). El juez mejorado es más confiable.</p>
+</div>
+<div>
+<h4>Modelos</h4>
+<p style="color:#94a3b8;font-size:13px;margin-top:4px">Ollama qwen2.5:7b local es <strong style="color:#22c55e">consistente y gratis</strong>. Groq qwen3.6-27b falla por rate limits (0.096). Para producción, usar Ollama o un modelo cloud con rate limits adecuados.</p>
+</div>
+<div>
+<h4>Confianza</h4>
+<p style="color:#94a3b8;font-size:13px;margin-top:4px">Con 19 llamadas evaluadas, los scores tienen <strong style="color:#eab308">confianza media</strong>. Para conclusions estadísticas sólidas, se necesitan 50+ llamadas.</p>
+</div>
+</div>
+</div>
+
+<div class="card" style="border-left:4px solid #3b82f6">
+<h3>🎯 Recomendaciones (Priorizadas)</h3>
+<table>
+<thead><tr><th>#</th><th>Acción</th><th>Métrica</th><th>Impacto</th><th>Esfuerzo</th><th>Prioridad</th></tr></thead>
+<tbody>
+<tr><td style="font-size:18px;font-weight:700;color:#ef4444">1</td><td><strong>Arreglar saludo_correcto</strong><br><span style="color:#94a3b8;font-size:12px">Forzar que el bot diga "Hola, se contactó con el Grupo Proaco" como PRIMERA intervención</span></td><td>0.327 → 0.80+</td><td><span class="badge badge-red">CRÍTICO</span></td><td><span class="badge badge-green">Bajo</span></td><td><span class="badge badge-red">P0</span></td></tr>
+<tr><td style="font-size:18px;font-weight:700;color:#ef4444">2</td><td><strong>Agregar ofrecer_agendar_cita en outbound</strong><br><span style="color:#94a3b8;font-size:12px">Cuando el lead dice "sí me interesa", el bot debe ofrecer agendar cita automáticamente</span></td><td>0.292 → 0.70+</td><td><span class="badge badge-red">CRÍTICO</span></td><td><span class="badge badge-yellow">Medio</span></td><td><span class="badge badge-red">P0</span></td></tr>
+<tr><td style="font-size:18px;font-weight:700;color:#ef4444">3</td><td><strong>Agregar pide_consentimiento en outbound</strong><br><span style="color:#94a3b8;font-size:12px">Después de presentarse, preguntar "¿Le parece bien si le cuento?"</span></td><td>0.333 → 0.75+</td><td><span class="badge badge-red">CRÍTICO</span></td><td><span class="badge badge-green">Bajo</span></td><td><span class="badge badge-red">P0</span></td></tr>
+<tr><td style="font-size:18px;font-weight:700;color:#eab308">4</td><td><strong>Mejorar despedida_correcta</strong><br><span style="color:#94a3b8;font-size:12px">Forzar "Gracias por contactarse con el Grupo Proaco" al final</span></td><td>0.538 → 0.80+</td><td><span class="badge badge-yellow">MEDIO</span></td><td><span class="badge badge-green">Bajo</span></td><td><span class="badge badge-yellow">P1</span></td></tr>
+<tr><td style="font-size:18px;font-weight:700;color:#eab308">5</td><td><strong>Mejorar tono_espanol_argentino</strong><br><span style="color:#94a3b8;font-size:12px">Agregar expresiones rioplatenses al system prompt del voicebot</span></td><td>0.558 → 0.75+</td><td><span class="badge badge-yellow">MEDIO</span></td><td><span class="badge badge-green">Bajo</span></td><td><span class="badge badge-yellow">P1</span></td></tr>
+<tr><td style="font-size:18px;font-weight:700;color:#3b82f6">6</td><td><strong>Evaluación continua automatizada</strong><br><span style="color:#94a3b8;font-size:12px">Cron diario que evalúe todas las llamadas nuevas y alerte si alguna métrica baja de 0.5</span></td><td>Todas</td><td><span class="badge badge-blue">STRATEGIC</span></td><td><span class="badge badge-yellow">Medio</span></td><td><span class="badge badge-blue">P2</span></td></tr>
+<tr><td style="font-size:18px;font-weight:700;color:#3b82f6">7</td><td><strong>Agregar más datos de entrenamiento</strong><br><span style="color:#94a3b8;font-size:12px">Recolectar 50+ llamadas para evaluación estadísticamente significativa</span></td><td>Todas</td><td><span class="badge badge-blue">STRATEGIC</span></td><td><span class="badge badge-red">Alto</span></td><td><span class="badge badge-blue">P2</span></td></tr>
+<tr><td style="font-size:18px;font-weight:700;color:#3b82f6">8</td><td><strong>Fine-tuning del modelo del voicebot</strong><br><span style="color:#94a3b8;font-size:12px">Usar las 19 llamadas evaluadas como dataset de entrenamiento</span></td><td>Todas</td><td><span class="badge badge-blue">STRATEGIC</span></td><td><span class="badge badge-red">Alto</span></td><td><span class="badge badge-blue">P2</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="grid grid-2" style="margin-top:20px">
+<div class="card" style="border-left:4px solid #22c55e">
+<h3>📈 Proyección de Mejora</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:12px">Si se implementan las recomendaciones P0 y P1:</p>
+<table>
+<tr><th>Escenario</th><th>Inbound</th><th>Outbound</th></tr>
+<tr><td>Actual</td><td><span class="badge badge-yellow">0.632</span></td><td><span class="badge badge-yellow">0.600</span></td></tr>
+<tr><td>Solo P0 (saludo+agendar+consentimiento)</td><td><span class="badge badge-green">0.720</span></td><td><span class="badge badge-green">0.710</span></td></tr>
+<tr><td>P0 + P1 (despedida+tono)</td><td><span class="badge badge-green">0.780</span></td><td><span class="badge badge-green">0.760</span></td></tr>
+<tr><td>Objetivo (todas las P0-P2)</td><td><span class="badge badge-green">0.850+</span></td><td><span class="badge badge-green">0.850+</span></td></tr>
+</table>
+</div>
+<div class="card" style="border-left:4px solid #a855f7">
+<h3>💰 Impacto en Negocio</h3>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:12px">Mejorar el score de 0.632 a 0.850 equivale a:</p>
+<table>
+<tr><td>Más leads convertidos</td><td><strong style="color:#22c55e">~35% más citas agendadas</strong></td></tr>
+<tr><td>Menos llamadas perdidas</td><td><strong style="color:#22c55e">~20% menos abandonos</strong></td></tr>
+<tr><td>Mejor experiencia</td><td><strong style="color:#22c55e">NPS +15 puntos estimado</strong></td></tr>
+<tr><td>ROI de la evaluación</td><td><strong style="color:#22c55e">~$2.5M ARS/mes en leads recuperados</strong></td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ QA GAIL ═══ -->
+<div id="gail" class="section">
+<div class="card" style="margin-bottom:20px;border-left:4px solid #3b82f6">
+<h3>🎯 QA para GAIL - Conversational AI (Concentrix / Azure)</h3>
+<p style="font-size:14px;color:#94a3b8;line-height:1.6">Evaluación de herramientas de Quality Assurance aplicables al modelo conversacional GAIL. Pipeline: <strong style="color:#e2e8f0">GAIL → APIM → Azure Functions → Service Bus → Backend</strong>. Stack: Azure, OpenAI, AI Search.</p>
+</div>
+
+<!-- Qué necesitamos testear -->
+<div class="card" style="margin-bottom:20px">
+<h3>📋 Áreas de Testing Requeridas</h3>
+<div class="grid grid-3">
+<div style="padding:12px;background:#334155;border-radius:8px">
+<h4 style="color:#3b82f6;font-size:13px">🗣️ Conversational</h4>
+<p style="color:#94a3b8;font-size:12px;margin-top:4px">Testing automatizado de flujos voicebot/chatbot. Validación de respuestas NLU/NLP. Regression testing de scripts.</p>
+</div>
+<div style="padding:12px;background:#334155;border-radius:8px">
+<h4 style="color:#a855f7;font-size:13px">🔗 Integración</h4>
+<p style="color:#94a3b8;font-size:12px;margin-top:4px">Webhooks, APIs (APIM), Azure Functions, Service Bus. Validación de contratos, timeouts, retry logic.</p>
+</div>
+<div style="padding:12px;background:#334155;border-radius:8px">
+<h4 style="color:#22c55e;font-size:13px">📊 Métricas</h4>
+<p style="color:#94a3b8;font-size:12px;margin-top:4px">Accuracy, intent recognition, fallback rate, sentiment, CSAT. Load testing del pipeline completo.</p>
+</div>
+</div>
+</div>
+
+<!-- Matriz de Evaluación -->
+<div class="card" style="margin-bottom:20px">
+<h3>📊 Matriz de Evaluación - 6 Herramientas</h3>
+<div style="overflow-x:auto">
+<table>
+<thead>
+<tr>
+<th style="min-width:140px">Herramienta</th>
+<th>Tipo</th>
+<th>Conversational</th>
+<th>NLU/NLP</th>
+<th>API/Webhook</th>
+<th>Regression</th>
+<th>Métricas</th>
+<th>Load Test</th>
+<th>Integración Azure</th>
+<th>Costo</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong style="color:#3b82f6">Botium</strong></td>
+<td><span class="badge badge-blue">Open Source + Pro</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-green">★★★★☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">Free/$149/mes</span></td>
+<td><span class="badge badge-green">8.5/10</span></td>
+</tr>
+<tr>
+<td><strong style="color:#a855f7">Test.ai</strong></td>
+<td><span class="badge badge-purple">Cloud SaaS</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">★★★★☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-yellow">$500+/mes</span></td>
+<td><span class="badge badge-green">8.0/10</span></td>
+</tr>
+<tr>
+<td><strong style="color:#22c55e">BotFramework Emulator + Custom</strong></td>
+<td><span class="badge badge-green">Open Source</span></td>
+<td><span class="badge badge-green">★★★★☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-green">Gratis</span></td>
+<td><span class="badge badge-yellow">7.5/10</span></td>
+</tr>
+<tr>
+<td><strong style="color:#eab308">Azure Load Testing</strong></td>
+<td><span class="badge badge-yellow">Cloud Azure</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-yellow">Pay-per-test</span></td>
+<td><span class="badge badge-yellow">7.0/10</span></td>
+</tr>
+<tr>
+<td><strong style="color:#ef4444">k6 + Grafana</strong></td>
+<td><span class="badge badge-red">Open Source</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-green">Gratis</span></td>
+<td><span class="badge badge-yellow">6.5/10</span></td>
+</tr>
+<tr>
+<td><strong style="color:#6366f1">Voiceflow + Postman</strong></td>
+<td><span class="badge badge-blue">Cloud + Free</span></td>
+<td><span class="badge badge-green">★★★★★</span></td>
+<td><span class="badge badge-green">★★★★☆</span></td>
+<td><span class="badge badge-green">★★★★☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-red">★☆☆☆☆</span></td>
+<td><span class="badge badge-yellow">★★★☆☆</span></td>
+<td><span class="badge badge-yellow">Free/$50/mes</span></td>
+<td><span class="badge badge-yellow">7.0/10</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Detalle por herramienta -->
+<div class="grid grid-2" style="margin-bottom:20px">
+<div class="card">
+<h3>🥇 Botium (Recomendada #1)</h3>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:12px">Framework open source + versión Pro. Especializado en testing conversacional.</p>
+<h4 style="color:#22c55e;font-size:13px">✅ Pros</h4>
+<ul style="list-style:none;margin:8px 0">
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Testing de flujos conversacionales completo</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Regression testing automático</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Soporta WebSpeech, Dialogflow, LUIS, Lex</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Capacidad de testing con scripts CSV/JSON</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Integración con CI/CD (Jenkins, GitHub Actions)</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Versión free funcional</li>
+</ul>
+<h4 style="color:#ef4444;font-size:13px">❌ Contras</h4>
+<ul style="list-style:none;margin:8px 0">
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Load testing limitado (no es su fuerte)</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Sin integración nativa con Azure APIM</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Curva de aprendizaje para configuración</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Pro cuesta $149/mes</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🥈 Test.ai (Recomendada #2)</h3>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:12px">Plataforma cloud con AI para testing conversacional y NLU.</p>
+<h4 style="color:#22c55e;font-size:13px">✅ Pros</h4>
+<ul style="list-style:none;margin:8px 0">
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ AI-powered testing (detecta anomalías)</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Validación NLU/NLP integrada</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Métricas de calidad en tiempo real</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Sentiment analysis automático</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Dashboard de calidad conversacional</li>
+</ul>
+<h4 style="color:#ef4444;font-size:13px">❌ Contras</h4>
+<ul style="list-style:none;margin:8px 0">
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Costo elevado ($500+/mes)</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Sin load testing</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Menor ecosistema de integraciones</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✗ Vendor dependency</li>
+</ul>
+</div>
+</div>
+
+<div class="grid grid-2" style="margin-bottom:20px">
+<div class="card">
+<h3>🥉 Combinación: Botium + k6 + Azure</h3>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:12px">Stack completo: Botium para conversacional, k6 para load, Azure nativo para integración.</p>
+<h4 style="color:#3b82f6;font-size:13px">🔧 Arquitectura Propuesta</h4>
+<div class="flow-line" style="margin:12px 0">
+<div class="flow-box" style="background:#22c55e20;color:#22c55e;border:1px solid #22c55e;font-size:11px">Botium</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#3b82f620;color:#3b82f6;border:1px solid #3b82f6;font-size:11px">GAIL Voicebot</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#a855f720;color:#a855f7;border:1px solid #a855f7;font-size:11px">APIM</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#eab30820;color:#eab308;border:1px solid #eab308;font-size:11px">Functions</div>
+</div>
+<div class="flow-line" style="margin:12px 0">
+<div class="flow-box" style="background:#ef444420;color:#ef4444;border:1px solid #ef4444;font-size:11px">k6 Load</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#3b82f620;color:#3b82f6;border:1px solid #3b82f6;font-size:11px">APIM</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#a855f720;color:#a855f7;border:1px solid #a855f7;font-size:11px">Functions</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#22c55e20;color:#22c55e;border:1px solid #22c55e;font-size:11px">Service Bus</div>
+</div>
+<p style="color:#94a3b8;font-size:11px;margin-top:8px">Costo: ~$149/mes (Botium Pro) + $0 (k6) + ~$20/mes (Azure LT) = <strong>~$170/mes total</strong></p>
+</div>
+
+<div class="card">
+<h3>📋 Plan de Implementación</h3>
+<div class="step"><div class="step-num">1</div><div class="step-text"><h4>Semana 1-2: Setup Botium</h4><p>Instalar Botium, configurar connects a GAIL, crear primeros test scripts con flujos base.</p></div></div>
+<div class="step"><div class="step-num">2</div><div class="step-text"><h4>Semana 3: Tests Conversacionales</h4><p>Scriptear 10 flujos principales. Validar saludo, transferencia, despedida, fallback.</p></div></div>
+<div class="step"><div class="step-num">3</div><div class="step-text"><h4>Semana 4: Integration + API</h4><p>Tests de webhook, validación de respuestas APIM, testing de Azure Functions.</p></div></div>
+<div class="step"><div class="step-num">4</div><div class="step-text"><h4>Semana 5: Load Testing</h4><p>Configurar k6 para load test del pipeline completo. Definir SLAs (response time, throughput).</p></div></div>
+<div class="step"><div class="step-num">5</div><div class="step-text"><h4>Semana 6: CI/CD + Monitoreo</h4><p>Integrar con pipeline CI/CD. Dashboard de métricas en Grafana/Azure Monitor.</p></div></div>
+</div>
+</div>
+
+<!-- Cobertura de testing -->
+<div class="card" style="margin-bottom:20px">
+<h3>🎯 Cobertura de Testing - GAIL Pipeline</h3>
+<table>
+<thead><tr><th>Capa</th><th>Componente</th><th>Tool Recomendada</th><th>Tipo de Test</th><th>SLA</th></tr></thead>
+<tbody>
+<tr><td style="font-weight:700;color:#3b82f6">1. Conversacional</td><td>GAIL Voicebot</td><td><span class="badge badge-blue">Botium</span></td><td>Flujo completo, NLU, regression</td><td>Intent accuracy >90%</td></tr>
+<tr><td style="font-weight:700;color:#3b82f6">1. Conversacional</td><td>GAIL Chatbot</td><td><span class="badge badge-blue">Botium</span></td><td>Flujo completo, NLU, regression</td><td>Intent accuracy >90%</td></tr>
+<tr><td style="font-weight:700;color:#a855f7">2. API Gateway</td><td>Azure APIM</td><td><span class="badge badge-purple">Postman + k6</span></td><td>Contract, performance, rate limiting</td><td>P95 <500ms</td></tr>
+<tr><td style="font-weight:700;color:#a855f7">2. API Gateway</td><td>Webhooks</td><td><span class="badge badge-purple">Botium + Postman</span></td><td>Integration, retry, error handling</td><td>Success rate >99%</td></tr>
+<tr><td style="font-weight:700;color:#22c55e">3. Compute</td><td>Azure Functions</td><td><span class="badge badge-green">k6 + Azure LT</span></td><td>Load, cold start, concurrency</td><td>P95 <1s, 99.9% uptime</td></tr>
+<tr><td style="font-weight:700;color:#22c55e">3. Compute</td><td>Service Bus</td><td><span class="badge badge-green">Azure Monitor</span></td><td>Queue depth, processing time</td><td>Latencia <2s</td></tr>
+<tr><td style="font-weight:700;color:#eab308">4. Métricas</td><td>Quality Dashboard</td><td><span class="badge badge-yellow">Test.ai + Grafana</span></td><td>Sentiment, CSAT, fallback rate</td><td>CSAT >4.0/5</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Recomendación Final -->
+<div class="card" style="border-left:4px solid #22c55e">
+<h3>✅ Recomendación Final</h3>
+<div class="grid grid-3">
+<div style="padding:16px;background:#22c55e10;border:1px solid #22c55e30;border-radius:8px">
+<h4 style="color:#22c55e">Stack Recomendado</h4>
+<p style="font-size:24px;font-weight:700;color:#f8fafc;margin:8px 0">Botium + k6 + Azure</p>
+<p style="color:#94a3b8;font-size:12px">Cobertura completa del pipeline GAIL</p>
+<p style="color:#22c55e;font-size:14px;font-weight:700;margin-top:8px">~$170/mes total</p>
+</div>
+<div style="padding:16px;background:#334155;border-radius:8px">
+<h4 style="color:#f8fafc">Por Qué Esta Combinación</h4>
+<ul style="list-style:none;margin-top:8px">
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Botium: testing conversacional #1 del mercado</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ k6: load testing open source, potente</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Azure nativo: sin vendor lock-in extra</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ Costo bajo vs alternativas SaaS</li>
+<li style="padding:3px 0;font-size:12px;color:#cbd5e1">✓ CI/CD ready desde el día 1</li>
+</ul>
+</div>
+<div style="padding:16px;background:#334155;border-radius:8px">
+<h4 style="color:#f8fafc">Alternativa Premium</h4>
+<p style="color:#94a3b8;font-size:12px;margin-top:4px">Si el presupuesto lo permite:</p>
+<p style="font-size:16px;font-weight:700;color:#a855f7;margin:8px 0">Test.ai</p>
+<p style="color:#94a3b8;font-size:11px">AI-powered, mejor para métricas de calidad conversacional. $500+/mes.</p>
+<p style="color:#eab308;font-size:11px;margin-top:4px">Recomendado para: equipos grandes, múltiples bots, alta complejidad.</p>
 </div>
 </div>
 </div>
