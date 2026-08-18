@@ -122,38 +122,40 @@
 
 ### Modelo de Negocio: SaaS para Evaluación de VoiceBots
 
-#### Costos Operativos (por 100 llamadas evaluadas)
+#### Costos Operativos (por 100 llamadas evaluadas, ARS)
 
 | Componente | Costo | Notas |
 |------------|-------|-------|
 | Juez LLM (Ollama) | $0 | Local, sin API calls |
-| Juez LLM (Groq) | ~$5-15 | Free tier limitado |
-| Juez LLM (OpenAI) | ~$10-30 | gpt-4o-mini |
+| Juez LLM (Groq) | ~$6.000-18.000 | Free tier limitado |
+| Juez LLM (OpenAI) | ~$12.000-36.000 | gpt-4o-mini |
 | LangSmith | $0 | Free tier (50K runs) |
 | Opik | $0 | Open source |
 | DeepEval | $0 | Open source |
-| VPS (2 vCPU, 4GB) | ~$20-40/mes | DigitalOcean/Hetzner |
-| Dominio + SSL | ~$15/año | .com |
-| **TOTAL por 100 llamadas** | **~$25-85** | Depende del modelo |
+| VPS (2 vCPU, 4GB) | ~$24.000-60.000/mes | DigitalOcean/Hetzner |
+| Dominio + SSL | ~$18.000/año | .com |
+| **TOTAL por 100 llamadas** | **~$30.000-102.000** | Depende del modelo |
 
-#### Planes de Venta
+#### Planes de Venta (precios en ARS)
 
 | Plan | Precio | Llamadas/mes | Modelo | Margen |
 |------|--------|-------------|--------|--------|
-| **Starter** | $99/mes | 100 | Ollama local | ~74% |
-| **Professional** | $299/mes | 500 | Groq/OpenAI | ~73% |
-| **Enterprise** | $799/mes | Ilimitado | Custom fine-tuned | ~75% |
+| **Starter** | $118.800/mes | 100 | Ollama local | ~75% |
+| **Professional** | $358.800/mes | 500 | Groq/OpenAI | ~73% |
+| **Enterprise** | $958.800/mes | Ilimitado | Custom fine-tuned | ~75% |
+
+*Tipo de cambio: 1 USD = 1.200 ARS*
 
 #### Features por Plan
 
-**Starter ($99/mes)**
+**Starter ($118.800/mes)**
 - ✅ Hasta 100 llamadas/mes
 - ✅ 9 métricas inbound + 7 outbound
 - ✅ Dashboard web básico
 - ✅ Reporte mensual PDF
 - ✅ Juez Ollama local (requiere servidor del cliente)
 
-**Professional ($299/mes)**
+**Professional ($358.800/mes)**
 - ✅ Todo lo de Starter
 - ✅ 500 llamadas/mes
 - ✅ Juez cloud (Groq/OpenAI)
@@ -162,7 +164,7 @@
 - ✅ Comparación month-over-month
 - ✅ Soporte email
 
-**Enterprise ($799/mes)**
+**Enterprise ($958.800/mes)**
 - ✅ Todo lo de Professional
 - ✅ Llamadas ilimitadas
 - ✅ Reglas custom por cliente
@@ -172,15 +174,15 @@
 - ✅ SLA 99.9%
 - ✅ Soporte prioritario
 
-#### Proyección de Ingresos (12 meses)
+#### Proyección de Ingresos (12 meses, ARS)
 
 | Mes | Starter | Professional | Enterprise | Ingreso Total |
 |-----|---------|-------------|------------|---------------|
-| 1-3 | 5 | 1 | 0 | $795/mes |
-| 4-6 | 10 | 3 | 1 | $1,887/mes |
-| 7-9 | 15 | 5 | 2 | $3,280/mes |
-| 10-12 | 20 | 8 | 3 | $5,365/mes |
-| **Total Año 1** | | | | **~$35,000** |
+| 1-3 | 5 | 1 | 0 | $952.800/mes |
+| 4-6 | 10 | 3 | 1 | $2.265.600/mes |
+| 7-9 | 15 | 5 | 2 | $3.936.000/mes |
+| 10-12 | 20 | 8 | 3 | $6.438.000/mes |
+| **Total Año 1** | | | | **~$42.000.000** |
 
 #### Ventajas Competitivas
 1. **100% offline disponible** (Ollama) - sin dependencia de APIs
