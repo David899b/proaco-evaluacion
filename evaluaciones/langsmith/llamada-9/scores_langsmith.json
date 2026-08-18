@@ -53,7 +53,15 @@
     "deriva_web_si_no_sabe": {
       "value": 0.5,
       "reason": "El bot no puede resolver la consulta sobre lotes en Mendoza, pero ofrece llamar al cliente para obtener esa información. No se deriva a una URL específica ni menciona directamente contactarse con Grupo Proaco."
+    },
+    "transfiere_correcto": {
+      "value": 0.5,
+      "reason": "El bot no realiza transferencia alguna ya que el cliente no solicita hablar con una persona real y todas las peticiones son atendidas por el bot."
+    },
+    "clarifica_ambiguo": {
+      "value": 0.75,
+      "reason": "El bot preguntó claramente qué tipo de inmueble buscaba el cliente, pero no siguió pidiendo aclaraciones cuando el cliente proporcionó información más específica sobre su búsqueda. Aunque el bot no asumió incorrectamente la intención del cliente, podría haber hecho más preguntas para asegurarse de que entendía completamente sus necesidades."
     }
   },
-  "avg": 0.6071428571428571
+  "avg": 0.6111111111111112
 }

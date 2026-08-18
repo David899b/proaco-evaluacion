@@ -1,0 +1,222 @@
+{
+  "herramienta": "DeepEval",
+  "modelo": "ollama/qwen2.5:7b",
+  "tipo": "outbound",
+  "n_llamadas": 6,
+  "promedios": {
+    "se_presenta": 1.0,
+    "menciona_proposito": 0.583,
+    "pide_consentimiento": 0.333,
+    "maneja_no_interes": 0.667,
+    "ofrece_agendar_cita": 0.25,
+    "listado_max_3": 0.5,
+    "tono_respetuoso": 0.917
+  },
+  "global_avg": 0.607,
+  "llamadas": [
+    {
+      "id": "CA18a4abd08ab9818405d44a7e4c1b910f",
+      "avg": 0.686,
+      "scores": {
+        "se_presenta": {
+          "value": 1.0,
+          "reason": "El bot se presenta diciendo 'Proaco' al inicio de la llamada."
+        },
+        "menciona_proposito": {
+          "value": 1.0,
+          "reason": "El bot explica el motivo de la llamada al inicio, indicando que está revisando opciones disponibles para una casa con dos dormitorios y dos baños."
+        },
+        "pide_consentimiento": {
+          "value": 0.5,
+          "reason": "El bot implícitamente pregunta si es buen momento al decir 'un momento mientras lo reviso', pero no hace una pregunta explícita."
+        },
+        "maneja_no_interes": {
+          "value": 1.0,
+          "reason": "El bot cierra la conversación de manera cortés y grácia ante el cliente que expresa no querer hablar más."
+        },
+        "ofrece_agendar_cita": {
+          "value": 0.0,
+          "reason": "El bot no ofrece agendar cita ni derivar al asesor después de la interrupción del cliente."
+        },
+        "listado_max_3": {
+          "value": 0.5,
+          "reason": "El bot listó una propiedad que cumplía con los requisitos del lead pero continuó buscando más opciones sin filtrarlas, lo cual resulta en la lista de más de tres propiedades."
+        },
+        "tono_respetuoso": {
+          "value": 0.8,
+          "reason": "El bot mantiene un tono respetuoso en general, pero pierde puntos por la respuesta final que podría ser interpretada como agresiva."
+        }
+      }
+    },
+    {
+      "id": "CA1cc4b3a43b1c81376115825d86c44622",
+      "avg": 0.286,
+      "scores": {
+        "se_presenta": {
+          "value": 1.0,
+          "reason": "El bot se identifica como Proaco al inicio de la llamada."
+        },
+        "menciona_proposito": {
+          "value": 0.0,
+          "reason": "El bot no explica el motivo de la llamada."
+        },
+        "pide_consentimiento": {
+          "value": 0.0,
+          "reason": "El bot no realiza ninguna pregunta de consentimiento antes de continuar la conversación."
+        },
+        "maneja_no_interes": {
+          "value": 0.0,
+          "reason": "El bot no ha recibido la respuesta 'no me interesa' y continúa la conversación."
+        },
+        "ofrece_agendar_cita": {
+          "value": 0.0,
+          "reason": "El bot no ofrece agendar cita ni ninguna opción relacionada."
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "El bot no listó ninguna propiedad en la transcripción."
+        },
+        "tono_respetuoso": {
+          "value": 1.0,
+          "reason": "El bot mantiene un tono respetuoso al iniciar la conversación con el cliente."
+        }
+      }
+    },
+    {
+      "id": "CA19ee8401e82785291c1d6e2bceb6d77d",
+      "avg": 0.771,
+      "scores": {
+        "se_presenta": {
+          "value": 1.0,
+          "reason": "El bot se presenta claramente al inicio de la llamada diciendo 'Proaco'."
+        },
+        "menciona_proposito": {
+          "value": 1.0,
+          "reason": "El bot claramente explica el motivo de la llamada al inicio, indicando que está allí para ayudar con las propiedades y luego reitera el interés del cliente en ver propiedades."
+        },
+        "pide_consentimiento": {
+          "value": 0.5,
+          "reason": "El bot implícitamente le da un momento al cliente sin preguntar explícitamente antes de continuar."
+        },
+        "maneja_no_interes": {
+          "value": 1.0,
+          "reason": "El bot cerró la conversación de manera cortés después del cliente expresar que no encontró lo que buscaba y agradeció al cliente."
+        },
+        "ofrece_agendar_cita": {
+          "value": 0.5,
+          "reason": "El bot menciona la opción de agendar una cita pero no concreta esta oferta. En lugar de ofrecer directamente agendar una visita o derivar al asesor, el bot se centra en buscar departamentos y finalmente ofrece consultar en el sitio web."
+        },
+        "listado_max_3": {
+          "value": 0.5,
+          "reason": "El bot intentó listar departamentos pero no pudo encontrar resultados debido a un inconveniente técnico. Aunque el bot solicitó datos de contacto para futuras consultas, no cumplió con la regla de listar hasta 3 propiedades correctas."
+        },
+        "tono_respetuoso": {
+          "value": 0.9,
+          "reason": "El bot mantiene un tono respetuoso y cortés durante toda la llamada, aunque hay un breve momento de confusión al inicio debido a la mala calidad del audio del cliente."
+        }
+      }
+    },
+    {
+      "id": "CAc57514332ee76b2150ec583f8a86735b",
+      "avg": 0.571,
+      "scores": {
+        "se_presenta": {
+          "value": 1.0,
+          "reason": "El bot se presenta diciendo 'Proaco' al inicio de la llamada."
+        },
+        "menciona_proposito": {
+          "value": 0.5,
+          "reason": "El bot menciona ayudar con la compra de una casa pero no explica claramente el motivo o contexto de la llamada."
+        },
+        "pide_consentimiento": {
+          "value": 0.5,
+          "reason": "El bot implícitamente sugiere continuar la conversación sin preguntar explícitamente si es un buen momento."
+        },
+        "maneja_no_interes": {
+          "value": 0.5,
+          "reason": "El bot insiste una vez después de la respuesta 'ya vamos más tarde', pero el cliente vuelve a rechazar."
+        },
+        "ofrece_agendar_cita": {
+          "value": 0.0,
+          "reason": "El bot no ofrece agendar cita o derivar a asesor aunque el cliente menciona estar ya ocupado."
+        },
+        "listado_max_3": {
+          "value": 0.5,
+          "reason": "El bot lista más de 3 propiedades sin filtrar según el lead."
+        },
+        "tono_respetuoso": {
+          "value": 1.0,
+          "reason": "El bot mantiene un tono respetuoso y cortés durante toda la transcripción, sin insultos ni agresividad."
+        }
+      }
+    },
+    {
+      "id": "CAd7af8dc9b388be471478d07f0b379b7d",
+      "avg": 0.757,
+      "scores": {
+        "se_presenta": {
+          "value": 1.0,
+          "reason": "El bot se presenta claramente al inicio de la llamada diciendo 'Proaco', cumpliendo con la regla."
+        },
+        "menciona_proposito": {
+          "value": 1.0,
+          "reason": "El bot claramente explica que llama para mostrar opciones de departamentos con tres habitaciones."
+        },
+        "pide_consentimiento": {
+          "value": 0.5,
+          "reason": "El bot implícitamente pregunta por el consentimiento al decir 'Te leo las primeras tres: Primero: Proyecto “Departamentos con cochera - 2024”.' sin una clara indicación de si puede continuar o no. Luego continúa sin obtener explícita confirmación del cliente."
+        },
+        "maneja_no_interes": {
+          "value": 0.5,
+          "reason": "El bot insiste varias veces antes de que el cliente indique su interés en un departamento, lo cual es una violación de la regla de manejoNoInteres."
+        },
+        "ofrece_agendar_cita": {
+          "value": 1.0,
+          "reason": "El bot ofrece agendar cita/visita al final de la conversación, derivando a un agente para continuar con los detalles."
+        },
+        "listado_max_3": {
+          "value": 0.5,
+          "reason": "El bot listó más de 3 propiedades (6) sin filtrarlas según las solicitudes del lead."
+        },
+        "tono_respetuoso": {
+          "value": 0.8,
+          "reason": "El bot mantiene un tono respetuoso generalmente, pero hay momentos donde la comunicación se vuelve repetitiva y no muy clara, lo que puede generar confusión al cliente."
+        }
+      }
+    },
+    {
+      "id": "CAf8fa6d0fc16e2c0ae1208556778cbd2f",
+      "avg": 0.571,
+      "scores": {
+        "se_presenta": {
+          "value": 1.0,
+          "reason": "El bot se identifica claramente como Grupo Proaco al inicio de la llamada."
+        },
+        "menciona_proposito": {
+          "value": 0.0,
+          "reason": "El bot no explica el motivo de la llamada."
+        },
+        "pide_consentimiento": {
+          "value": 0.0,
+          "reason": "El bot no preguntó si era un buen momento para continuar ni usó ninguna variante similar antes de colgar."
+        },
+        "maneja_no_interes": {
+          "value": 1.0,
+          "reason": "El bot corta la llamada sin intentar seguir insistiendo después que el cliente colgó."
+        },
+        "ofrece_agendar_cita": {
+          "value": 0.0,
+          "reason": "El bot no ofrece agendar cita ni ninguna opción relacionada."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot no lista ninguna propiedad ya que el cliente colgó inmediatamente."
+        },
+        "tono_respetuoso": {
+          "value": 1.0,
+          "reason": "El bot mantiene un tono respetuoso al iniciar la conversación y no hay interacción para evaluar."
+        }
+      }
+    }
+  ]
+}

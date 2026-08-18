@@ -49,7 +49,15 @@
     "deriva_web_si_no_sabe": {
       "value": 1.0,
       "reason": "El bot resolvió todas las consultas del cliente sin necesidad de derivar y no se presentaron situaciones donde el bot no pudiera resolver la consulta."
+    },
+    "transfiere_correcto": {
+      "value": 1.0,
+      "reason": "La transcripción no muestra que el cliente solicite hablar con una persona real ni que el bot se encuentre en una situación donde deba transferir al cliente. Por lo tanto, la regla condicional se aplica, otorgando un score de 1.0."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot preguntó claramente qué detalles específicos quería el cliente al inicio y luego continuó gestionando la información de manera precisa sin asumir o dar datos innecesarios. Además, ofreció opciones para coordinar la llamada y el envío del material solicitado, manteniendo un diálogo natural y eficiente."
     }
   },
-  "avg": 0.8214285714285714
+  "avg": 0.8611111111111112
 }

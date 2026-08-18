@@ -49,7 +49,15 @@
     "deriva_web_si_no_sabe": {
       "value": 0.75,
       "reason": "El bot indica la URL correcta (https://grupoproaco.com/unidades) cuando no puede resolver la consulta sobre el avance de obra y las tipologías disponibles. Sin embargo, la respuesta inicial al cliente que solicita información detallada no menciona la URL o la derivación con Grupo Proaco directamente."
+    },
+    "transfiere_correcto": {
+      "value": 0.5,
+      "reason": "El bot no transfiere al cliente a un asesor humano cuando este lo solicita explícitamente. El cliente finalmente pide que se le llame, pero el bot no realiza la transferencia y solo registra el número de teléfono para futuras consultas."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot preguntó claramente qué información quería el cliente al inicio de la conversación y continuó haciendo preguntas relevantes cuando la información solicitada era ambigua o incompleta. Además, no asumió la intención del cliente sin confirmar y evitó dar información innecesaria hasta obtener claridad sobre lo que se requería."
     }
   },
-  "avg": 0.6428571428571429
+  "avg": 0.6666666666666666
 }

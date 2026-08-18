@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proaco VoiceBot - Dashboard de Evaluación</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.header{background:linear-gradient(135deg,#1e293b,#334155);padding:24px 32px;border-bottom:1px solid #475569}
+.header h1{font-size:24px;font-weight:700;color:#f8fafc}
+.header p{color:#94a3b8;margin-top:4px;font-size:14px}
+.container{max-width:1400px;margin:0 auto;padding:24px}
+.grid{display:grid;gap:20px;margin-bottom:24px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
+.card h3{font-size:14px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.stat{font-size:32px;font-weight:700}
+.stat.green{color:#22c55e}.stat.yellow{color:#eab308}.stat.red{color:#ef4444}
+.stat.blue{color:#3b82f6}.stat.purple{color:#a855f7}
+.badge{display:inline-block;padding:2px 8px;border-radius:9999px;font-size:11px;font-weight:600}
+.badge-green{background:#166534;color:#bbf7d0}.badge-yellow{background:#854d0e;color:#fef08a}
+.badge-red{background:#991b1b;color:#fecaca}.badge-blue{background:#1e40af;color:#bfdbfe}
+.chart-card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
+.chart-card h3{font-size:16px;color:#f8fafc;margin-bottom:16px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #334155;font-size:13px}
+th{color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px}
+td{color:#e2e8f0}
+.score-bar{height:6px;border-radius:3px;background:#334155;overflow:hidden;min-width:80px}
+.score-fill{height:100%;border-radius:3px;transition:width .3s}
+.tab-container{display:flex;gap:4px;margin-bottom:20px}
+.tab{padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;
+     background:#334155;color:#94a3b8;border:none;transition:all .2s}
+.tab.active{background:#3b82f6;color:#fff}
+.tab:hover:not(.active){background:#475569;color:#e2e8f0}
+.section{display:none}.section.active{display:block}
+.cost-card{background:linear-gradient(135deg,#1e293b,#1a2332);border:1px solid #334155;border-radius:12px;padding:20px}
+.cost-card h4{color:#f8fafc;font-size:16px;margin-bottom:8px}
+.cost-card .price{font-size:28px;font-weight:700;color:#3b82f6}
+.cost-card .unit{font-size:14px;color:#94a3b8}
+.cost-card ul{list-style:none;margin-top:12px}
+.cost-card li{padding:4px 0;font-size:13px;color:#cbd5e1}
+.cost-card li::before{content:'✓ ';color:#22c55e;font-weight:700}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Proaco VoiceBot - Dashboard de Evaluación</h1>
+<p>9 métricas · 13 inbound + 6 outbound · 3 herramientas · 2 modelos</p>
+</div>
+
+<div class="container">
+<div class="tab-container">
+<button class="tab active" onclick="showTab('overview')">Overview</button>
+<button class="tab" onclick="showTab('inbound')">Inbound (13)</button>
+<button class="tab" onclick="showTab('outbound')">Outbound (6)</button>
+<button class="tab" onclick="showTab('models')">Modelos</button>
+<button class="tab" onclick="showTab('costs')">Plan de Costos</button>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview" class="section active">
+<div class="grid grid-4" style="margin-bottom:20px">
+<div class="card"><h3>Inbound GLOBAL</h3><div class="stat blue">0.632</div><span class="badge badge-yellow">Mejorado · 9 métricas</span></div>
+<div class="card"><h3>Outbound GLOBAL</h3><div class="stat purple">0.600</div><span class="badge badge-yellow">Mejorado · 7 métricas</span></div>
+<div class="card"><h3>Correlación DE↔LS</h3><div class="stat green">1.000</div><span class="badge badge-green">Validado</span></div>
+<div class="card"><h3>Herramientas</h3><div class="stat" style="color:#f8fafc">3</div><span class="badge badge-blue">Opik · DeepEval · LangSmith</span></div>
+</div>
+
+<div class="grid grid-2">
+<div class="chart-card"><h3>Scores por Métrica - Inbound (Promedio 3 tools)</h3><canvas id="chartInbound"></canvas></div>
+<div class="chart-card"><h3>Scores por Métrica - Outbound (Promedio 2 tools)</h3><canvas id="chartOutbound"></canvas></div>
+</div>
+
+<div class="grid grid-2" style="margin-top:20px">
+<div class="chart-card"><h3>Comparación por Herramienta</h3><canvas id="chartTools"></canvas></div>
+<div class="chart-card"><h3>Comparación por Modelo</h3><canvas id="chartModels"></canvas></div>
+</div>
+</div>
+
+<!-- INBOUND -->
+<div id="inbound" class="section">
+<div class="card">
+<h3> Scores por Llamada - Inbound (9 Métricas)</h3>
+<table>
+<thead><tr><th>Llamada</th><th>DeepEval</th><th>LangSmith</th><th>Δ</th><th>saludo</th><th>despedida</th><th>contacto</th><th>tono</th><th>intent</th><th>listado</th><th>web</th><th>transfiere</th><th>clarifica</th></tr></thead>
+<tbody id="inboundTable"></tbody>
+</table>
+</div>
+</div>
+
+<!-- OUTBOUND -->
+<div id="outbound" class="section">
+<div class="card">
+<h3> Scores por Llamada - Outbound (7 Métricas)</h3>
+<table>
+<thead><tr><th>Llamada</th><th>DeepEval</th><th>LangSmith</th><th>Δ</th><th>presenta</th><th>propósito</th><th>consentim.</th><th>no_interés</th><th>cita</th><th>listado</th><th>tono</th></tr></thead>
+<tbody id="outboundTable"></tbody>
+</table>
+</div>
+</div>
+
+<!-- MODELS -->
+<div id="models" class="section">
+<div class="grid grid-2">
+<div class="card">
+<h3>Ollama qwen2.5:7b (Local)</h3>
+<div class="stat green">0.632</div>
+<p style="color:#94a3b8;margin-top:8px">7 tok/s · Sin costo · Sin límites · Funciona offline</p>
+<ul style="list-style:none;margin-top:12px"><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✓ Consistente entre herramientas</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✓ Calidad aceptable para evaluation</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">⚠ Termothrottle en MacBook Air</li></ul>
+</div>
+<div class="card">
+<h3>Groq qwen3.6-27b (Cloud)</h3>
+<div class="stat red">0.096</div>
+<p style="color:#94a3b8;margin-top:8px">Rate limit: 8000 TPM · Inestable · Costo variable</p>
+<ul style="list-style:none;margin-top:12px"><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ Rate limits hacen impossible evaluación masiva</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ ~50% de llamadas fallan con 0.0</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ No recomendado para este caso de uso</li></ul>
+</div>
+</div>
+</div>
+
+<!-- COSTS -->
+<div id="costs" class="section">
+<div class="grid grid-3" style="margin-bottom:20px">
+<div class="cost-card">
+<h4>Plan Starter</h4>
+<div class="price">$99<span class="unit">/mes</span></div>
+<ul>
+<li>Hasta 100 llamadas/mes evaluadas</li>
+<li>1 inbound + 1 outbound</li>
+<li>Juez Ollama local (gratis)</li>
+<li>Dashboard web</li>
+<li>Reporte mensual PDF</li>
+</ul>
+</div>
+<div class="cost-card" style="border-color:#3b82f6">
+<h4>Plan Professional</h4>
+<div class="price">$299<span class="unit">/mes</span></div>
+<ul>
+<li>Hasta 500 llamadas/mes evaluadas</li>
+<li>Inbound + outbound ilimitados</li>
+<li>Juez Groq cloud (mejor calidad)</li>
+<li>Dashboard + LangSmith tracing</li>
+<li>Reportes + alertas</li>
+<li>Soporte email</li>
+</ul>
+</div>
+<div class="cost-card">
+<h4>Plan Enterprise</h4>
+<div class="price">$799<span class="unit">/mes</span></div>
+<ul>
+<li>Llamadas ilimitadas</li>
+<li>Multi-voicebot (custom reglas)</li>
+<li>Modelo fine-tuned dedicado</li>
+<li>API de integración</li>
+<li>Dashboard + LangSmith + Opik</li>
+<li>SLA 99.9% + soporte prioritario</li>
+</ul>
+</div>
+</div>
+<div class="grid grid-2">
+<div class="card">
+<h3>Costos Operativos Estimados (por 100 llamadas)</h3>
+<table>
+<tr><td>Ollama local</td><td><strong>$0</strong></td><td><span class="badge badge-green"> Gratis</span></td></tr>
+<tr><td>Groq cloud</td><td><strong>~$5-15</strong></td><td><span class="badge badge-yellow"> Rate limited</span></td></tr>
+<tr><td>LangSmith</td><td><strong>$0</strong></td><td><span class="badge badge-green"> Free tier</span></td></tr>
+<tr><td>Opik</td><td><strong>$0</strong></td><td><span class="badge badge-green"> Open source</span></td></tr>
+<tr><td>DeepEval</td><td><strong>$0</strong></td><td><span class="badge badge-green"> Open source</span></td></tr>
+<tr><td>Infraestructura</td><td><strong>~$20-50</strong></td><td><span class="badge badge-blue"> VPS</span></td></tr>
+</table>
+</div>
+<div class="card">
+<h3>Margen Estimado</h3>
+<table>
+<tr><th>Plan</th><th>Ingreso</th><th>Costo</th><th>Margen</th></tr>
+<tr><td>Starter</td><td>$99</td><td>~$25</td><td><span class="badge badge-green">74%</span></td></tr>
+<tr><td>Professional</td><td>$299</td><td>~$80</td><td><span class="badge badge-green">73%</span></td></tr>
+<tr><td>Enterprise</td><td>$799</td><td>~$200</td><td><span class="badge badge-green">75%</span></td></tr>
+</table>
+<p style="color:#94a3b8;margin-top:12px;font-size:12px">* Costo incluye infraestructura + API calls. No incluye desarrollo/mantenimiento.</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const INBOUND = {
+metrics: ['saludo_correcto','despedida_correcta','pide_contacto_una_vez','tono_espanol_argentino','deteccion_intent','listado_max_3','deriva_web_si_no_sabe','transfiere_correcto','clarifica_ambiguo'],
+labels: ['Saludo','Despedida','Contacto','Tono','Intent','Listado','Deriva Web','Transfiere','Clarifica'],
+deepeval: [0.327,0.538,0.577,0.558,0.577,0.865,0.769,0.615,0.865],
+langsmith: [0.327,0.538,0.577,0.558,0.577,0.865,0.769,0.615,0.865],
+calls: [
+{id:'llamada-1',de:0.778,ls:0.778,s:[0.25,0.75,0.75,0.75,0.75,0.75,1.00,1.00,1.00]},
+{id:'llamada-2',de:0.472,ls:0.472,s:[0.25,0.25,0.50,0.50,0.50,0.50,0.50,0.50,0.75]},
+{id:'llamada-3',de:0.806,ls:0.806,s:[0.25,0.75,0.75,0.50,1.00,1.00,1.00,1.00,1.00]},
+{id:'llamada-4',de:0.611,ls:0.611,s:[0.50,0.75,0.50,0.50,0.50,0.50,0.75,0.50,1.00]},
+{id:'llamada-5',de:0.306,ls:0.306,s:[0.00,0.25,0.00,0.25,0.00,1.00,0.50,0.25,0.50]},
+{id:'llamada-6',de:0.611,ls:0.611,s:[0.25,0.25,0.25,0.75,0.75,1.00,1.00,0.25,1.00]},
+{id:'llamada-7',de:0.667,ls:0.667,s:[0.25,0.75,0.75,0.50,0.50,1.00,0.75,0.50,1.00]},
+{id:'llamada-8',de:0.861,ls:0.861,s:[0.75,1.00,0.75,0.50,0.75,1.00,1.00,1.00,1.00]},
+{id:'llamada-9',de:0.611,ls:0.611,s:[0.25,0.75,0.50,0.75,0.75,0.75,0.50,0.50,0.75]},
+{id:'llamada-10',de:0.722,ls:0.722,s:[0.25,0.25,0.75,0.50,0.75,1.00,1.00,1.00,1.00]},
+{id:'llamada-11',de:0.722,ls:0.722,s:[0.25,0.75,0.75,0.50,0.75,1.00,1.00,0.50,1.00]},
+{id:'llamada-12',de:0.472,ls:0.472,s:[0.25,0.25,0.75,0.50,0.00,1.00,0.50,0.50,0.50]},
+{id:'llamada-13',de:0.583,ls:0.583,s:[0.75,0.25,0.50,0.75,0.50,0.75,0.50,0.50,0.75]}
+]};
+
+const OUTBOUND = {
+metrics: ['se_presenta','menciona_proposito','pide_consentimiento','maneja_no_interes','ofrece_agendar_cita','listado_max_3','tono_respetuoso'],
+labels: ['Presenta','Propósito','Consentimiento','No Interés','Agendar Cita','Listado','Tono'],
+deepeval: [1.000,0.583,0.333,0.667,0.250,0.500,0.917],
+langsmith: [1.000,0.583,0.333,0.500,0.333,0.500,0.900],
+calls: [
+{id:'CA18a4..',de:0.686,ls:0.471,s:[1.00,1.00,0.50,1.00,0.00,0.50,0.80]},
+{id:'CA1cc4..',de:0.286,ls:0.286,s:[1.00,0.00,0.00,0.00,0.00,0.00,1.00]},
+{id:'CA19ee..',de:0.771,ls:0.829,s:[1.00,1.00,0.50,1.00,0.50,0.50,0.90]},
+{id:'CAc575..',de:0.571,ls:0.643,s:[1.00,0.50,0.50,0.50,0.00,0.50,1.00]},
+{id:'CAd7af..',de:0.757,ls:0.757,s:[1.00,1.00,0.50,0.50,1.00,0.50,0.80]},
+{id:'CAf8fa..',de:0.571,ls:0.571,s:[1.00,0.00,0.00,1.00,0.00,1.00,1.00]}
+]};
+
+function colorForScore(v){return v>=0.75?'#22c55e':v>=0.50?'#eab308':'#ef4444'}
+function barHtml(v){return `<div class="score-bar"><div class="score-fill" style="width:${v*100}%;background:${colorForScore(v)}"></div></div>`}
+function showTab(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');event.target.classList.add('active')}
+
+// Inbound table
+const ib=document.getElementById('inboundTable');
+INBOUND.calls.forEach(c=>{
+ib.innerHTML+=`<tr><td><strong>${c.id}</strong></td><td>${c.de.toFixed(3)}</td><td>${c.ls.toFixed(3)}</td><td>${Math.abs(c.de-c.ls).toFixed(3)}</td>${c.s.map(v=>`<td>${v.toFixed(2)} ${barHtml(v)}</td>`).join('')}</tr>`;
+});
+
+// Outbound table
+const ob=document.getElementById('outboundTable');
+OUTBOUND.calls.forEach(c=>{
+ob.innerHTML+=`<tr><td><strong>${c.id}</strong></td><td>${c.de.toFixed(3)}</td><td>${c.ls.toFixed(3)}</td><td>${Math.abs(c.de-c.ls).toFixed(3)}</td>${c.s.map(v=>`<td>${v.toFixed(2)} ${barHtml(v)}</td>`).join('')}</tr>`;
+});
+
+// Charts
+const radarOpts={scales:{r:{min:0,max:1,ticks:{stepSize:0.25,color:'#94a3b8',backdropColor:'transparent'},grid:{color:'#334155'},pointLabels:{color:'#e2e8f0',font:{size:11}}}},plugins:{legend:{labels:{color:'#e2e8f0'}}}};
+
+new Chart(document.getElementById('chartInbound'),{type:'radar',data:{labels:INBOUND.labels,datasets:[{label:'DeepEval',data:INBOUND.deepeval,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.1)',pointBackgroundColor:'#3b82f6'},{label:'LangSmith',data:INBOUND.langsmith,borderColor:'#a855f7',backgroundColor:'rgba(168,85,247,0.1)',pointBackgroundColor:'#a855f7'}]},options:radarOpts});
+
+new Chart(document.getElementById('chartOutbound'),{type:'radar',data:{labels:OUTBOUND.labels,datasets:[{label:'DeepEval',data:OUTBOUND.deepeval,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.1)',pointBackgroundColor:'#3b82f6'},{label:'LangSmith',data:OUTBOUND.langsmith,borderColor:'#a855f7',backgroundColor:'rgba(168,85,247,0.1)',pointBackgroundColor:'#a855f7'}]},options:radarOpts});
+
+new Chart(document.getElementById('chartTools'),{type:'bar',data:{labels:['Opik J1','Opik J2','DeepEval','LangSmith'],datasets:[{label:'Inbound',data:[0.757,0.650,0.632,0.632],backgroundColor:['#6366f1','#8b5cf6','#3b82f6','#a855f7']},{label:'Outbound',data:[null,null,0.607,0.593],backgroundColor:['transparent','transparent','#3b82f6','#a855f7']}]},options:{scales:{x:{grid:{color:'#334155'},ticks:{color:'#e2e8f0'}},y:{min:0,max:1,grid:{color:'#334155'},ticks:{color:'#e2e8f0'}}},plugins:{legend:{labels:{color:'#e2e8f0'}}}}});
+
+new Chart(document.getElementById('chartModels'),{type:'bar',data:{labels:['Ollama qwen2.5:7b','Groq qwen3.6-27b'],datasets:[{label:'GLOBAL Score',data:[0.632,0.096],backgroundColor:['#22c55e','#ef4444']}]},options:{indexAxis:'y',scales:{x:{min:0,max:1,grid:{color:'#334155'},ticks:{color:'#e2e8f0'}},y:{grid:{color:'#334155'},ticks:{color:'#e2e8f0'}}},plugins:{legend:{display:false}}}});
+</script>
+</body>
+</html>

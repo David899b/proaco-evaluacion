@@ -36,7 +36,15 @@
     "deriva_web_si_no_sabe": {
       "value": 0.5,
       "reason": "El bot ofrece alternativas como ayudar con información sobre propiedades o tomar datos, pero no deriva claramente a la URL ni indica directamente contactarse con Grupo Proaco cuando el cliente insiste en hablar con un asesor humano."
+    },
+    "transfiere_correcto": {
+      "value": 0.25,
+      "reason": "El bot intenta ayudar al cliente pero nunca realiza una transferencia, incluso cuando el cliente insiste en hablar con un asesor humano."
+    },
+    "clarifica_ambiguo": {
+      "value": 0.5,
+      "reason": "El bot respondió de manera natural y ofreció opciones al cliente, pero no preguntó qué quería el cliente cuando este hizo una consulta ambigua sobre si era una IA o quería hablar con un asesor humano."
     }
   },
-  "avg": 0.2857142857142857
+  "avg": 0.3055555555555556
 }

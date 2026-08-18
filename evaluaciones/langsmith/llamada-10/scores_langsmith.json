@@ -40,7 +40,15 @@
     "deriva_web_si_no_sabe": {
       "value": 1.0,
       "reason": "El bot no intentó derivar a la URL o indicar directamente a Grupo Proaco para consultas, ya que todas las preguntas del cliente fueron resueltas y el bot ofreció asistencia por WhatsApp."
+    },
+    "transfiere_correcto": {
+      "value": 1.0,
+      "reason": "El bot no recibió un pedido explícito del cliente para hablar con una persona real y no se presentó la necesidad de transferir al cliente."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot no asumió ninguna intención y preguntó claramente por los detalles específicos del cliente antes de actuar, cumpliendo con todos los criterios de evaluación."
     }
   },
-  "avg": 0.6428571428571429
+  "avg": 0.7222222222222222
 }

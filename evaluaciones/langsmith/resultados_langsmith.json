@@ -4,15 +4,17 @@
   "model": "ollama/qwen2.5:7b",
   "n_llamadas": 13,
   "promedios": {
+    "clarifica_ambiguo": 0.8653846153846154,
     "deriva_web_si_no_sabe": 0.7692307692307693,
     "despedida_correcta": 0.5384615384615384,
     "deteccion_intent": 0.5769230769230769,
     "listado_max_3": 0.8653846153846154,
     "pide_contacto_una_vez": 0.5769230769230769,
     "saludo_correcto": 0.3269230769230769,
-    "tono_espanol_argentino": 0.5576923076923077
+    "tono_espanol_argentino": 0.5576923076923077,
+    "transfiere_correcto": 0.6153846153846154
   },
-  "global_avg": 0.6016483516483516,
+  "global_avg": 0.6324786324786325,
   "por_llamada": [
     {
       "llamada_id": "llamada-1",
@@ -43,7 +45,7 @@
         },
         "despedida_correcta": {
           "value": 0.75,
-          "reason": "La despedida '¿Hay algo más en lo que pueda ayudarle hoy?' es la última intervención del bot y menciona Grupo Proaco implícitamente, pero no contiene exactamente la frase 'Gracias por contactarse con el Grupo Proaco'."
+          "reason": "La despedida '¿Hay algo más en lo que pueda ayudarle hoy?' es la última intervención del bot y menciona Grupo Proaco implícitamente, aunque no usa exactamente las palabras 'Gracias por contactarse con el Grupo Proaco'."
         },
         "pide_contacto_una_vez": {
           "value": 0.75,
@@ -59,14 +61,22 @@
         },
         "listado_max_3": {
           "value": 0.75,
-          "reason": "El bot listó correctamente tres opciones de departamentos, pero incluyó información no solicitada como el monto de las expensas para una opción, lo que descalifica un punto. No se cumplió con la regla de no incluir datos extra no solicitados."
+          "reason": "El bot listó correctamente tres opciones de departamentos, pero incluyó información no solicitada como el monto de las expensas para una opción, lo que descalifica un punto. Sin embargo, el bot cumplió con la regla al listar solo tres propiedades y ofrecer mostrar más si hay más opciones disponibles."
         },
         "deriva_web_si_no_sabe": {
           "value": 1.0,
           "reason": "En toda la transcripción, el bot responde de manera efectiva a todas las consultas del cliente y no se deriva cuando puede proporcionar información relevante."
+        },
+        "transfiere_correcto": {
+          "value": 1.0,
+          "reason": "El bot no recibió ninguna solicitud explícita de hablar con una persona real y no intentó transferir el llamado, por lo que se mantiene la puntuación máxima."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot preguntó claramente qué características buscaba el cliente antes de proporcionar información, cumpliendo con todos los criterios establecidos en la regla."
         }
       },
-      "avg": 0.7142857142857143
+      "avg": 0.7777777777777778
     },
     {
       "llamada_id": "llamada-2",
@@ -125,9 +135,17 @@
         "deriva_web_si_no_sabe": {
           "value": 0.5,
           "reason": "El bot no puede resolver la consulta sobre disponibilidad específica y ofrece llamar para coordinar una asesoría personalmente con Grupo Proaco, cumpliendo parcialmente con la regla al ofrecer alternativa pero sin derivar directamente a la URL o indicar claramente que se puede consultar en el sitio web."
+        },
+        "transfiere_correcto": {
+          "value": 0.5,
+          "reason": "El bot menciona que va a transferir al cliente con un asesor pero no realiza la transferencia. El contexto se pierde ya que el bot continúa buscando disponibilidad de horarios para llamadas telefónicas en lugar de transferir al cliente."
+        },
+        "clarifica_ambiguo": {
+          "value": 0.75,
+          "reason": "El bot preguntó por la zona y el presupuesto inicialmente, pero cuando el cliente proporcionó más detalles, el bot asumió correctamente su intención de buscar departamentos en la Ciudad de Buenos Aires o Gran Buenos Aires, preferentemente zona norte o cerca del centro. El bot no preguntó adicionalmente sobre los tipos de propiedades hasta que el cliente especificó sus preferencias, luego proporcionó opciones sin necesidad de más clarificación, obteniendo un score de 0.75."
         }
       },
-      "avg": 0.42857142857142855
+      "avg": 0.4722222222222222
     },
     {
       "llamada_id": "llamada-3",
@@ -172,9 +190,17 @@
         "deriva_web_si_no_sabe": {
           "value": 1.0,
           "reason": "El bot no intentó derivar la consulta ya que pudo resolverla proporcionando información y enviando el correo electrónico solicitado."
+        },
+        "transfiere_correcto": {
+          "value": 1.0,
+          "reason": "No se presentó una solicitud explícita de hablar con un humano y el bot no intentó transferir al cliente."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot preguntó claramente y de forma natural qué información necesitaba antes de actuar, sin asumir la intención del cliente ni dar información innecesaria."
         }
       },
-      "avg": 0.75
+      "avg": 0.8055555555555556
     },
     {
       "llamada_id": "llamada-4",
@@ -224,9 +250,17 @@
         "deriva_web_si_no_sabe": {
           "value": 0.75,
           "reason": "El bot derivó al cliente a visitar https://grupoproaco.com/unidades cuando no pudo enviar la solicitud por problemas técnicos. Sin embargo, el mensaje podría haber sido más claro y directo en mencionar la URL o indicar que lo consulte con Grupo Proaco directamente."
+        },
+        "transfiere_correcto": {
+          "value": 0.5,
+          "reason": "El bot intenta transferir al cliente pero no indica claramente que va a hacerlo ni menciona brevemente el motivo. Además, el contexto se pierde ya que el bot vuelve a preguntar por el nombre completo para agendar la cita en lugar de confirmar la transferencia."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot preguntó claramente qué uso buscaba el cliente y luego continuó con preguntas claras sobre preferencias de zona, tipo de departamento y detalles adicionales sin asumir información. Las preguntas fueron naturales y relevantes al contexto de la conversación."
         }
       },
-      "avg": 0.5714285714285714
+      "avg": 0.6111111111111112
     },
     {
       "llamada_id": "llamada-5",
@@ -266,9 +300,17 @@
         "deriva_web_si_no_sabe": {
           "value": 0.5,
           "reason": "El bot ofrece alternativas como ayudar con información sobre propiedades o tomar datos, pero no deriva claramente a la URL ni indica directamente contactarse con Grupo Proaco cuando el cliente insiste en hablar con un asesor humano."
+        },
+        "transfiere_correcto": {
+          "value": 0.25,
+          "reason": "El bot intenta ayudar al cliente pero nunca realiza una transferencia, incluso cuando el cliente insiste en hablar con un asesor humano."
+        },
+        "clarifica_ambiguo": {
+          "value": 0.5,
+          "reason": "El bot respondió de manera natural y ofreció opciones al cliente, pero no preguntó qué quería el cliente cuando este hizo una consulta ambigua sobre si era una IA o quería hablar con un asesor humano."
         }
       },
-      "avg": 0.2857142857142857
+      "avg": 0.3055555555555556
     },
     {
       "llamada_id": "llamada-6",
@@ -316,9 +358,17 @@
         "deriva_web_si_no_sabe": {
           "value": 1.0,
           "reason": "El bot resuelve todas las consultas del cliente sin necesidad de derivar y no se queda sin respuesta en ningún momento."
+        },
+        "transfiere_correcto": {
+          "value": 0.25,
+          "reason": "El bot no realiza ninguna transferencia y el cliente finalmente solicita una transferencia explícitamente, pero el bot no cumple con la regla al no transferir."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot preguntó claramente y de forma natural qué información necesitaba cuando el cliente hizo consultas ambigüas o incompletas, sin asumir la intención del cliente ni proporcionar información innecesaria antes de obtener más detalles."
         }
       },
-      "avg": 0.6071428571428571
+      "avg": 0.6111111111111112
     },
     {
       "llamada_id": "llamada-7",
@@ -371,9 +421,17 @@
         "deriva_web_si_no_sabe": {
           "value": 0.75,
           "reason": "El bot indica la URL correcta (https://grupoproaco.com/unidades) cuando no puede resolver la consulta sobre el avance de obra y las tipologías disponibles. Sin embargo, la respuesta inicial al cliente que solicita información detallada no menciona la URL o la derivación con Grupo Proaco directamente."
+        },
+        "transfiere_correcto": {
+          "value": 0.5,
+          "reason": "El bot no transfiere al cliente a un asesor humano cuando este lo solicita explícitamente. El cliente finalmente pide que se le llame, pero el bot no realiza la transferencia y solo registra el número de teléfono para futuras consultas."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot preguntó claramente qué información quería el cliente al inicio de la conversación y continuó haciendo preguntas relevantes cuando la información solicitada era ambigua o incompleta. Además, no asumió la intención del cliente sin confirmar y evitó dar información innecesaria hasta obtener claridad sobre lo que se requería."
         }
       },
-      "avg": 0.6428571428571429
+      "avg": 0.6666666666666666
     },
     {
       "llamada_id": "llamada-8",
@@ -426,9 +484,17 @@
         "deriva_web_si_no_sabe": {
           "value": 1.0,
           "reason": "El bot resolvió todas las consultas del cliente sin necesidad de derivar y no se presentaron situaciones donde el bot no pudiera resolver la consulta."
+        },
+        "transfiere_correcto": {
+          "value": 1.0,
+          "reason": "La transcripción no muestra que el cliente solicite hablar con una persona real ni que el bot se encuentre en una situación donde deba transferir al cliente. Por lo tanto, la regla condicional se aplica, otorgando un score de 1.0."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot preguntó claramente qué detalles específicos quería el cliente al inicio y luego continuó gestionando la información de manera precisa sin asumir o dar datos innecesarios. Además, ofreció opciones para coordinar la llamada y el envío del material solicitado, manteniendo un diálogo natural y eficiente."
         }
       },
-      "avg": 0.8214285714285714
+      "avg": 0.8611111111111112
     },
     {
       "llamada_id": "llamada-9",
@@ -485,9 +551,17 @@
         "deriva_web_si_no_sabe": {
           "value": 0.5,
           "reason": "El bot no puede resolver la consulta sobre lotes en Mendoza, pero ofrece llamar al cliente para obtener esa información. No se deriva a una URL específica ni menciona directamente contactarse con Grupo Proaco."
+        },
+        "transfiere_correcto": {
+          "value": 0.5,
+          "reason": "El bot no realiza transferencia alguna ya que el cliente no solicita hablar con una persona real y todas las peticiones son atendidas por el bot."
+        },
+        "clarifica_ambiguo": {
+          "value": 0.75,
+          "reason": "El bot preguntó claramente qué tipo de inmueble buscaba el cliente, pero no siguió pidiendo aclaraciones cuando el cliente proporcionó información más específica sobre su búsqueda. Aunque el bot no asumió incorrectamente la intención del cliente, podría haber hecho más preguntas para asegurarse de que entendía completamente sus necesidades."
         }
       },
-      "avg": 0.6071428571428571
+      "avg": 0.6111111111111112
     },
     {
       "llamada_id": "llamada-10",
@@ -531,9 +605,17 @@
         "deriva_web_si_no_sabe": {
           "value": 1.0,
           "reason": "El bot no intentó derivar a la URL o indicar directamente a Grupo Proaco para consultas, ya que todas las preguntas del cliente fueron resueltas y el bot ofreció asistencia por WhatsApp."
+        },
+        "transfiere_correcto": {
+          "value": 1.0,
+          "reason": "El bot no recibió un pedido explícito del cliente para hablar con una persona real y no se presentó la necesidad de transferir al cliente."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot no asumió ninguna intención y preguntó claramente por los detalles específicos del cliente antes de actuar, cumpliendo con todos los criterios de evaluación."
         }
       },
-      "avg": 0.6428571428571429
+      "avg": 0.7222222222222222
     },
     {
       "llamada_id": "llamada-11",
@@ -585,9 +667,17 @@
         "deriva_web_si_no_sabe": {
           "value": 1.0,
           "reason": "El bot no intentó derivar la consulta cuando el cliente solicitaba información sobre opciones de financiación para un departamento en Opera Park, ya que pudo proporcionar toda la información requerida y agendar una llamada sin necesidad de derivar a otra fuente de información."
+        },
+        "transfiere_correcto": {
+          "value": 0.5,
+          "reason": "El bot menciona la transferencia al final de la conversación pero no realiza ninguna acción para transferir al cliente con un asesor humano. El contexto se pierde ya que el bot no agiliza la solicitud del cliente y simplemente confirma la llamada programada."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot respondió de manera clara y natural al cliente, solicitando información adicional cuando la consulta era ambigua o incompleta. No asumió la intención del cliente sin preguntar y proporcionó opciones relevantes para continuar la conversación."
         }
       },
-      "avg": 0.7142857142857143
+      "avg": 0.7222222222222222
     },
     {
       "llamada_id": "llamada-12",
@@ -645,9 +735,17 @@
         "deriva_web_si_no_sabe": {
           "value": 0.5,
           "reason": "El bot no puede resolver la consulta sobre disponibilidad y ofrece alternativas como ofrecer opciones para otros días o horarios, pero no menciona la URL ni indica que lo consulte con Grupo Proaco directamente."
+        },
+        "transfiere_correcto": {
+          "value": 0.5,
+          "reason": "El bot menciona que va a transferir pero no realiza la transferencia. El cliente insiste en hablar con un humano y el bot no cumple con la regla de transferir correctamente."
+        },
+        "clarifica_ambiguo": {
+          "value": 0.5,
+          "reason": "El bot asumió correctamente la intención del cliente al tratar de encontrar un turno disponible para el viernes por la tarde, sin preguntar inicialmente qué día y hora exacta quería la visita a la obra. Sin embargo, no se cumplió con la regla de preguntar antes de actuar en caso de ambigüedad o falta de información clara del cliente."
         }
       },
-      "avg": 0.4642857142857143
+      "avg": 0.4722222222222222
     },
     {
       "llamada_id": "llamada-13",
@@ -708,9 +806,17 @@
         "deriva_web_si_no_sabe": {
           "value": 0.5,
           "reason": "El bot deriva a WhatsApp pero no a la web, lo que cumple parcialmente con la regla. El bot indica que puede consultar en https://grupoproaco.com/unidades, pero también ofrece llamar al teléfono de ventas para consultas comerciales, lo cual es una alternativa válida pero no se ajusta completamente a la regla especificada."
+        },
+        "transfiere_correcto": {
+          "value": 0.5,
+          "reason": "El bot menciona la transferencia pero no la realiza, y el cliente insiste en hablar con un humano sin que el bot cumpla con la regla."
+        },
+        "clarifica_ambiguo": {
+          "value": 0.75,
+          "reason": "El bot preguntó claramente qué información quería el cliente (departamentos o llamada) en un momento inicial, pero luego asumió que la información de los departamentos era lo que se pedía y no volvió a preguntar cuando el cliente solicitó más detalles sobre las chatas. A pesar de esto, el bot mantuvo una comunicación fluida y natural."
         }
       },
-      "avg": 0.5714285714285714
+      "avg": 0.5833333333333334
     }
   ],
   "langsmith_project_id": "d38e4cc9-ff40-49d8-af8f-4eae45b5dc6f",

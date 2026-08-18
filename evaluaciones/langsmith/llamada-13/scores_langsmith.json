@@ -57,7 +57,15 @@
     "deriva_web_si_no_sabe": {
       "value": 0.5,
       "reason": "El bot deriva a WhatsApp pero no a la web, lo que cumple parcialmente con la regla. El bot indica que puede consultar en https://grupoproaco.com/unidades, pero también ofrece llamar al teléfono de ventas para consultas comerciales, lo cual es una alternativa válida pero no se ajusta completamente a la regla especificada."
+    },
+    "transfiere_correcto": {
+      "value": 0.5,
+      "reason": "El bot menciona la transferencia pero no la realiza, y el cliente insiste en hablar con un humano sin que el bot cumpla con la regla."
+    },
+    "clarifica_ambiguo": {
+      "value": 0.75,
+      "reason": "El bot preguntó claramente qué información quería el cliente (departamentos o llamada) en un momento inicial, pero luego asumió que la información de los departamentos era lo que se pedía y no volvió a preguntar cuando el cliente solicitó más detalles sobre las chatas. A pesar de esto, el bot mantuvo una comunicación fluida y natural."
     }
   },
-  "avg": 0.5714285714285714
+  "avg": 0.5833333333333334
 }

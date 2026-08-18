@@ -54,7 +54,15 @@
     "deriva_web_si_no_sabe": {
       "value": 0.5,
       "reason": "El bot no puede resolver la consulta sobre disponibilidad y ofrece alternativas como ofrecer opciones para otros días o horarios, pero no menciona la URL ni indica que lo consulte con Grupo Proaco directamente."
+    },
+    "transfiere_correcto": {
+      "value": 0.5,
+      "reason": "El bot menciona que va a transferir pero no realiza la transferencia. El cliente insiste en hablar con un humano y el bot no cumple con la regla de transferir correctamente."
+    },
+    "clarifica_ambiguo": {
+      "value": 0.5,
+      "reason": "El bot asumió correctamente la intención del cliente al tratar de encontrar un turno disponible para el viernes por la tarde, sin preguntar inicialmente qué día y hora exacta quería la visita a la obra. Sin embargo, no se cumplió con la regla de preguntar antes de actuar en caso de ambigüedad o falta de información clara del cliente."
     }
   },
-  "avg": 0.4642857142857143
+  "avg": 0.4722222222222222
 }

@@ -20,33 +20,41 @@
   },
   "scores": {
     "saludo_correcto": {
-      "value": 0.5,
-      "reason": "El bot menciona 'Grupo Proaco' pero no en la primera intervención y no utiliza exactamente la frase 'se contactó con el Grupo Proaco'. En su lugar, inicia con una pregunta genérica 'Perfecto, ¿podrías contarme para qué uso buscas el departamento? ¿Será para vivienda propia, inversión o algo más?', lo que no cumple con los criterios establecidos."
+      "value": 0.0,
+      "reason": "El bot no utiliza el saludo oficial al iniciar la llamada. Su primera intervención es 'Perfecto, ¿podrías contarme...', omitiendo por completo la frase requerida."
     },
     "despedida_correcta": {
-      "value": 0.75,
-      "reason": "La despedida 'Marcelo, la llamada para asesoramiento quedó agendada para el martes a las cinco de la tarde.' es la última intervención del bot y contiene la frase 'Gracias por contactarse con el Grupo Proaco', aunque no está en el final exacto de la conversación."
+      "value": 0.0,
+      "reason": "El bot no incluye la despedida oficial requerida al finalizar la llamada. Su última intervención es una pregunta de cierre sin mencionar 'Gracias por contactarse con el Grupo Proaco', por lo que no cumple con la regla obligatoria."
     },
     "pide_contacto_una_vez": {
-      "value": 0.5,
-      "reason": "El bot solicitó datos de contacto (nombre y teléfono) pero repitió el pedido después del primer intento, no cumpliendo con el criterio de no repetir confirmaciones innecesarias de datos ya dados."
+      "value": 0.25,
+      "reason": "El bot solicita los datos de contacto en múltiples turnos (nombre, luego teléfono, y posteriormente pide confirmación/repetición de ambos). Esto viola la regla de pedirlos exactamente una vez y sin confirmaciones, correspondiendo al puntaje de 0.25 según la rúbrica y los edge cases."
     },
     "tono_espanol_argentino": {
-      "value": 0.5,
-      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Marcelo' para referirse al cliente. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'Marcelo', lo que reduce la puntuación. No se observa español neutro forzado ni tono seco o poco amigable en el diálogo."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "deteccion_intent": {
-      "value": 0.5,
-      "reason": "El bot detecta correctamente la intención del cliente (comprar un departamento) y responde alineado con esa intención durante gran parte de la conversación. Sin embargo, el bot desvía la conversación para solicitar detalles adicionales que no fueron solicitados inicialmente por el cliente, como su número de teléfono varias veces. Además, el bot finalmente agendó una cita sin haber recibido toda la información necesaria del cliente (como el rango de precios), lo cual indica un desvío en la conversación no solicitado."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "listado_max_3": {
-      "value": 0.5,
-      "reason": "El bot listó 3 propiedades pero incluyó información no solicitada como el rango de precios y ofertó mostrar más opciones si hay disponibles, aunque no se mencionaron explícitamente en la transcripción. Además, el bot no cumplió con la regla de no incluir fotos, expensas ni orientaciones."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
     },
     "deriva_web_si_no_sabe": {
-      "value": 0.75,
-      "reason": "El bot derivó al cliente a visitar https://grupoproaco.com/unidades cuando no pudo enviar la solicitud por problemas técnicos. Sin embargo, el mensaje podría haber sido más claro y directo en mencionar la URL o indicar que lo consulte con Grupo Proaco directamente."
+      "value": 1.0,
+      "reason": "El bot identifica que no puede enviar la lista por correo, cumple con la regla al derivar correctamente a la URL https://grupoproaco.com/unidades en múltiples turnos, y ofrece la alternativa de un asesor comercial sin inventar información ni dejar la consulta sin respuesta."
+    },
+    "transfiere_correcto": {
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot identifica la consulta inicial ambigua y realiza preguntas de aclaración naturales y progresivas (uso, zona, estado de construcción), ofreciendo opciones relevantes sin asumir detalles ni dar información no solicitada, cumpliendo plenamente con la regla."
     }
   },
-  "avg": 0.5714285714285714
+  "avg": 0.25
 }

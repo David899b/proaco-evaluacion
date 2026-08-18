@@ -23,33 +23,41 @@
   },
   "scores": {
     "saludo_correcto": {
-      "value": 0.25,
-      "reason": "El bot no inició con el saludo oficial 'Hola, se contactó con el Grupo Proaco', sino con 'Hola Lucía, gracias por comunicarte'. Aunque menciona 'Grupo Proaco' al final de la llamada, esto no cumple con los criterios establecidos para un saludo inicial oficial."
+      "value": 0.0,
+      "reason": "El bot no utiliza el saludo oficial requerido en su primera intervención. Responde con un saludo genérico y contextual sin mencionar 'Grupo Proaco', lo que corresponde al puntaje 0.00 según la rúbrica."
     },
     "despedida_correcta": {
-      "value": 0.75,
-      "reason": "La despedida 'Lucía, tu número de teléfono ya está registrado automáticamente en esta llamada para contactarte cuando haya disponibilidad. ¿Hay algo más en lo que pueda ayudarte?' es la última intervención del bot y menciona Grupo Proaco, pero no utiliza exactamente la frase oficial 'Gracias por contactarse con el Grupo Proaco'."
+      "value": 0.0,
+      "reason": "La transcripción finaliza con la intervención del cliente y el bot no realiza la despedida oficial requerida. No aparece la frase 'Gracias por contactarse con el Grupo Proaco' en ningún momento de la conversación."
     },
     "pide_contacto_una_vez": {
-      "value": 0.75,
-      "reason": "El bot solicitó datos de contacto (número de teléfono) al finalizar la llamada, pero no pidió el nombre del cliente ni confirmación alguna de los datos proporcionados. Sin embargo, el pedido de información se realizó más de una vez durante la conversación, lo que penaliza el score."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze the User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Pro"
     },
     "tono_espanol_argentino": {
-      "value": 0.5,
-      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'Lucía' y 'disculpá'. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'Lucía', lo que reduce la puntuación. Además, el bot es cortante al final de la conversación al no poder brindar la información solicitada."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
     },
     "deteccion_intent": {
-      "value": 0.5,
-      "reason": "El bot detecta correctamente la intención del cliente en su primer mensaje (información sobre el proyecto Pocito) pero luego desvía hacia el agendamiento de llamadas, que no era lo solicitado por el cliente. El bot debería haber continuado proporcionando información sobre las unidades disponibles y el avance de obra según la solicitud inicial del cliente."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "listado_max_3": {
-      "value": 1.0,
-      "reason": "El bot no listó ninguna propiedad ya que el cliente no solicitó información sobre unidades disponibles. La evaluación se basa en la regla condicional de la rúbrica."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199896, Requested 2725. Please try again in 18m52.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     },
     "deriva_web_si_no_sabe": {
-      "value": 0.75,
-      "reason": "El bot indica la URL correcta (https://grupoproaco.com/unidades) cuando no puede resolver la consulta sobre el avance de obra y las tipologías disponibles. Sin embargo, la respuesta inicial al cliente que solicita información detallada no menciona la URL o la derivación con Grupo Proaco directamente."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199809, Requested 2663. Please try again in 17m47.904s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    },
+    "transfiere_correcto": {
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199723, Requested 2635. Please try again in 16m58.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    },
+    "clarifica_ambiguo": {
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Requested 2633. Please try again in 16m20.208s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     }
   },
-  "avg": 0.6428571428571429
+  "avg": 0.0
 }

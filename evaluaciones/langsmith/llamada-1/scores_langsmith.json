@@ -27,7 +27,7 @@
     },
     "despedida_correcta": {
       "value": 0.75,
-      "reason": "La despedida '¿Hay algo más en lo que pueda ayudarle hoy?' es la última intervención del bot y menciona Grupo Proaco implícitamente, pero no contiene exactamente la frase 'Gracias por contactarse con el Grupo Proaco'."
+      "reason": "La despedida '¿Hay algo más en lo que pueda ayudarle hoy?' es la última intervención del bot y menciona Grupo Proaco implícitamente, aunque no usa exactamente las palabras 'Gracias por contactarse con el Grupo Proaco'."
     },
     "pide_contacto_una_vez": {
       "value": 0.75,
@@ -43,12 +43,20 @@
     },
     "listado_max_3": {
       "value": 0.75,
-      "reason": "El bot listó correctamente tres opciones de departamentos, pero incluyó información no solicitada como el monto de las expensas para una opción, lo que descalifica un punto. No se cumplió con la regla de no incluir datos extra no solicitados."
+      "reason": "El bot listó correctamente tres opciones de departamentos, pero incluyó información no solicitada como el monto de las expensas para una opción, lo que descalifica un punto. Sin embargo, el bot cumplió con la regla al listar solo tres propiedades y ofrecer mostrar más si hay más opciones disponibles."
     },
     "deriva_web_si_no_sabe": {
       "value": 1.0,
       "reason": "En toda la transcripción, el bot responde de manera efectiva a todas las consultas del cliente y no se deriva cuando puede proporcionar información relevante."
+    },
+    "transfiere_correcto": {
+      "value": 1.0,
+      "reason": "El bot no recibió ninguna solicitud explícita de hablar con una persona real y no intentó transferir el llamado, por lo que se mantiene la puntuación máxima."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot preguntó claramente qué características buscaba el cliente antes de proporcionar información, cumpliendo con todos los criterios establecidos en la regla."
     }
   },
-  "avg": 0.7142857142857143
+  "avg": 0.7777777777777778
 }

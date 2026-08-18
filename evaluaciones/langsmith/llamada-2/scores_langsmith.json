@@ -55,7 +55,15 @@
     "deriva_web_si_no_sabe": {
       "value": 0.5,
       "reason": "El bot no puede resolver la consulta sobre disponibilidad específica y ofrece llamar para coordinar una asesoría personalmente con Grupo Proaco, cumpliendo parcialmente con la regla al ofrecer alternativa pero sin derivar directamente a la URL o indicar claramente que se puede consultar en el sitio web."
+    },
+    "transfiere_correcto": {
+      "value": 0.5,
+      "reason": "El bot menciona que va a transferir al cliente con un asesor pero no realiza la transferencia. El contexto se pierde ya que el bot continúa buscando disponibilidad de horarios para llamadas telefónicas en lugar de transferir al cliente."
+    },
+    "clarifica_ambiguo": {
+      "value": 0.75,
+      "reason": "El bot preguntó por la zona y el presupuesto inicialmente, pero cuando el cliente proporcionó más detalles, el bot asumió correctamente su intención de buscar departamentos en la Ciudad de Buenos Aires o Gran Buenos Aires, preferentemente zona norte o cerca del centro. El bot no preguntó adicionalmente sobre los tipos de propiedades hasta que el cliente especificó sus preferencias, luego proporcionó opciones sin necesidad de más clarificación, obteniendo un score de 0.75."
     }
   },
-  "avg": 0.42857142857142855
+  "avg": 0.4722222222222222
 }

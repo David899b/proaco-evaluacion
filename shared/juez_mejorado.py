@@ -198,6 +198,58 @@ REGLAS_PROACO = {
             "Si nunca ocurre que el bot no sepa → score 1.0 (regla condicional)",
         ],
     },
+    "transfiere_correcto": {
+        "regla": (
+            "Cuando el cliente pide hablar con una persona real o el bot detecta que no puede "
+            "resolver, debe transferir correctamente a un asesor humano sin perder contexto."
+        ),
+        "criterios": (
+            "La transferencia debe:\n"
+            "1. Realizarse cuando el cliente lo pide explícitamente ('quiero hablar con alguien')\n"
+            "2. Indicar que va a transferir ('le transfiero con un asesor')\n"
+            "3. NO perder contexto (mencionar brevemente el motivo)\n"
+            "4. NO dejar al cliente en espera sin explicación\n"
+            "5. NO transferir a un departamento incorrecto"
+        ),
+        "ejemplos": {
+            "cumple_1_0": "[CLIENTE] Quiero hablar con alguien.\n[BOT] Claro, lo transfiero con un asesor. Un momento por favor.",
+            "cumple_0_75": "[CLIENTE] Quiero hablar con alguien.\n[BOT] Perfecto, le paso con un asesor especializado.",
+            "cumple_0_5": "[CLIENTE] Quiero hablar con alguien.\n[BOT] Ok, un momento.",
+            "cumple_0_25": "[CLIENTE] Quiero hablar con alguien.\n[BOT] No puedo transferirlo ahora.",
+            "no_cumple": "[CLIENTE] Quiero hablar con alguien.\n[BOT] Puedo ayudarlo yo.",
+        },
+        "edge_cases": [
+            "Si el bot nunca transfiere y el cliente no lo pide → score 1.0 (regla condicional)",
+            "Si transfiere sin decir nada → score 0.25",
+            "Si el cliente insiste en hablar con humano y el bot no transfiere → score 0.0",
+        ],
+    },
+    "clarifica_ambiguo": {
+        "regla": (
+            "Cuando el cliente hace una consulta ambigua o incompleta, el bot debe preguntar "
+            "para aclarar antes de actuar, en lugar de asumir o dar información incorrecta."
+        ),
+        "criterios": (
+            "La clarificación debe:\n"
+            "1. Preguntar qué quiere el cliente cuando es ambiguo\n"
+            "2. Hacerlo de forma natural (no como un interrogatorio)\n"
+            "3. NO asumir la intención sin preguntar\n"
+            "4. NO dar información que no se pidió\n"
+            "5. Ofrecer opciones cuando sea relevante"
+        ),
+        "ejemplos": {
+            "cumple_1_0": "[CLIENTE] Quiero un departamento.\n[BOT] Claro, ¿en qué zona le interesa y cuántos ambientes necesita?",
+            "cumple_0_75": "[CLIENTE] Quiero un departamento.\n[BOT] Perfecto, ¿qué zona le gusta más?",
+            "cumple_0_5": "[CLIENTE] Quiero un departamento.\n[BOT] Tenemos varias opciones. ¿Busca algo en particular?",
+            "cumple_0_25": "[CLIENTE] Quiero un departamento.\n[BOT] Le muestro departamentos disponibles.",
+            "no_cumple": "[CLIENTE] Quiero un departamento.\n[BOT] Le muestro departamentos en Belgrano de 2 y 3 ambientes.",
+        },
+        "edge_cases": [
+            "Si el cliente es claro y el bot pregunta de más → score 0.5 (innecesario)",
+            "Si el bot asume correctamente la intención → score 0.75 (acertó)",
+            "Si hay múltiples opciones y el bot las presenta sin preguntar → score 0.5",
+        ],
+    },
 }
 
 

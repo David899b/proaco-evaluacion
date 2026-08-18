@@ -41,7 +41,15 @@
     "deriva_web_si_no_sabe": {
       "value": 1.0,
       "reason": "El bot no intentó derivar la consulta ya que pudo resolverla proporcionando información y enviando el correo electrónico solicitado."
+    },
+    "transfiere_correcto": {
+      "value": 1.0,
+      "reason": "No se presentó una solicitud explícita de hablar con un humano y el bot no intentó transferir al cliente."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot preguntó claramente y de forma natural qué información necesitaba antes de actuar, sin asumir la intención del cliente ni dar información innecesaria."
     }
   },
-  "avg": 0.75
+  "avg": 0.8055555555555556
 }

@@ -1,0 +1,34 @@
+{
+  "id": "CA19ee8401e82785291c1d6e2bceb6d77d",
+  "avg": 0.829,
+  "scores": {
+    "se_presenta": {
+      "value": 1.0,
+      "reason": "El bot se identifica como Proaco al inicio de la llamada y mantiene el cumplimiento del protocolo de presentación a lo largo de toda la transcripción."
+    },
+    "menciona_proposito": {
+      "value": 1.0,
+      "reason": "El bot claramente explica el motivo de la llamada al inicio, indicando que está allí para ayudar y buscar propiedades."
+    },
+    "pide_consentimiento": {
+      "value": 1.0,
+      "reason": "El bot pregunta explícitamente si puede continuar con la transcripción, utilizando expresiones como '¿Podría repetir qué necesita?' y '¿Le gustaría que revisemos juntos los departamentos disponibles ahora?'."
+    },
+    "maneja_no_interes": {
+      "value": 1.0,
+      "reason": "El bot cerró la conversación de manera cortés después de que el cliente expresara claramente su interés en departamentos y no encontró lo que buscaba."
+    },
+    "ofrece_agendar_cita": {
+      "value": 0.5,
+      "reason": "El bot menciona la opción de agendar una cita al final de la transcripción pero no concreta esta oferta."
+    },
+    "listado_max_3": {
+      "value": 0.5,
+      "reason": "El bot intentó listar departamentos pero no pudo encontrar resultados debido a un inconveniente técnico. No se listaron propiedades y el cliente expresó que no encontró lo buscado."
+    },
+    "tono_respetuoso": {
+      "value": 0.8,
+      "reason": "El bot mantiene un tono respetuoso en general y disculpa la falta de claridad cuando no entiende al cliente. Sin embargo, hay momentos donde el bot repite preguntas innecesariamente o se vuelve algo confuso, como cuando intenta buscar departamentos y luego menciona una demora sin explicarla claramente."
+    }
+  }
+}

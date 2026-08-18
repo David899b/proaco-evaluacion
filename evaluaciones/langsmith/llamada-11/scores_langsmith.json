@@ -48,7 +48,15 @@
     "deriva_web_si_no_sabe": {
       "value": 1.0,
       "reason": "El bot no intentó derivar la consulta cuando el cliente solicitaba información sobre opciones de financiación para un departamento en Opera Park, ya que pudo proporcionar toda la información requerida y agendar una llamada sin necesidad de derivar a otra fuente de información."
+    },
+    "transfiere_correcto": {
+      "value": 0.5,
+      "reason": "El bot menciona la transferencia al final de la conversación pero no realiza ninguna acción para transferir al cliente con un asesor humano. El contexto se pierde ya que el bot no agiliza la solicitud del cliente y simplemente confirma la llamada programada."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot respondió de manera clara y natural al cliente, solicitando información adicional cuando la consulta era ambigua o incompleta. No asumió la intención del cliente sin preguntar y proporcionó opciones relevantes para continuar la conversación."
     }
   },
-  "avg": 0.7142857142857143
+  "avg": 0.7222222222222222
 }

@@ -22,33 +22,41 @@
   },
   "scores": {
     "saludo_correcto": {
-      "value": 0.25,
-      "reason": "El bot no cumple con el saludo oficial requerido al inicio de la llamada. En lugar de 'Hola, se contactó con el Grupo Proaco', el bot comienza directamente preguntando por la ciudad del cliente."
+      "value": 0.0,
+      "reason": "El bot no realiza el saludo oficial al inicio. La llamada comienza con el cliente y la primera intervención del bot es 'Claro, puedo ayudarle con eso...', sin mencionar 'Grupo Proaco' ni cumplir con el saludo obligatorio."
     },
     "despedida_correcta": {
-      "value": 0.75,
-      "reason": "La despedida '¿Hay algo más en lo que pueda ayudarle hoy?' es la última intervención del bot y menciona Grupo Proaco implícitamente, pero no contiene exactamente la frase 'Gracias por contactarse con el Grupo Proaco'."
+      "value": 0.0,
+      "reason": "El bot no incluye la despedida oficial al finalizar la llamada. Su última intervención es una pregunta ('¿Hay algo más en lo que pueda ayudarle hoy?') y no contiene la frase obligatoria ni ninguna variación de la misma."
     },
     "pide_contacto_una_vez": {
-      "value": 0.75,
-      "reason": "El bot pide los datos de contacto (nombre y teléfono) una sola vez al finalizar la llamada, pero no cumple con el criterio de no pedir confirmación/repeticiones innecesarias de datos ya dados. Además, solicita el email después del pedido inicial de nombre y teléfono, lo que podría considerarse un pedido adicional."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "tono_espanol_argentino": {
-      "value": 0.75,
-      "reason": "El bot mantiene un tono amable y claro, usando expresiones rioplatenses como 'Martín' y 'gracias'. Sin embargo, no utiliza modismos argentinos explícitos como 'dale', 'bárbaro', o 'claro que sí', lo cual reduce la puntuación."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "deteccion_intent": {
-      "value": 0.75,
-      "reason": "El bot identificó correctamente la intención del cliente de ver departamentos disponibles en Buenos Aires y le pidió detalles adicionales para filtrar las opciones. Sin embargo, el bot desvió ligeramente al preguntar por la ciudad inicialmente, cuando el cliente ya había especificado que estaba interesado en la ciudad de Buenos Aires."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "listado_max_3": {
-      "value": 0.75,
-      "reason": "El bot listó correctamente tres opciones de departamentos, pero incluyó información no solicitada como el monto de las expensas para una opción, lo que descalifica un punto. No se cumplió con la regla de no incluir datos extra no solicitados."
+      "value": 1.0,
+      "reason": "El bot cumple estrictamente con la regla: lista exactamente 3 propiedades, incluye solo la información solicitada por el cliente (zona y cantidad de ambientes) y no agrega datos no solicitados como expensas, fotos u orientaciones. Además, indica que son opciones 'para comenzar', cumpliendo con el criterio de ofrecer más si es necesario."
     },
     "deriva_web_si_no_sabe": {
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+    },
+    "transfiere_correcto": {
       "value": 1.0,
-      "reason": "En toda la transcripción, el bot responde de manera efectiva a todas las consultas del cliente y no se deriva cuando puede proporcionar información relevante."
+      "reason": "El cliente nunca solicitó hablar con un asesor humano ni el bot detectó una situación que requiriera transferencia. La regla es condicional y, al no activarse la condición, se asigna la puntuación máxima según el edge case especificado."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot identifica correctamente la ambigüedad inicial ('en la ciudad') y pregunta de forma natural por la ubicación específica. Luego, solicita aclarar características clave (ambientes, precio, zona) ofreciendo ejemplos, sin asumir ni dar información no solicitada. Cumple plenamente con la regla y la rúbrica de 1.0."
     }
   },
-  "avg": 0.7142857142857143
+  "avg": 0.3333333333333333
 }

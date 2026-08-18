@@ -1,0 +1,34 @@
+{
+  "id": "CA1cc4b3a43b1c81376115825d86c44622",
+  "avg": 0.286,
+  "scores": {
+    "se_presenta": {
+      "value": 1.0,
+      "reason": "El bot se identifica como Proaco al inicio de la llamada."
+    },
+    "menciona_proposito": {
+      "value": 0.0,
+      "reason": "El bot no menciona el propósito de la llamada."
+    },
+    "pide_consentimiento": {
+      "value": 0.0,
+      "reason": "El bot no hace una pregunta explícita ni implícita sobre el consentimiento para continuar la llamada."
+    },
+    "maneja_no_interes": {
+      "value": 0.0,
+      "reason": "El bot no ha recibido aún la respuesta 'no me interesa' y continúa la conversación."
+    },
+    "ofrece_agendar_cita": {
+      "value": 0.0,
+      "reason": "El bot no ofrece agendar cita ni ninguna opción relacionada."
+    },
+    "listado_max_3": {
+      "value": 0.0,
+      "reason": "El bot no listó ninguna propiedad en la transcripción."
+    },
+    "tono_respetuoso": {
+      "value": 1.0,
+      "reason": "El bot responde de manera cortés y amable al cliente."
+    }
+  }
+}

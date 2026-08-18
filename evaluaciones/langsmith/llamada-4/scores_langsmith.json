@@ -46,7 +46,15 @@
     "deriva_web_si_no_sabe": {
       "value": 0.75,
       "reason": "El bot derivó al cliente a visitar https://grupoproaco.com/unidades cuando no pudo enviar la solicitud por problemas técnicos. Sin embargo, el mensaje podría haber sido más claro y directo en mencionar la URL o indicar que lo consulte con Grupo Proaco directamente."
+    },
+    "transfiere_correcto": {
+      "value": 0.5,
+      "reason": "El bot intenta transferir al cliente pero no indica claramente que va a hacerlo ni menciona brevemente el motivo. Además, el contexto se pierde ya que el bot vuelve a preguntar por el nombre completo para agendar la cita en lugar de confirmar la transferencia."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot preguntó claramente qué uso buscaba el cliente y luego continuó con preguntas claras sobre preferencias de zona, tipo de departamento y detalles adicionales sin asumir información. Las preguntas fueron naturales y relevantes al contexto de la conversación."
     }
   },
-  "avg": 0.5714285714285714
+  "avg": 0.6111111111111112
 }

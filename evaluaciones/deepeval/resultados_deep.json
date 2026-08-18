@@ -1,19 +1,152 @@
 {
   "tool": "deepeval",
   "judge": "juez_mejorado",
-  "model": "ollama/qwen2.5:7b",
-  "n_llamadas": 1,
+  "model": "groq/qwen/qwen3.6-27b",
+  "n_llamadas": 13,
   "promedios": {
-    "deriva_web_si_no_sabe": 1.0,
-    "despedida_correcta": 0.75,
-    "deteccion_intent": 1.0,
-    "listado_max_3": 1.0,
-    "pide_contacto_una_vez": 0.75,
-    "saludo_correcto": 0.25,
-    "tono_espanol_argentino": 0.5
+    "clarifica_ambiguo": 0.3076923076923077,
+    "deriva_web_si_no_sabe": 0.15384615384615385,
+    "despedida_correcta": 0.0,
+    "deteccion_intent": 0.0,
+    "listado_max_3": 0.23076923076923078,
+    "pide_contacto_una_vez": 0.019230769230769232,
+    "saludo_correcto": 0.0,
+    "tono_espanol_argentino": 0.0,
+    "transfiere_correcto": 0.15384615384615385
   },
-  "global_avg": 0.75,
+  "global_avg": 0.09615384615384616,
   "por_llamada": [
+    {
+      "llamada_id": "llamada-1",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "El bot no realiza el saludo oficial al inicio. La llamada comienza con el cliente y la primera intervención del bot es 'Claro, puedo ayudarle con eso...', sin mencionar 'Grupo Proaco' ni cumplir con el saludo obligatorio."
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "El bot no incluye la despedida oficial al finalizar la llamada. Su última intervención es una pregunta ('¿Hay algo más en lo que pueda ayudarle hoy?') y no contiene la frase obligatoria ni ninguna variación de la misma."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot cumple estrictamente con la regla: lista exactamente 3 propiedades, incluye solo la información solicitada por el cliente (zona y cantidad de ambientes) y no agrega datos no solicitados como expensas, fotos u orientaciones. Además, indica que son opciones 'para comenzar', cumpliendo con el criterio de ofrecer más si es necesario."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "transfiere_correcto": {
+          "value": 1.0,
+          "reason": "El cliente nunca solicitó hablar con un asesor humano ni el bot detectó una situación que requiriera transferencia. La regla es condicional y, al no activarse la condición, se asigna la puntuación máxima según el edge case especificado."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot identifica correctamente la ambigüedad inicial ('en la ciudad') y pregunta de forma natural por la ubicación específica. Luego, solicita aclarar características clave (ambientes, precio, zona) ofreciendo ejemplos, sin asumir ni dar información no solicitada. Cumple plenamente con la regla y la rúbrica de 1.0."
+        }
+      },
+      "avg": 0.3333333333333333
+    },
+    {
+      "llamada_id": "llamada-2",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "El bot no realiza el saludo oficial al inicio de la llamada. Su primera intervención salta directamente a preguntar por el presupuesto sin mencionar 'Grupo Proaco' ni utilizar la frase requerida, incumpliendo totalmente la regla."
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "El bot no incluye la despedida oficial al finalizar la llamada. La transcripción termina abruptamente con una pregunta del bot y no contiene en ningún momento la frase obligatoria 'Gracias por contactarse con el Grupo Proaco'."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot identificó la consulta inicial incompleta y realizó preguntas aclaratorias naturales y progresivas (presupuesto, zona, tipo de propiedad) antes de actuar, ofreciendo opciones cuando correspondía y sin asumir intenciones ni dar información no solicitada. Cumple plenamente con la regla."
+        }
+      },
+      "avg": 0.1111111111111111
+    },
     {
       "llamada_id": "llamada-3",
       "metadata": {
@@ -31,35 +164,659 @@
       },
       "scores": {
         "saludo_correcto": {
-          "value": 0.25,
-          "reason": "El bot menciona 'Grupo Proaco' pero no inicia la llamada con el saludo oficial completo 'Hola, se contactó con el Grupo Proaco', sino que agrega información antes del saludo."
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
         },
         "despedida_correcta": {
-          "value": 0.75,
-          "reason": "La despedida 'Gracias, Juan. Un asesor de Grupo Proaco se pondrá en contacto con usted a la brevedad para enviarle información sobre departamentos de dos ambientes en Palermo.' no es la última intervención del bot y contiene más texto que el requerido pero menciona al Grupo Proaco."
+          "value": 0.0,
+          "reason": "El bot no realizó la despedida oficial al finalizar la llamada. Su última intervención fue preguntar si había algo más en lo que podía ayudar, y la transcripción termina con el cliente sin que el bot haya dicho la frase obligatoria."
         },
         "pide_contacto_una_vez": {
-          "value": 0.75,
-          "reason": "El bot solicitó nombre y teléfono al principio de la llamada pero luego repitió el pedido de correo electrónico. A pesar de esto, el pedido se hizo una sola vez cerca del final de la llamada."
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
         },
         "tono_espanol_argentino": {
-          "value": 0.5,
-          "reason": "El bot usa un tono amable y cortés, pero no incluye expresiones rioplatenses ni modismos argentinos como 'dale' o 'bárbaro'. Además, el uso de 'Juan' en lugar de 'usted' es consistente, aunque no se usan modismos locales."
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
         },
         "deteccion_intent": {
-          "value": 1.0,
-          "reason": "El bot identificó correctamente la intención del cliente (enviar opciones de departamentos por correo) y respondió alineado con esa intención, sin desviar el tema ni ofrecer información no solicitada."
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
         },
         "listado_max_3": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "transfiere_correcto": {
           "value": 1.0,
-          "reason": "El bot no listó ninguna propiedad y cumplió con la regla ya que el cliente no pidió opciones inmediatas por voz."
+          "reason": "El cliente nunca solicitó hablar con un asesor humano. Según los edge cases, al no activarse la condición de transferencia, la regla se considera cumplida (score 1.0). El bot gestionó la solicitud correctamente recopilando los datos y confirmando el seguimiento por parte de un asesor."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "<brief explanation in Spanish>"
+        }
+      },
+      "avg": 0.2222222222222222
+    },
+    {
+      "llamada_id": "llamada-4",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_resolve_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_resolve_intent",
+          "proaco_resolve_intent",
+          "proaco_resolve_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "El bot no utiliza el saludo oficial al iniciar la llamada. Su primera intervención es 'Perfecto, ¿podrías contarme...', omitiendo por completo la frase requerida."
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "El bot no incluye la despedida oficial requerida al finalizar la llamada. Su última intervención es una pregunta de cierre sin mencionar 'Gracias por contactarse con el Grupo Proaco', por lo que no cumple con la regla obligatoria."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.25,
+          "reason": "El bot solicita los datos de contacto en múltiples turnos (nombre, luego teléfono, y posteriormente pide confirmación/repetición de ambos). Esto viola la regla de pedirlos exactamente una vez y sin confirmaciones, correspondiendo al puntaje de 0.25 según la rúbrica y los edge cases."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
         },
         "deriva_web_si_no_sabe": {
           "value": 1.0,
-          "reason": "El bot no intentó derivar la consulta ya que pudo resolverla proporcionando información y enviando el correo electrónico solicitado."
+          "reason": "El bot identifica que no puede enviar la lista por correo, cumple con la regla al derivar correctamente a la URL https://grupoproaco.com/unidades en múltiples turnos, y ofrece la alternativa de un asesor comercial sin inventar información ni dejar la consulta sin respuesta."
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "clarifica_ambiguo": {
+          "value": 1.0,
+          "reason": "El bot identifica la consulta inicial ambigua y realiza preguntas de aclaración naturales y progresivas (uso, zona, estado de construcción), ofreciendo opciones relevantes sin asumir detalles ni dar información no solicitada, cumpliendo plenamente con la regla."
         }
       },
-      "avg": 0.75
+      "avg": 0.25
+    },
+    {
+      "llamada_id": "llamada-5",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [],
+        "tools": [],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "El bot no utiliza el saludo oficial requerido en su primera intervención. En lugar de decir 'Hola, se contactó con el Grupo Proaco', responde directamente a la pregunta del cliente presentándose como asistente virtual, incumpliendo totalmente la regla de saludo de inicio."
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "El bot no utiliza la despedida oficial requerida. La llamada finaliza con una pregunta ('¿Hay algo más en lo que pueda ayudarle?') sin incluir ninguna frase de cierre, por lo que no cumple con la regla obligatoria."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "<string>"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El cliente nunca solicitó listar propiedades y el bot no realizó ningún listado. Según el edge case indicado, al no aplicarse la condición de listado, se considera que cumple la regla condicional."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 1.0,
+          "reason": "La regla es condicional y en la transcripción el cliente nunca realiza una consulta que el bot no pueda resolver; solo insiste en hablar con un asesor humano. Según el edge case indicado, si nunca ocurre que el bot no sepa, se asigna score 1.0."
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "..."
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        }
+      },
+      "avg": 0.2222222222222222
+    },
+    {
+      "llamada_id": "llamada-6",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "El bot no utiliza el saludo oficial al iniciar la llamada. Su primera intervención responde directamente a la consulta del cliente sin mencionar 'Grupo Proaco' ni emplear la frase requerida."
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "El bot no incluye la despedida oficial al finalizar la llamada. La última intervención corresponde a una respuesta sobre la duración de la visita y una pregunta de cierre, sin contener la frase obligatoria ni ninguna despedida."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "listado_max_3": {
+          "value": 1.0,
+          "reason": "El bot nunca lista propiedades en la transcripción. La regla es condicional y, según los edge cases, si no se realiza el listado de propiedades, se considera cumplida (score 1.0). La conversación se centra exclusivamente en agendar una visita y consultar por la dirección del showroom."
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "El cliente solicitó explícitamente hablar con un asesor para confirmar la dirección. El bot se negó a realizar la transferencia ('No puedo transferir llamadas') y ofreció continuar ayudando él mismo, incumpliendo la regla y correspondiendo a la puntuación 0.0 según la rúbrica y los edge cases."
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        }
+      },
+      "avg": 0.1111111111111111
+    },
+    {
+      "llamada_id": "llamada-7",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "El bot no utiliza el saludo oficial requerido en su primera intervención. Responde con un saludo genérico y contextual sin mencionar 'Grupo Proaco', lo que corresponde al puntaje 0.00 según la rúbrica."
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "La transcripción finaliza con la intervención del cliente y el bot no realiza la despedida oficial requerida. No aparece la frase 'Gracias por contactarse con el Grupo Proaco' en ningún momento de la conversación."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze the User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Pro"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert evaluator of real estate voicebots for Grupo Proaco.\n   - **Tas"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199896, Requested 2725. Please try again in 18m52.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199809, Requested 2663. Please try again in 17m47.904s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199723, Requested 2635. Please try again in 16m58.656s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Requested 2633. Please try again in 16m20.208s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        }
+      },
+      "avg": 0.0
+    },
+    {
+      "llamada_id": "llamada-8",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199549, Requested 2600. Please try again in 15m28.367999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199462, Requested 2566. Please try again in 14m36.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199375, Requested 2655. Please try again in 14m36.959999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199288, Requested 2626. Please try again in 13m46.848s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199201, Requested 2624. Please try again in 13m8.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199114, Requested 2691. Please try again in 12m59.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199027, Requested 2629. Please try again in 11m55.392s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198940, Requested 2601. Please try again in 11m5.712s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198853, Requested 2599. Please try again in 10m27.264s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        }
+      },
+      "avg": 0.0
+    },
+    {
+      "llamada_id": "llamada-9",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198766, Requested 2672. Please try again in 10m21.216s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198679, Requested 2638. Please try again in 9m28.944s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198591, Requested 2727. Please try again in 9m29.376s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198505, Requested 2698. Please try again in 8m39.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198418, Requested 2696. Please try again in 8m1.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198331, Requested 2763. Please try again in 7m52.608s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198244, Requested 2701. Please try again in 6m48.24s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198157, Requested 2673. Please try again in 5m58.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198070, Requested 2671. Please try again in 5m20.112s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        }
+      },
+      "avg": 0.0
+    },
+    {
+      "llamada_id": "llamada-10",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent"
+        ],
+        "tools": [
+          "proaco_list_intent"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197983, Requested 2043. Please try again in 11.232s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "El bot no incluye la despedida oficial obligatoria 'Gracias por contactarse con el Grupo Proaco' en ningún momento de la llamada. La transcripción finaliza con la intervención del cliente sin que el bot cierre con la frase requerida."
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199914, Requested 2098. Please try again in 14m29.184s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199827, Requested 2069. Please try again in 13m39.072s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199740, Requested 2067. Please try again in 13m0.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199653, Requested 2134. Please try again in 12m51.984s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199566, Requested 2072. Please try again in 11m47.616s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199479, Requested 2044. Please try again in 10m57.936s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199392, Requested 2042. Please try again in 10m19.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        }
+      },
+      "avg": 0.0
+    },
+    {
+      "llamada_id": "llamada-11",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199305, Requested 2566. Please try again in 13m28.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199218, Requested 2532. Please try again in 12m36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199131, Requested 2621. Please try again in 12m36.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199044, Requested 2592. Please try again in 11m46.752s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198957, Requested 2590. Please try again in 11m8.304s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198871, Requested 2657. Please try again in 11m0.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198784, Requested 2595. Please try again in 9m55.728s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198697, Requested 2567. Please try again in 9m6.048s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198610, Requested 2565. Please try again in 8m27.6s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        }
+      },
+      "avg": 0.0
+    },
+    {
+      "llamada_id": "llamada-12",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "tools": [
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "scheduleCalDotComAppointment"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198523, Requested 2854. Please try again in 9m54.863999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198436, Requested 2820. Please try again in 9m2.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198349, Requested 2909. Please try again in 9m3.456s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198262, Requested 2880. Please try again in 8m13.344s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198175, Requested 2878. Please try again in 7m34.895999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198088, Requested 2945. Please try again in 7m26.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198001, Requested 2883. Please try again in 6m21.888s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197914, Requested 2855. Please try again in 5m32.208s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197827, Requested 2853. Please try again in 4m53.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        }
+      },
+      "avg": 0.0
+    },
+    {
+      "llamada_id": "llamada-13",
+      "metadata": {
+        "canal": "voz",
+        "origen": "google_sheets",
+        "intents": [
+          "proaco_list_intent",
+          "getCalDotComAvailability"
+        ],
+        "tools": [
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "proaco_list_intent",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability",
+          "getCalDotComAvailability"
+        ],
+        "proyecto": "proaco",
+        "flow": "inbound"
+      },
+      "scores": {
+        "saludo_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197740, Requested 3663. Please try again in 10m6.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "despedida_correcta": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197653, Requested 3629. Please try again in 9m13.824s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "pide_contacto_una_vez": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197566, Requested 3718. Please try again in 9m14.688s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "tono_espanol_argentino": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197479, Requested 3689. Please try again in 8m24.575999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deteccion_intent": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197392, Requested 3687. Please try again in 7m46.128s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "listado_max_3": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197305, Requested 3754. Please try again in 7m37.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "deriva_web_si_no_sabe": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197218, Requested 3692. Please try again in 6m33.12s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "transfiere_correcto": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197131, Requested 3664. Please try again in 5m43.44s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        },
+        "clarifica_ambiguo": {
+          "value": 0.0,
+          "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197045, Requested 3662. Please try again in 5m5.424s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+        }
+      },
+      "avg": 0.0
     }
   ]
 }

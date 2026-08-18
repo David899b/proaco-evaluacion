@@ -18,33 +18,41 @@
   },
   "scores": {
     "saludo_correcto": {
-      "value": 0.25,
-      "reason": "El bot no realizó el saludo oficial 'Hola, se contactó con el Grupo Proaco' al inicio de la llamada. En su lugar, comenzó directamente a responder al cliente con información sobre departamentos y horarios."
+      "value": 0.0,
+      "reason": "El bot no utiliza el saludo oficial al iniciar la llamada. Su primera intervención responde directamente a la consulta del cliente sin mencionar 'Grupo Proaco' ni emplear la frase requerida."
     },
     "despedida_correcta": {
-      "value": 0.25,
-      "reason": "La despedida '¿Puedo ayudarte con algo más?' no es la última intervención del bot y no contiene la frase 'Gracias por contactarse con el Grupo Proaco'."
+      "value": 0.0,
+      "reason": "El bot no incluye la despedida oficial al finalizar la llamada. La última intervención corresponde a una respuesta sobre la duración de la visita y una pregunta de cierre, sin contener la frase obligatoria ni ninguna despedida."
     },
     "pide_contacto_una_vez": {
-      "value": 0.25,
-      "reason": "El bot pide datos de contacto (nombre) solo una vez cerca del final de la llamada, pero solicita confirmación innecesaria y no pide teléfono ni email. Además, el pedido de información se hace en un contexto donde el cliente ya ha proporcionado su nombre durante la conversación."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "tono_espanol_argentino": {
-      "value": 0.75,
-      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'claro que sí' y '¿Puedo ayudarte con algo más?'. Sin embargo, no utiliza modismos rioplatenses y cambia de 'usted' a 'tú' sin consistencia. No se observa el uso de expresiones típicas del español rioplatense como 'dale', 'bárbaro', o 'claro'."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "deteccion_intent": {
-      "value": 0.75,
-      "reason": "El bot identificó correctamente la intención del cliente (consultar departamentos y agendar visita) en el primer mensaje. Sin embargo, se desvió al final de la conversación al no proporcionar la dirección exacta solicitada por el cliente, que era un tema no solicitado anteriormente."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     },
     "listado_max_3": {
       "value": 1.0,
-      "reason": "El bot no listó ninguna propiedad y cumplió con la regla ya que el cliente no solicitó información sobre propiedades de un dormitorio en Nueva Córdoba."
+      "reason": "El bot nunca lista propiedades en la transcripción. La regla es condicional y, según los edge cases, si no se realiza el listado de propiedades, se considera cumplida (score 1.0). La conversación se centra exclusivamente en agendar una visita y consultar por la dirección del showroom."
     },
     "deriva_web_si_no_sabe": {
-      "value": 1.0,
-      "reason": "El bot resuelve todas las consultas del cliente sin necesidad de derivar y no se queda sin respuesta en ningún momento."
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
+    },
+    "transfiere_correcto": {
+      "value": 0.0,
+      "reason": "El cliente solicitó explícitamente hablar con un asesor para confirmar la dirección. El bot se negó a realizar la transferencia ('No puedo transferir llamadas') y ofreció continuar ayudando él mismo, incumpliendo la regla y correspondiendo a la puntuación 0.0 según la rúbrica y los edge cases."
+    },
+    "clarifica_ambiguo": {
+      "value": 0.0,
+      "reason": "parse_error: \n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Expert and strict evaluator of real estate voicebots for Grupo Proaco."
     }
   },
-  "avg": 0.6071428571428571
+  "avg": 0.1111111111111111
 }

@@ -44,7 +44,15 @@
     "deriva_web_si_no_sabe": {
       "value": 1.0,
       "reason": "El bot resuelve todas las consultas del cliente sin necesidad de derivar y no se queda sin respuesta en ningún momento."
+    },
+    "transfiere_correcto": {
+      "value": 0.25,
+      "reason": "El bot no realiza ninguna transferencia y el cliente finalmente solicita una transferencia explícitamente, pero el bot no cumple con la regla al no transferir."
+    },
+    "clarifica_ambiguo": {
+      "value": 1.0,
+      "reason": "El bot preguntó claramente y de forma natural qué información necesitaba cuando el cliente hizo consultas ambigüas o incompletas, sin asumir la intención del cliente ni proporcionar información innecesaria antes de obtener más detalles."
     }
   },
-  "avg": 0.6071428571428571
+  "avg": 0.6111111111111112
 }

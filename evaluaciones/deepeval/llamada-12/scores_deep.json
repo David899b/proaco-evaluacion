@@ -28,33 +28,41 @@
   },
   "scores": {
     "saludo_correcto": {
-      "value": 0.25,
-      "reason": "El bot no realizó ningún saludo al inicio de la llamada y comenzó directamente con la consulta sobre disponibilidad de turnos."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198523, Requested 2854. Please try again in 9m54.863999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     },
     "despedida_correcta": {
-      "value": 0.25,
-      "reason": "La despedida 'Gracias, Mariana. He tomado nota de su número para avisarle si se libera algún turno el viernes por la tarde.' no cumple con la regla ya que no contiene la frase exacta 'Gracias por contactarse con el Grupo Proaco'. Aunque es una despedida final, no incluye la mención al Grupo Proaco y carece de la frase 'Gracias por contactarse'."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198436, Requested 2820. Please try again in 9m2.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     },
     "pide_contacto_una_vez": {
-      "value": 0.75,
-      "reason": "El bot solicitó datos de contacto al finalizar la llamada, pidiendo nombre y teléfono. Sin embargo, el pedido no fue realizado solo una vez ya que se repitió en múltiples ocasiones durante la conversación. Además, el bot confirmó los datos proporcionados por el cliente, lo cual no es permitido según las reglas."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198349, Requested 2909. Please try again in 9m3.456s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     },
     "tono_espanol_argentino": {
-      "value": 0.5,
-      "reason": "El bot mantiene un tono amable y claro, usando expresiones como 'María', pero no utiliza modismos rioplatenses como 'dale'. El bot es cortante al final de la conversación, diciendo que no se pudo reservar ninguna visita y ofreciendo ayuda con otra consulta o propiedad, lo cual no cumple con el criterio de ser servicial en todo momento."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198262, Requested 2880. Please try again in 8m13.344s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     },
     "deteccion_intent": {
       "value": 0.0,
-      "reason": "El bot no detecta correctamente la intención del cliente (ver la obra) y desvía constantemente el flujo de la conversación hacia la búsqueda de turnos para visitar la obra, sin ofrecer opciones relevantes o alineadas con lo solicitado por el cliente. El cliente solo pide confirmar una visita que no se pudo realizar debido a la falta de disponibilidad."
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198175, Requested 2878. Please try again in 7m34.895999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     },
     "listado_max_3": {
-      "value": 1.0,
-      "reason": "La transcripción no muestra ninguna interacción donde el bot liste propiedades inmobiliarias, por lo tanto, se cumple la regla condicional de que si nunca lista propiedades (el cliente no pidió)."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198088, Requested 2945. Please try again in 7m26.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     },
     "deriva_web_si_no_sabe": {
-      "value": 0.5,
-      "reason": "El bot no puede resolver la consulta sobre disponibilidad y ofrece alternativas como ofrecer opciones para otros días o horarios, pero no menciona la URL ni indica que lo consulte con Grupo Proaco directamente."
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198001, Requested 2883. Please try again in 6m21.888s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    },
+    "transfiere_correcto": {
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197914, Requested 2855. Please try again in 5m32.208s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    },
+    "clarifica_ambiguo": {
+      "value": 0.0,
+      "reason": "Error: litellm.RateLimitError: RateLimitError: GroqException - {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01m08reehfeaa8ety77h622pmg` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197827, Requested 2853. Please try again in 4m53.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
     }
   },
-  "avg": 0.4642857142857143
+  "avg": 0.0
 }

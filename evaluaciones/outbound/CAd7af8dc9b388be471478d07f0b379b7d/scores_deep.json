@@ -1,0 +1,34 @@
+{
+  "id": "CAd7af8dc9b388be471478d07f0b379b7d",
+  "avg": 0.757,
+  "scores": {
+    "se_presenta": {
+      "value": 1.0,
+      "reason": "El bot se presenta claramente al inicio de la llamada diciendo 'Proaco', cumpliendo con la regla."
+    },
+    "menciona_proposito": {
+      "value": 1.0,
+      "reason": "El bot claramente explica que llama para mostrar opciones de departamentos con tres habitaciones."
+    },
+    "pide_consentimiento": {
+      "value": 0.5,
+      "reason": "El bot implícitamente pregunta por el consentimiento al decir 'Te leo las primeras tres: Primero: Proyecto “Departamentos con cochera - 2024”.' sin una clara indicación de si puede continuar o no. Luego continúa sin obtener explícita confirmación del cliente."
+    },
+    "maneja_no_interes": {
+      "value": 0.5,
+      "reason": "El bot insiste varias veces antes de que el cliente indique su interés en un departamento, lo cual es una violación de la regla de manejoNoInteres."
+    },
+    "ofrece_agendar_cita": {
+      "value": 1.0,
+      "reason": "El bot ofrece agendar cita/visita al final de la conversación, derivando a un agente para continuar con los detalles."
+    },
+    "listado_max_3": {
+      "value": 0.5,
+      "reason": "El bot listó más de 3 propiedades (6) sin filtrarlas según las solicitudes del lead."
+    },
+    "tono_respetuoso": {
+      "value": 0.8,
+      "reason": "El bot mantiene un tono respetuoso generalmente, pero hay momentos donde la comunicación se vuelve repetitiva y no muy clara, lo que puede generar confusión al cliente."
+    }
+  }
+}

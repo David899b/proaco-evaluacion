@@ -1,0 +1,34 @@
+{
+  "id": "CA18a4abd08ab9818405d44a7e4c1b910f",
+  "avg": 0.471,
+  "scores": {
+    "se_presenta": {
+      "value": 1.0,
+      "reason": "El bot se presenta diciendo 'Proaco' al inicio de la llamada."
+    },
+    "menciona_proposito": {
+      "value": 1.0,
+      "reason": "El bot explica claramente el motivo de la llamada al inicio, indicando que va a revisar las opciones disponibles para una casa con dos dormitorios y dos baños."
+    },
+    "pide_consentimiento": {
+      "value": 0.0,
+      "reason": "El bot no pregunta explícitamente ni implícitamente por el consentimiento del cliente para continuar la conversación."
+    },
+    "maneja_no_interes": {
+      "value": 0.0,
+      "reason": "El bot insiste dos veces en continuar la conversación después de que el cliente expresa claramente su deseo de terminar."
+    },
+    "ofrece_agendar_cita": {
+      "value": 0.0,
+      "reason": "El bot no ofrece agendar una cita o visita alguna vez en la transcripción."
+    },
+    "listado_max_3": {
+      "value": 0.5,
+      "reason": "El bot listó correctamente una propiedad que cumple con los requisitos (dos dormitorios y dos baños), pero solo lo hizo una vez en lugar de hasta tres como se especifica en la regla."
+    },
+    "tono_respetuoso": {
+      "value": 0.8,
+      "reason": "El bot mantiene un tono respetuoso en general, pero pierde puntos por la repetición innecesaria de la solicitud de que se repita y por no manejar adecuadamente el cambio brusco de tono del cliente."
+    }
+  }
+}
