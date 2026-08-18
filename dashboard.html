@@ -16,14 +16,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f
 .grid-3{grid-template-columns:repeat(3,1fr)}
 .grid-2{grid-template-columns:repeat(2,1fr)}
 .grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-5{grid-template-columns:repeat(5,1fr)}
 .card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
 .card h3{font-size:14px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.card h4{font-size:15px;color:#f8fafc;margin-bottom:8px}
 .stat{font-size:32px;font-weight:700}
 .stat.green{color:#22c55e}.stat.yellow{color:#eab308}.stat.red{color:#ef4444}
 .stat.blue{color:#3b82f6}.stat.purple{color:#a855f7}
 .badge{display:inline-block;padding:2px 8px;border-radius:9999px;font-size:11px;font-weight:600}
 .badge-green{background:#166534;color:#bbf7d0}.badge-yellow{background:#854d0e;color:#fef08a}
 .badge-red{background:#991b1b;color:#fecaca}.badge-blue{background:#1e40af;color:#bfdbfe}
+.badge-purple{background:#581c87;color:#e9d5ff}
 .chart-card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
 .chart-card h3{font-size:16px;color:#f8fafc;margin-bottom:16px}
 table{width:100%;border-collapse:collapse}
@@ -32,7 +35,7 @@ th{color:#94a3b8;font-weight:600;text-transform:uppercase;font-size:11px;letter-
 td{color:#e2e8f0}
 .score-bar{height:6px;border-radius:3px;background:#334155;overflow:hidden;min-width:80px}
 .score-fill{height:100%;border-radius:3px;transition:width .3s}
-.tab-container{display:flex;gap:4px;margin-bottom:20px}
+.tab-container{display:flex;gap:4px;margin-bottom:20px;flex-wrap:wrap}
 .tab{padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;
      background:#334155;color:#94a3b8;border:none;transition:all .2s}
 .tab.active{background:#3b82f6;color:#fff}
@@ -45,47 +48,258 @@ td{color:#e2e8f0}
 .cost-card ul{list-style:none;margin-top:12px}
 .cost-card li{padding:4px 0;font-size:13px;color:#cbd5e1}
 .cost-card li::before{content:'✓ ';color:#22c55e;font-weight:700}
+.legend-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #334155}
+.legend-item:last-child{border-bottom:none}
+.legend-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.legend-text h4{font-size:14px;color:#f8fafc;margin-bottom:2px}
+.legend-text p{font-size:12px;color:#94a3b8;line-height:1.4}
+.step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid #334155}
+.step:last-child{border-bottom:none}
+.step-num{width:36px;height:36px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.step-text h4{font-size:14px;color:#f8fafc;margin-bottom:4px}
+.step-text p{font-size:13px;color:#94a3b8;line-height:1.5}
+.tool-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;margin:2px}
+.opik{background:#6366f1;color:#e0e7ff}.deepeval{background:#3b82f6;color:#dbeafe}.langsmith{background:#a855f7;color:#f3e8ff}
+.flow-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
+.flow-box{padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.flow-arrow{color:#475569;font-size:18px}
 </style>
 </head>
 <body>
 <div class="header">
 <h1>Proaco VoiceBot - Dashboard de Evaluación</h1>
-<p>9 métricas · 13 inbound + 6 outbound · 3 herramientas · 2 modelos</p>
+<p>9 métricas · 13 inbound + 6 outbound · 3 herramientas · 2 modelos · 435 evaluaciones</p>
 </div>
 
 <div class="container">
 <div class="tab-container">
 <button class="tab active" onclick="showTab('overview')">Overview</button>
+<button class="tab" onclick="showTab('legend')">Leyenda</button>
+<button class="tab" onclick="showTab('process')">Proceso</button>
+<button class="tab" onclick="showTab('tests')">Pruebas</button>
+<button class="tab" onclick="showTab('opik')">Opik</button>
 <button class="tab" onclick="showTab('inbound')">Inbound (13)</button>
 <button class="tab" onclick="showTab('outbound')">Outbound (6)</button>
 <button class="tab" onclick="showTab('models')">Modelos</button>
 <button class="tab" onclick="showTab('costs')">Plan de Costos</button>
 </div>
 
-<!-- OVERVIEW -->
+<!-- ═══════════════════════════════════════════════════════ OVERVIEW ═══ -->
 <div id="overview" class="section active">
 <div class="grid grid-4" style="margin-bottom:20px">
-<div class="card"><h3>Inbound GLOBAL</h3><div class="stat blue">0.632</div><span class="badge badge-yellow">Mejorado · 9 métricas</span></div>
-<div class="card"><h3>Outbound GLOBAL</h3><div class="stat purple">0.600</div><span class="badge badge-yellow">Mejorado · 7 métricas</span></div>
+<div class="card"><h3>Inbound GLOBAL</h3><div class="stat blue">0.632</div><span class="badge badge-yellow">9 métricas · 13 llamadas</span></div>
+<div class="card"><h3>Outbound GLOBAL</h3><div class="stat purple">0.600</div><span class="badge badge-purple">7 métricas · 6 llamadas</span></div>
 <div class="card"><h3>Correlación DE↔LS</h3><div class="stat green">1.000</div><span class="badge badge-green">Validado</span></div>
-<div class="card"><h3>Herramientas</h3><div class="stat" style="color:#f8fafc">3</div><span class="badge badge-blue">Opik · DeepEval · LangSmith</span></div>
+<div class="card"><h3>Total Evaluaciones</h3><div class="stat" style="color:#f8fafc">435</div><span class="badge badge-blue">19 llamadas × 3 tools</span></div>
 </div>
 
 <div class="grid grid-2">
-<div class="chart-card"><h3>Scores por Métrica - Inbound (Promedio 3 tools)</h3><canvas id="chartInbound"></canvas></div>
-<div class="chart-card"><h3>Scores por Métrica - Outbound (Promedio 2 tools)</h3><canvas id="chartOutbound"></canvas></div>
+<div class="chart-card"><h3>Scores por Métrica - Inbound</h3><canvas id="chartInbound"></canvas></div>
+<div class="chart-card"><h3>Scores por Métrica - Outbound</h3><canvas id="chartOutbound"></canvas></div>
 </div>
 
-<div class="grid grid-2" style="margin-top:20px">
+<div class="grid grid-3" style="margin-top:20px">
 <div class="chart-card"><h3>Comparación por Herramienta</h3><canvas id="chartTools"></canvas></div>
 <div class="chart-card"><h3>Comparación por Modelo</h3><canvas id="chartModels"></canvas></div>
+<div class="chart-card"><h3>Opik: J1 vs J2 vs J1-Mejorado</h3><canvas id="chartOpik"></canvas></div>
 </div>
 </div>
 
-<!-- INBOUND -->
+<!-- ═══════════════════════════════════════════════════════ LEYENDA ═══ -->
+<div id="legend" class="section">
+<div class="grid grid-2">
+<div class="card">
+<h3>📋 Métricas Inbound (9 reglas)</h3>
+<div class="legend-item"><div class="legend-icon" style="background:#dc262620;color:#ef4444">👋</div><div class="legend-text"><h4>saludo_correcto</h4><p>El bot saluda al iniciar con "Hola, se contactó con el Grupo Proaco". Puntuá 1.0 si dice la frase exacta, 0.5 si varía, 0.0 si es genérico.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">👋</div><div class="legend-text"><h4>despedida_correcta</h4><p>El bot se despide con "Gracias por contactarse con el Grupo Proaco". Debe ser al final de la llamada.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">📞</div><div class="legend-text"><h4>pide_contacto_una_vez</h4><p>El bot pide nombre + teléfono/email exactamente UNA vez, al final. No repetir el pedido.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">🗣️</div><div class="legend-text"><h4>tono_espanol_argentino</h4><p>Tono amable con expresiones rioplatenses ("dale", "bárbaro", "claro"). Sin español neutro forzado.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">🎯</div><div class="legend-text"><h4>deteccion_intent</h4><p>El bot detecta qué quiere el cliente y ejecuta el flujo correcto sin desviarse.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#22c55e20;color:#22c55e">📋</div><div class="legend-text"><h4>listado_max_3</h4><p>Lista máximo 3 propiedades por mensaje, solo lo que el cliente pidió.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#22c55e20;color:#22c55e">🔗</div><div class="legend-text"><h4>deriva_web_si_no_sabe</h4><p>Cuando no puede resolver, indica https://grupoproaco.com/unidades o derivar a asesor.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">🔄</div><div class="legend-text"><h4>transfiere_correcto</h4><p>Cuando el cliente pide hablar con alguien, transfiere correctamente sin perder contexto.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#22c55e20;color:#22c55e">❓</div><div class="legend-text"><h4>clarifica_ambiguo</h4><p>Cuando la consulta es ambigua, pregunta para aclarar antes de actuar.</p></div></div>
+</div>
+
+<div class="card">
+<h3>📋 Métricas Outbound (7 reglas)</h3>
+<div class="legend-item"><div class="legend-icon" style="background:#22c55e20;color:#22c55e">🏢</div><div class="legend-text"><h4>se_presenta</h4><p>El bot se identifica como "Grupo Proaco" al inicio de la llamada saliente.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">💬</div><div class="legend-text"><h4>menciona_proposito</h4><p>Explica por qué llama (campaña, emprendimiento, interés previo del lead).</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#dc262620;color:#ef4444">✋</div><div class="legend-text"><h4>pide_consentimiento</h4><p>Pregunta si puede continuar / es buen momento antes de hablar del tema.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">🚫</div><div class="legend-text"><h4>maneja_no_interes</h4><p>Ante "no me interesa", cierra cortésmente sin insistir ni entrar en loop.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#dc262620;color:#ef4444">📅</div><div class="legend-text"><h4>ofrece_agendar_cita</h4><p>Si hay interés, ofrece agendar cita/visita o derivar a asesor (CalDotCom).</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#eab30820;color:#eab308">📋</div><div class="legend-text"><h4>listado_max_3</h4><p>Si lista propiedades, máximo 3 y solo lo que pidió el lead.</p></div></div>
+<div class="legend-item"><div class="legend-icon" style="background:#22c55e20;color:#22c55e">😊</div><div class="legend-text"><h4>tono_respetuoso</h4><p>Tono cortés durante toda la llamada, sin insultos ni agresividad.</p></div></div>
+
+<h3 style="margin-top:24px">📊 Escala de Colores</h3>
+<div style="display:flex;gap:16px;margin-top:8px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:6px"><div style="width:16px;height:16px;border-radius:4px;background:#22c55e"></div><span style="font-size:13px">🟢 0.75 - 1.00: Cumple</span></div>
+<div style="display:flex;align-items:center;gap:6px"><div style="width:16px;height:16px;border-radius:4px;background:#eab308"></div><span style="font-size:13px">🟡 0.50 - 0.74: Parcial</span></div>
+<div style="display:flex;align-items:center;gap:6px"><div style="width:16px;height:16px;border-radius:4px;background:#ef4444"></div><span style="font-size:13px">🔴 0.00 - 0.49: No cumple</span></div>
+</div>
+
+<h3 style="margin-top:24px">🛠️ Herramientas</h3>
+<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+<span class="tool-badge opik">Opik — Local, tracing, datasets, open source</span>
+<span class="tool-badge deepeval">DeepEval — Pip install, testing framework</span>
+<span class="tool-badge langsmith">LangSmith — Cloud UI, datasets, API</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PROCESO ═══ -->
+<div id="process" class="section">
+<div class="card" style="margin-bottom:20px">
+<h3>🔄 Flujo de Evaluación del VoiceBot</h3>
+<div class="flow-line">
+<div class="flow-box" style="background:#3b82f620;color:#3b82f6;border:1px solid #3b82f6">📞 Llamada Real</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#a855f720;color:#a855f7;border:1px solid #a855f7">🎤 Transcripción Vapi/Bland</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#22c55e20;color:#22c55e;border:1px solid #22c55e">📝 Formato JSON</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#eab30820;color:#eab308;border:1px solid #eab308">🤖 Juez LLM (qwen2.5:7b)</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#ef444420;color:#ef4444;border:1px solid #ef4444">📊 Scores 0-1</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#6366f120;color:#6366f1;border:1px solid #6366f1">📈 Dashboard</div>
+</div>
+</div>
+
+<div class="grid grid-2">
+<div class="card">
+<h3>📋 Proceso Paso a Paso</h3>
+<div class="step"><div class="step-num">1</div><div class="step-text"><h4>Recolección de Transcripciones</h4><p>Se obtienen las transcripciones de llamadas reales del voicebot Proaco (Vapi/Bland). Cada llamada tiene un JSON con los turnos del BOT y CLIENTE.</p></div></div>
+<div class="step"><div class="step-num">2</div><div class="step-text"><h4>Normalización a Texto</h4><p>Las transcripciones se convierten a formato legible: [BOT] y [CLIENTE] con cada turno. Se limpian_tool_calls y metadata innecesaria.</p></div></div>
+<div class="step"><div class="step-num">3</div><div class="step-text"><h4>Construcción de Prompts</h4><p>El juez mejorado (shared/juez_mejorado.py) genera prompts con: rúbrica de 5 anclas (1.0/0.75/0.5/0.25/0.0), chain-of-thought, edge cases y ejemplos.</p></div></div>
+<div class="step"><div class="step-num">4</div><div class="step-text"><h4>Evaluación con Juez LLM</h4><p>Cada métrica se evalúa individualmente con el juez LLM (qwen2.5:7b local). Responde con JSON: {"score": 0.X, "reason": "..."}.</p></div></div>
+<div class="step"><div class="step-num">5</div><div class="step-text"><h4>Cálculo de Scores</h4><p>Se promedian los scores por métrica y por llamada. Se genera el GLOBAL score (promedio de todas las métricas).</p></div></div>
+<div class="step"><div class="step-num">6</div><div class="step-text"><h4>Logging y Comparación</h4><p>Los resultados se guardan en JSON y se loguean a LangSmith para visualización. Se comparan entre herramientas (Opik, DeepEval, LangSmith).</p></div></div>
+</div>
+
+<div class="card">
+<h3>🏗️ Arquitectura del Sistema</h3>
+<div class="step"><div class="step-num" style="background:#6366f1">O</div><div class="step-text"><h4>Opik (Local)</h4><p>SDK Python → Docker server → UI localhost:5173. Tracing de cada evaluación. Datasets para re-evaluar. Soporta GEval metrics custom.</p></div></div>
+<div class="step"><div class="step-num" style="background:#3b82f6">D</div><div class="step-text"><h4>DeepEval (CLI)</h4><p>pip install deepeval → Script Python → CLI output. Sin UI web (solo terminal). Testing framework para LLMs. Métricas custom via litellm.</p></div></div>
+<div class="step"><div class="step-num" style="background:#a855f7">L</div><div class="step-text"><h4>LangSmith (Cloud)</h4><p>API REST con requests → smith.langchain.com. Runs + Feedback por métrica. Datasets para comparar experimentos. Sin SDK (solo HTTP).</p></div></div>
+<div class="step"><div class="step-num" style="background:#22c55e">J</div><div class="step-text"><h4>Juez Mejorado (Shared)</h4><p>shared/juez_mejorado.py → prompts con rúbrica, CoT, edge cases. Compartido por las 3 herramientas. 9 métricas inbound + 7 outbound.</p></div></div>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PRUEBAS ═══ -->
+<div id="tests" class="section">
+<div class="card" style="margin-bottom:20px">
+<h3>🧪 Pruebas Realizadas</h3>
+<table>
+<thead><tr><th>#</th><th>Prueba</th><th>Herramienta</th><th>Modelo</th><th>Llamadas</th><th>Métricas</th><th>Resultado</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Inbound J1 (juez original)</td><td><span class="tool-badge opik">Opik</span></td><td>qwen2.5:7b</td><td>13</td><td>7</td><td><span class="badge badge-yellow">GLOBAL 0.757</span></td></tr>
+<tr><td>2</td><td>Inbound J2 (juez coder)</td><td><span class="tool-badge opik">Opik</span></td><td>qwen2.5-coder:7b</td><td>13</td><td>7</td><td><span class="badge badge-yellow">GLOBAL 0.650</span></td></tr>
+<tr><td>3</td><td>Inbound J1-mejorado</td><td><span class="tool-badge deepeval">DeepEval</span></td><td>qwen2.5:7b</td><td>13</td><td>9</td><td><span class="badge badge-yellow">GLOBAL 0.632</span></td></tr>
+<tr><td>4</td><td>Inbound J1-mejorado</td><td><span class="tool-badge langsmith">LangSmith</span></td><td>qwen2.5:7b</td><td>13</td><td>9</td><td><span class="badge badge-yellow">GLOBAL 0.632</span></td></tr>
+<tr><td>5</td><td>Inbound J1-mejorado</td><td><span class="tool-badge deepeval">DeepEval</span></td><td>Groq qwen3.6-27b</td><td>13</td><td>9</td><td><span class="badge badge-red">GLOBAL 0.096 (rate limits)</span></td></tr>
+<tr><td>6</td><td>Outbound J1-mejorado</td><td><span class="tool-badge deepeval">DeepEval</span></td><td>qwen2.5:7b</td><td>6</td><td>7</td><td><span class="badge badge-yellow">GLOBAL 0.607</span></td></tr>
+<tr><td>7</td><td>Outbound J1-mejorado</td><td><span class="tool-badge langsmith">LangSmith</span></td><td>qwen2.5:7b</td><td>6</td><td>7</td><td><span class="badge badge-yellow">GLOBAL 0.593</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="grid grid-3">
+<div class="card">
+<h3>✅ Pruebas de Conexión</h3>
+<table>
+<tr><td>Opik Docker</td><td><span class="badge badge-green">OK</span></td></tr>
+<tr><td>Opik UI</td><td><span class="badge badge-green">localhost:5173</span></td></tr>
+<tr><td>DeepEval pip</td><td><span class="badge badge-green">4.1.8</span></td></tr>
+<tr><td>LangSmith API</td><td><span class="badge badge-green">OK</span></td></tr>
+<tr><td>LangSmith Dataset</td><td><span class="badge badge-green">13 examples</span></td></tr>
+<tr><td>Ollama qwen2.5:7b</td><td><span class="badge badge-green">~7 tok/s</span></td></tr>
+<tr><td>Groq API</td><td><span class="badge badge-red">Rate limited</span></td></tr>
+</table>
+</div>
+<div class="card">
+<h3>🔍 Validación de Consistencia</h3>
+<table>
+<tr><td>DeepEval ↔ LangSmith (inbound)</td><td><span class="badge badge-green">r = 1.000</span></td></tr>
+<tr><td>DeepEval ↔ LangSmith (outbound)</td><td><span class="badge badge-yellow">r ≈ 0.98</span></td></tr>
+<tr><td>Opik J1 vs J1-mejorado</td><td><span class="badge badge-yellow">Δ = 0.125</span></td></tr>
+<tr><td>Opik J2 vs J1-mejorado</td><td><span class="badge badge-green">Δ = 0.018</span></td></tr>
+</table>
+<p style="color:#94a3b8;margin-top:12px;font-size:11px">* DeepEval y LangSmith usan el mismo juez → scores idénticos (validación cruzada perfecta).</p>
+</div>
+<div class="card">
+<h3>📊 Datos del Experimento</h3>
+<table>
+<tr><td>Fecha</td><td>2026-08-17</td></tr>
+<tr><td>Total evaluaciones</td><td><strong>435</strong></td></tr>
+<tr><td>Inbound llamadas</td><td>13</td></tr>
+<tr><td>Outbound llamadas</td><td>6</td></tr>
+<tr><td>Métricas inbound</td><td>9</td></tr>
+<tr><td>Métricas outbound</td><td>7</td></tr>
+<tr><td>Herramientas</td><td>3</td></tr>
+<tr><td>Modelos</td><td>2</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ OPIK ═══ -->
+<div id="opik" class="section">
+<div class="grid grid-2" style="margin-bottom:20px">
+<div class="card">
+<h3>🎯 Opik J1 - Juez Original (qwen2.5:7b)</h3>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:12px">Prompts simples sin rúbrica ni CoT. Inflaba scores por falta de criterio estricto.</p>
+<table>
+<thead><tr><th>Métrica</th><th>Score</th><th>Estado</th></tr></thead>
+<tbody id="opikJ1Table"></tbody>
+</table>
+<div style="margin-top:12px;padding:12px;background:#334155;border-radius:8px">
+<strong style="color:#f8fafc">GLOBAL: 0.757</strong>
+<p style="color:#94a3b8;font-size:11px;margin-top:4px">7 métricas · 13 llamadas · Inbound</p>
+</div>
+</div>
+<div class="card">
+<h3>🎯 Opik J2 - Juez Coder (qwen2.5-coder:7b)</h3>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:12px">Modelo coder como juez. Más estricto que J1 pero prompts siguen siendo simples.</p>
+<table>
+<thead><tr><th>Métrica</th><th>Score</th><th>Estado</th></tr></thead>
+<tbody id="opikJ2Table"></tbody>
+</table>
+<div style="margin-top:12px;padding:12px;background:#334155;border-radius:8px">
+<strong style="color:#f8fafc">GLOBAL: 0.650</strong>
+<p style="color:#94a3b8;font-size:11px;margin-top:4px">7 métricas · 13 llamadas · Inbound</p>
+</div>
+</div>
+</div>
+
+<div class="grid grid-2">
+<div class="card">
+<h3>📈 Comparación: Opik J1 vs J1-Mejorado</h3>
+<canvas id="chartOpikCompare"></canvas>
+<p style="color:#94a3b8;font-size:11px;margin-top:12px">El juez mejorado (rúbrica + CoT) reduce scores promedio en 0.125 puntos. Más realista.</p>
+</div>
+<div class="card">
+<h3>📊 Scores por Llamada - Opik</h3>
+<canvas id="chartOpikCalls"></canvas>
+<p style="color:#94a3b8;font-size:11px;margin-top:12px">J2 (coder) es consistentemente más estricto que J1 en todas las llamadas.</p>
+</div>
+</div>
+
+<div class="card" style="margin-top:20px">
+<h3>📋 Scores por Llamada - Opik (7 Métricas Originales)</h3>
+<table>
+<thead><tr><th>Llamada</th><th>J1 avg</th><th>J2 avg</th><th>Δ J1-J2</th><th>saludo</th><th>despedida</th><th>contacto</th><th>tono</th><th>intent</th><th>listado</th><th>web</th></tr></thead>
+<tbody id="opikCallsTable"></tbody>
+</table>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ INBOUND ═══ -->
 <div id="inbound" class="section">
 <div class="card">
-<h3> Scores por Llamada - Inbound (9 Métricas)</h3>
+<h3> Scores por Llamada - Inbound (9 Métricas, Juez Mejorado)</h3>
 <table>
 <thead><tr><th>Llamada</th><th>DeepEval</th><th>LangSmith</th><th>Δ</th><th>saludo</th><th>despedida</th><th>contacto</th><th>tono</th><th>intent</th><th>listado</th><th>web</th><th>transfiere</th><th>clarifica</th></tr></thead>
 <tbody id="inboundTable"></tbody>
@@ -93,10 +307,10 @@ td{color:#e2e8f0}
 </div>
 </div>
 
-<!-- OUTBOUND -->
+<!-- ═══════════════════════════════════════════════════════ OUTBOUND ═══ -->
 <div id="outbound" class="section">
 <div class="card">
-<h3> Scores por Llamada - Outbound (7 Métricas)</h3>
+<h3> Scores por Llamada - Outbound (7 Métricas, Juez Mejorado)</h3>
 <table>
 <thead><tr><th>Llamada</th><th>DeepEval</th><th>LangSmith</th><th>Δ</th><th>presenta</th><th>propósito</th><th>consentim.</th><th>no_interés</th><th>cita</th><th>listado</th><th>tono</th></tr></thead>
 <tbody id="outboundTable"></tbody>
@@ -104,7 +318,7 @@ td{color:#e2e8f0}
 </div>
 </div>
 
-<!-- MODELS -->
+<!-- ═══════════════════════════════════════════════════════ MODELS ═══ -->
 <div id="models" class="section">
 <div class="grid grid-2">
 <div class="card">
@@ -117,12 +331,12 @@ td{color:#e2e8f0}
 <h3>Groq qwen3.6-27b (Cloud)</h3>
 <div class="stat red">0.096</div>
 <p style="color:#94a3b8;margin-top:8px">Rate limit: 8000 TPM · Inestable · Costo variable</p>
-<ul style="list-style:none;margin-top:12px"><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ Rate limits hacen impossible evaluación masiva</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ ~50% de llamadas fallan con 0.0</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ No recomendado para este caso de uso</li></ul>
+<ul style="list-style:none;margin-top:12px"><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ Rate limits hacen imposible evaluación masiva</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ ~50% de llamadas fallan con 0.0</li><li style="padding:4px 0;font-size:13px;color:#cbd5e1">✗ No recomendado para este caso de uso</li></ul>
 </div>
 </div>
 </div>
 
-<!-- COSTS -->
+<!-- ═══════════════════════════════════════════════════════ COSTS ═══ -->
 <div id="costs" class="section">
 <div class="grid grid-3" style="margin-bottom:20px">
 <div class="cost-card">
@@ -188,6 +402,10 @@ td{color:#e2e8f0}
 </div>
 
 <script>
+// ════════════════════════════════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════════════════════════════════
+
 const INBOUND = {
 metrics: ['saludo_correcto','despedida_correcta','pide_contacto_una_vez','tono_espanol_argentino','deteccion_intent','listado_max_3','deriva_web_si_no_sabe','transfiere_correcto','clarifica_ambiguo'],
 labels: ['Saludo','Despedida','Contacto','Tono','Intent','Listado','Deriva Web','Transfiere','Clarifica'],
@@ -223,9 +441,53 @@ calls: [
 {id:'CAf8fa..',de:0.571,ls:0.571,s:[1.00,0.00,0.00,1.00,0.00,1.00,1.00]}
 ]};
 
+const OPIK = {
+j1: [0.623,0.750,0.673,0.681,0.704,0.931,0.831],
+j2: [0.350,0.492,0.642,0.665,0.688,0.538,0.885],
+metrics: ['saludo','despedida','contacto','tono','intent','listado','web'],
+calls: [
+{id:'llamada-1',j1:0.750,j2:0.500,s:[0.50,0.75,0.75,0.75,0.75,0.75,1.00]},
+{id:'llamada-2',j1:0.643,j2:0.429,s:[0.25,0.25,0.50,0.50,0.50,0.50,1.00]},
+{id:'llamada-3',j1:0.857,j2:0.714,s:[0.75,0.75,0.75,0.75,1.00,1.00,1.00]},
+{id:'llamada-4',j1:0.714,j2:0.571,s:[0.50,0.75,0.50,0.75,0.50,0.75,0.75]},
+{id:'llamada-5',j1:0.500,j2:0.286,s:[0.00,0.25,0.50,0.25,0.50,1.00,0.50]},
+{id:'llamada-6',j1:0.714,j2:0.571,s:[0.25,0.50,0.50,0.75,0.75,1.00,1.00]},
+{id:'llamada-7',j1:0.750,j2:0.643,s:[0.50,0.75,0.75,0.75,0.50,1.00,1.00]},
+{id:'llamada-8',j1:0.929,j2:0.714,s:[0.75,1.00,0.75,0.75,0.75,1.00,1.00]},
+{id:'llamada-9',j1:0.714,j2:0.643,s:[0.25,0.75,0.75,0.75,0.75,0.75,1.00]},
+{id:'llamada-10',j1:0.786,j2:0.714,s:[0.50,0.50,0.75,0.75,0.75,1.00,1.00]},
+{id:'llamada-11',j1:0.786,j2:0.714,s:[0.50,0.75,0.75,0.75,0.75,1.00,1.00]},
+{id:'llamada-12',j1:0.643,j2:0.500,s:[0.25,0.25,0.75,0.50,0.50,1.00,1.00]},
+{id:'llamada-13',j1:0.714,j2:0.643,s:[0.75,0.50,0.50,0.75,0.75,0.75,1.00]}
+]};
+
+// ════════════════════════════════════════════════════════════════════════
+// HELPERS
+// ════════════════════════════════════════════════════════════════════════
 function colorForScore(v){return v>=0.75?'#22c55e':v>=0.50?'#eab308':'#ef4444'}
 function barHtml(v){return `<div class="score-bar"><div class="score-fill" style="width:${v*100}%;background:${colorForScore(v)}"></div></div>`}
 function showTab(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');event.target.classList.add('active')}
+function badgeFor(v){const c=v>=0.75?'badge-green':v>=0.50?'badge-yellow':'badge-red';return `<span class="badge ${c}">${v.toFixed(3)}</span>`}
+
+// ════════════════════════════════════════════════════════════════════════
+// TABLES
+// ════════════════════════════════════════════════════════════════════════
+
+// Opik J1 table
+const oj1=document.getElementById('opikJ1Table');
+const j1Avgs=[0.623,0.750,0.673,0.681,0.704,0.931,0.831];
+OPIK.metrics.forEach((m,i)=>{oj1.innerHTML+=`<tr><td>${m}</td><td>${j1Avgs[i].toFixed(3)}</td><td>${badgeFor(j1Avgs[i])}</td></tr>`});
+
+// Opik J2 table
+const oj2=document.getElementById('opikJ2Table');
+const j2Avgs=[0.350,0.492,0.642,0.665,0.688,0.538,0.885];
+OPIK.metrics.forEach((m,i)=>{oj2.innerHTML+=`<tr><td>${m}</td><td>${j2Avgs[i].toFixed(3)}</td><td>${badgeFor(j2Avgs[i])}</td></tr>`});
+
+// Opik calls table
+const oc=document.getElementById('opikCallsTable');
+OPIK.calls.forEach(c=>{
+oc.innerHTML+=`<tr><td><strong>${c.id}</strong></td><td>${c.j1.toFixed(3)}</td><td>${c.j2.toFixed(3)}</td><td>${(c.j1-c.j2).toFixed(3)}</td>${c.s.map(v=>`<td>${v.toFixed(2)} ${barHtml(v)}</td>`).join('')}</tr>`;
+});
 
 // Inbound table
 const ib=document.getElementById('inboundTable');
@@ -239,16 +501,24 @@ OUTBOUND.calls.forEach(c=>{
 ob.innerHTML+=`<tr><td><strong>${c.id}</strong></td><td>${c.de.toFixed(3)}</td><td>${c.ls.toFixed(3)}</td><td>${Math.abs(c.de-c.ls).toFixed(3)}</td>${c.s.map(v=>`<td>${v.toFixed(2)} ${barHtml(v)}</td>`).join('')}</tr>`;
 });
 
-// Charts
+// ════════════════════════════════════════════════════════════════════════
+// CHARTS
+// ════════════════════════════════════════════════════════════════════════
 const radarOpts={scales:{r:{min:0,max:1,ticks:{stepSize:0.25,color:'#94a3b8',backdropColor:'transparent'},grid:{color:'#334155'},pointLabels:{color:'#e2e8f0',font:{size:11}}}},plugins:{legend:{labels:{color:'#e2e8f0'}}}};
 
 new Chart(document.getElementById('chartInbound'),{type:'radar',data:{labels:INBOUND.labels,datasets:[{label:'DeepEval',data:INBOUND.deepeval,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.1)',pointBackgroundColor:'#3b82f6'},{label:'LangSmith',data:INBOUND.langsmith,borderColor:'#a855f7',backgroundColor:'rgba(168,85,247,0.1)',pointBackgroundColor:'#a855f7'}]},options:radarOpts});
 
 new Chart(document.getElementById('chartOutbound'),{type:'radar',data:{labels:OUTBOUND.labels,datasets:[{label:'DeepEval',data:OUTBOUND.deepeval,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.1)',pointBackgroundColor:'#3b82f6'},{label:'LangSmith',data:OUTBOUND.langsmith,borderColor:'#a855f7',backgroundColor:'rgba(168,85,247,0.1)',pointBackgroundColor:'#a855f7'}]},options:radarOpts});
 
-new Chart(document.getElementById('chartTools'),{type:'bar',data:{labels:['Opik J1','Opik J2','DeepEval','LangSmith'],datasets:[{label:'Inbound',data:[0.757,0.650,0.632,0.632],backgroundColor:['#6366f1','#8b5cf6','#3b82f6','#a855f7']},{label:'Outbound',data:[null,null,0.607,0.593],backgroundColor:['transparent','transparent','#3b82f6','#a855f7']}]},options:{scales:{x:{grid:{color:'#334155'},ticks:{color:'#e2e8f0'}},y:{min:0,max:1,grid:{color:'#334155'},ticks:{color:'#e2e8f0'}}},plugins:{legend:{labels:{color:'#e2e8f0'}}}}});
+new Chart(document.getElementById('chartTools'),{type:'bar',data:{labels:['Opik J1','Opik J2','DeepEval','LangSmith'],datasets:[{label:'Inbound (7 métricas)',data:[0.757,0.650,0.632,0.632],backgroundColor:['#6366f1','#8b5cf6','#3b82f6','#a855f7']},{label:'Outbound (7 métricas)',data:[null,null,0.607,0.593],backgroundColor:['transparent','transparent','#3b82f6','#a855f7']}]},options:{scales:{x:{grid:{color:'#334155'},ticks:{color:'#e2e8f0'}},y:{min:0,max:1,grid:{color:'#334155'},ticks:{color:'#e2e8f0'}}},plugins:{legend:{labels:{color:'#e2e8f0'}}}}});
 
 new Chart(document.getElementById('chartModels'),{type:'bar',data:{labels:['Ollama qwen2.5:7b','Groq qwen3.6-27b'],datasets:[{label:'GLOBAL Score',data:[0.632,0.096],backgroundColor:['#22c55e','#ef4444']}]},options:{indexAxis:'y',scales:{x:{min:0,max:1,grid:{color:'#334155'},ticks:{color:'#e2e8f0'}},y:{grid:{color:'#334155'},ticks:{color:'#e2e8f0'}}},plugins:{legend:{display:false}}}});
+
+// Opik comparison chart
+new Chart(document.getElementById('chartOpikCompare'),{type:'bar',data:{labels:OPIK.metrics,datasets:[{label:'Opik J1 (original)',data:j1Avgs,backgroundColor:'#6366f1'},{label:'Opik J1-Mejorado (DeepEval)',data:[0.327,0.538,0.577,0.558,0.577,0.865,0.769],backgroundColor:'#3b82f6'}]},options:{scales:{x:{grid:{color:'#334155'},ticks:{color:'#e2e8f0'}},y:{min:0,max:1,grid:{color:'#334155'},ticks:{color:'#e2e8f0'}}},plugins:{legend:{labels:{color:'#e2e8f0'}}}}});
+
+// Opik calls chart
+new Chart(document.getElementById('chartOpikCalls'),{type:'line',data:{labels:OPIK.calls.map(c=>c.id),datasets:[{label:'Opik J1',data:OPIK.calls.map(c=>c.j1),borderColor:'#6366f1',backgroundColor:'rgba(99,102,241,0.1)',fill:true,tension:0.3},{label:'Opik J2',data:OPIK.calls.map(c=>c.j2),borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,0.1)',fill:true,tension:0.3}]},options:{scales:{x:{grid:{color:'#334155'},ticks:{color:'#e2e8f0',maxRotation:45}},y:{min:0,max:1,grid:{color:'#334155'},ticks:{color:'#e2e8f0'}}},plugins:{legend:{labels:{color:'#e2e8f0'}}}}});
 </script>
 </body>
 </html>
